@@ -1,6 +1,10 @@
 class ApplicationController < ActionController::API
+    rescue_from StandardError, with: :unhandled_error
+    rescue_from ActionController::InvalidAuthenticityToken,
+        with: :invalid_authenticity_token
+    
     include ActionController::RequestForgeryProtection
-  
+    
     protect_from_forgery with: :exception
     before_action :snake_case_params, :attach_authenticity_token
 
@@ -43,6 +47,23 @@ class ApplicationController < ActionController::API
           render json: { user: current_user.slice('id', 'username', 'session_token') }
         else
           render json: ['No current user']
+        end
+    end
+
+    def invalid_authenticity_token
+        render json: { message: 'Invalid authenticity token' }, 
+            status: :unprocessable_entity
+    end
+      
+    def unhandled_error(error)
+        if request.accepts.first.html?
+            raise error
+        else
+            @message = "#{error.class} - #{error.message}"
+            @stack = Rails::BacktraceCleaner.new.clean(error.backtrace)
+            render 'api/errors/internal_server_error', status: :internal_server_error
+            
+            logger.error "\n#{@message}:\n\t#{@stack.join("\n\t")}\n"
         end
     end
 
