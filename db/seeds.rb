@@ -13,8 +13,10 @@ ApplicationRecord.transaction do
     ApplicationRecord.connection.reset_pk_sequence!('users')
 
     User.create!(
-        username: 'admin',
         email: 'admin@test.com',
-        password: 'test'
+        password: 'test',
+        first_name: 'admin',
+        last_name: 'admin',
+        birthdate: '1/1/2000'
     )
 end

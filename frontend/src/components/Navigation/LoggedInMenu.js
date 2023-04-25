@@ -11,7 +11,7 @@ function LoggedInMenu({user}){
     return (
         <div>
             <ul>
-                <li>{user.username}</li>
+                <li>{user.firstName}</li>
                 <li><button>Messages</button></li>
                 <li><button>Notifications</button></li>
                 <li><button>Trips</button></li>

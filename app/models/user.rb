@@ -1,25 +1,31 @@
 class User < ApplicationRecord
     has_secure_password
 
-    validates :username, 
-        length: { in: 3..16 }, 
-        uniqueness: true,
-        format: { without: URI::MailTo::EMAIL_REGEXP, message:  "can't be an email" }
-
     validates :email, 
         length: { in: 4..24}, 
         uniqueness: true,
         format: { with: URI::MailTo::EMAIL_REGEXP }
+    
+    validates :first_name, presence: true
+    validates :last_name, presence: true
+    validates :birthdate, presence: true
 
     validates :session_token, presence: true, uniqueness: true
     validates :password, length: { in: 4..16 }, allow_nil: true
 
+    validate :validate_age
 
     before_validation :ensure_session_token
 
-    def self.find_by_credentials(credential, password)
-        field = credential =~ URI::MailTo::EMAIL_REGEXP ? :email : :username
-        user = User.find_by(field => credential)
+    def validate_age
+        if birthdate.present? && birthdate > 18.years.ago.to_date
+            errors.add(:base, 'Users must be over 18 years old')
+        end
+    end
+
+    def self.find_by_credentials(email, password)
+        # field = credential =~ URI::MailTo::EMAIL_REGEXP ? :email : :username
+        user = User.find_by(email: email)
         user&.authenticate(password)
     end
 

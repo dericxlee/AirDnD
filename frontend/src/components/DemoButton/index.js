@@ -8,7 +8,7 @@ function DemoButton() {
 
     const handleClick = (e) => {
         e.preventDefault();
-        return dispatch(sessionActions.login({credential: 'admin', password: 'test'}))
+        return dispatch(sessionActions.login({email: 'admin@test.com', password: 'test'}))
             .catch(async (res) => {
             let data;
             try {
