@@ -1,18 +1,46 @@
 import React, { useState, useEffect } from "react";
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import * as sessionActions from '../../store/session';
+import LoggedInMenu from "./LoggedInMenu";
+import LoggedOutMenu from "./LoggedOutMenu";
+import LoginFormModal from "../LoginModal";
+import SignupFormModal from "../SignupModal";
+import DemoButton from "../DemoButton";
 
-function ProfileButton({ user }) {
+function ProfileButton() {
   const dispatch = useDispatch();
+  const sessionUser = useSelector(state => state.session.user);
   const [showMenu, setShowMenu] = useState(false);
   
+  let sessionLinks;
+  if(sessionUser){
+    sessionLinks = (
+      <LoggedInMenu user={sessionUser}/>
+    )
+  } else {
+    sessionLinks = (
+      <>
+        <LoggedOutMenu/>
+      </>
+    )
+  }
+
   const openMenu = () => {
     if (showMenu) return;
     setShowMenu(true);
   };
+
+  const closeMenu = () => {
+    if(!document.getElementById('menu') && showMenu) setShowMenu(false)
+  }
+
+  const toggleMenu = () => {
+    if(!showMenu) setShowMenu(true)
+    if(showMenu) setShowMenu(false)
+  }
   
   useEffect(() => {
-    if (!showMenu) return;
+    if (!showMenu || !sessionUser) return;
 
     const closeMenu = () => {
       setShowMenu(false);
@@ -21,28 +49,22 @@ function ProfileButton({ user }) {
     document.addEventListener('click', closeMenu);
   
     return () => document.removeEventListener("click", closeMenu);
-  }, [showMenu]);
+  }, [showMenu, sessionUser]);
 
-  const logout = (e) => {
-    e.preventDefault();
-    dispatch(sessionActions.logout());
-  };
+  // const logout = (e) => {
+  //   e.preventDefault();
+  //   dispatch(sessionActions.logout());
+  // };
 
   return (
-    <>
-      <button onClick={openMenu}>Profile
+    <div className='menu' id='menu'>
+      <button onClick={toggleMenu}>Profile
         <i className="fa-solid fa-user-circle" />
       </button>
       {showMenu && (
-        <ul className="profile-dropdown">
-          <li>{user.username}</li>
-          <li>{user.email}</li>
-          <li>
-            <button onClick={logout}>Log Out</button>
-          </li>
-        </ul>
+        sessionLinks
       )}
-    </>
+    </div>
   );
 }
 

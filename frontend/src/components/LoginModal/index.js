@@ -5,11 +5,21 @@ import LoginForm from './LoginForm';
 function LoginFormModal() {
   const [showModal, setShowModal] = useState(false);
 
+  const handleClick = (e) => {
+    e.preventDefault();
+    setShowModal(true)
+  }
+
+  const handleClose = (e) => {
+    e.preventDefault()
+    setShowModal(false)
+  }
+
   return (
     <>
-      <button onClick={() => setShowModal(true)}>Log In</button>
+      <button onClick={handleClick}>Log In</button>
       {showModal && (
-        <Modal onClose={() => setShowModal(false)}>
+        <Modal onClose={handleClose}>
           <LoginForm />
         </Modal>
       )}

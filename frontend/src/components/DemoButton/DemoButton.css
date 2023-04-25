@@ -1,0 +1,19 @@
+#community-btn-box {
+    column-count: 1;
+    width: 100%;
+}
+
+#community-btn-item {
+    display: inline-block;
+    width: 100%;
+    height: 25%;
+    text-align: center;
+}
+
+#community-btn {
+    width: 90%;
+    height: 65%;
+    font-size: 14px;
+    border-radius: 8px;
+    background-color: white;
+}

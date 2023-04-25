@@ -1,6 +1,7 @@
 import React, { useContext, useRef, useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import './Modal.css';
+import DemoButton from '../components/DemoButton';
 
 const ModalContext = React.createContext();
 
@@ -30,7 +31,11 @@ export function Modal({ onClose, children }) {
     <div id="modal">
       <div id="modal-background" onClick={onClose} />
       <div id="modal-content">
-        {children}
+        <div id='modal-message'><p id='login-msg'>Log in or sign up</p></div>
+        <div id='modal-form'>
+          {children}
+        </div>
+        <div id='modal-social-media'><DemoButton/></div>
       </div>
     </div>,
     modalNode
