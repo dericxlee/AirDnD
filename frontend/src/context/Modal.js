@@ -31,11 +31,7 @@ export function Modal({ onClose, children }) {
     <div id="modal">
       <div id="modal-background" onClick={onClose} />
       <div id="modal-content">
-        <div id='modal-message'><p id='login-msg'>Log in or sign up</p></div>
-        <div id='modal-form'>
-          {children}
-        </div>
-        <div id='modal-social-media'><DemoButton/></div>
+        {children}
       </div>
     </div>,
     modalNode
