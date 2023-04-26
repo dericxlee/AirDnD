@@ -19,4 +19,19 @@ ApplicationRecord.transaction do
         last_name: 'admin',
         birthdate: '1/1/2000'
     )
+
+    Listing.create!(
+        host_id: 1,
+        title: 'Big Mansion',
+        description: 'Nice view and place',
+        address: '123 Main Street',
+        city: 'San Francisco',
+        property_type: 'Entire home',
+        price: 500,
+        max_guests: 10,
+        num_beds: 6,
+        num_bedrooms: 5,
+        num_baths: 4
+    )
+
 end

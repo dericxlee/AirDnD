@@ -1,0 +1,29 @@
+#nav-bar {
+    display: block;
+    position: absolute;
+    top: 0%;
+    height: 10%;
+    width: 100%;
+    box-sizing: border-box;
+    /* border-bottom-style: solid;
+    border-bottom: black; */
+    border-block: 5px solid black;
+}
+
+#home-icon {
+    display: flex;
+    position: absolute;
+    top: 0%;
+    height: 100%;
+    width: 10%;
+    left: 0%;
+}
+
+#profile-btn-box {
+    display: flex;
+    position: absolute;
+    top: 0%;
+    height: 100%;
+    width: 10%;
+    right: 0%;
+}
