@@ -32,14 +32,14 @@ class Api::ListingsController < ApplicationController
         
         if @listing.destroy!
             render :add_index
-        end]
+        end
     end
 
     private
 
     def listing_params
-        params.require(:listing).permit(:host_id, :title, :description
-            :property_type, :address, :city, :price
-            :num_beds, :num_bedroosm, :num_baths)
+        params.require(:listing).permit(:host_id, :title, :description,
+            :property_type, :address, :city, :price,
+            :num_beds, :num_bedrooms, :num_baths)
     end
 end
