@@ -84,3 +84,7 @@ production:
   database: airdnd_production
   username: airdnd
   password: <%= ENV["AIRDND_DATABASE_PASSWORD"] %>
+
+production:
+  <<: *default
+  url: <%= ENV['DATABASE_URL'] %>
