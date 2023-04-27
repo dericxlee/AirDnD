@@ -8,8 +8,10 @@
 
 
 ApplicationRecord.transaction do 
+    Listing.destroy_all
     User.destroy_all
 
+    ApplicationRecord.connection.reset_pk_sequence!('listings')
     ApplicationRecord.connection.reset_pk_sequence!('users')
 
     User.create!(
@@ -32,6 +34,48 @@ ApplicationRecord.transaction do
         num_beds: 6,
         num_bedrooms: 5,
         num_baths: 4
+    )
+
+    Listing.create!(
+        host_id: 1,
+        title: 'Small House',
+        description: 'Affordable',
+        address: '456 Webster Street',
+        city: 'San Francisco',
+        property_type: 'Entire home',
+        price: 150,
+        max_guests: 4,
+        num_beds: 2,
+        num_bedrooms: 2,
+        num_baths: 2
+    )
+
+    Listing.create!(
+        host_id: 1,
+        title: 'Vacation Home',
+        description: 'Great beach view, swimming pool',
+        address: '123 Beachfront Ave',
+        city: 'San Francisco',
+        property_type: 'Entire home',
+        price: 500,
+        max_guests: 8,
+        num_beds: 5,
+        num_bedrooms: 4,
+        num_baths: 4
+    )
+
+    Listing.create!(
+        host_id: 1,
+        title: 'Cabin',
+        description: 'In the forest',
+        address: '123 Forest Ave',
+        city: 'San Francisco',
+        property_type: 'Entire home',
+        price: 200,
+        max_guests: 3,
+        num_beds: 2,
+        num_bedrooms: 2,
+        num_baths: 2
     )
 
 end

@@ -10,6 +10,7 @@ const ListingIndexItem = ({listing}) => {
     return (
         <>
             <li id='listing-box'>
+                
                 <p>{listing.title}</p>
                 <p>{listing.description}</p>
                 <button>Here I am</button>

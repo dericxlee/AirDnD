@@ -1,6 +1,4 @@
 #listing-box {
-    position: absolute;
-    background-color: purple;
-    bottom: 0%;
-    height: 10%;
+    height: 100%;
+    width: 25%;
 }

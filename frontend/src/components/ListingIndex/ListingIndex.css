@@ -1,0 +1,7 @@
+#listing-box-container {
+    position: absolute;
+    display: flex;
+    top: 10%;
+    height: 10%;
+    width: 100%;
+}

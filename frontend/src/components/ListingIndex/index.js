@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from "react-redux"
 import { useEffect } from "react"
 import { getListings, fetchListings } from "../../store/listing"
 import ListingIndexItem from "./ListingIndexItem"
+import './ListingIndex.css'
 
 const ListingIndex = () => {
     const dispatch = useDispatch()
@@ -12,7 +13,7 @@ const ListingIndex = () => {
     }, [dispatch])
 
     return (
-        <ul>
+        <ul id='listing-box-container'>
             {
                 listings.map(listing => <ListingIndexItem
                     listing={listing}
