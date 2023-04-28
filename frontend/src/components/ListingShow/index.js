@@ -1,19 +1,29 @@
 import { useDispatch, useSelector } from "react-redux"
 import { useParams } from "react-router-dom";
-import { getListing, fetchListing } from "../../store/listing";
+import { getListing, getListings, fetchListing } from "../../store/listing";
 import { useEffect } from "react";
 import './ListingShow.css'
+import { useState } from "react";
 
 
 const ListingShow = () => {
     const {listingId} = useParams();
     const dispatch = useDispatch();
-    const listing = useSelector(getListing(listingId));
-    console.log(listing)
+    const listing = useSelector(getListing(parseInt(listingId)));
+    console.log(listingId)
+    // const [listing, setListing] = useState({})
+
+    // useEffect(()=> {
+    //     if(!listing){
+    //         dispatch(getListing(listingId))
+    //     }
+    // }, [dispatch, listingId])
+
+    if(!listing) console.log('fail')
 
     useEffect(()=> {
         dispatch(fetchListing(listingId))
-    }, [])
+    }, [dispatch, listingId])
 
     return (
         <div id='show-page-container'>
@@ -35,7 +45,7 @@ const ListingShow = () => {
             <div id='show-page-bottom-divider-box'>
                 <div id='show-page-information-box'>
                     <div id='show-page-host-box'>
-                        <p id='show-page-host'>{listing?.propertyType} hosted by</p>
+                        <p id='show-page-host'>{listing?.propertyType} hosted by {listing?.hostId}</p>
                     </div>
                     <div id='show-page-attribute-box'>
                         <ul id='show-page-attribute'>

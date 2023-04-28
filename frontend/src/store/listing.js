@@ -1,6 +1,8 @@
-export const RECEIVE_LISTINGS = 'listing/RECEIVE_LISTINGS'
-export const RECEIVE_LISTING = 'listing/RECEIVE_LISTING'
-export const REMOVE_LISTING = 'listing/REMOVE_LISTING'
+import csrfFetch from "./csrf.js";
+
+export const RECEIVE_LISTINGS = 'listings/RECEIVE_LISTINGS'
+export const RECEIVE_LISTING = 'listings/RECEIVE_LISTING'
+export const REMOVE_LISTING = 'listings/REMOVE_LISTING'
 
 const receiveListings = listings => ({
     type: RECEIVE_LISTINGS,
@@ -35,7 +37,7 @@ export const fetchListings = () => async (dispatch) => {
 }
 
 export const fetchListing = listingId => async (dispatch) => {
-    const res = await fetch (`/api/listings/${listingId}`)
+    const res = await csrfFetch (`/api/listings/${listingId}`)
 
     if(res.ok) {
         const listing = await res.json()
@@ -44,12 +46,22 @@ export const fetchListing = listingId => async (dispatch) => {
 }
 
 export const createListing = listing => async (dispatch) => {
-    const res = await fetch (`/api/listings/`, {
+    const { hostId, title, description, propertyType, price, address, city, maxGuests, numBeds, numBedrooms, numBaths} = listing
+    const res = await csrfFetch (`/api/listings/`, {
         method: 'POST',
-        headers: {
-            'Content-Type' : 'application/json'
-        },
-        body: JSON.stringify(listing)
+        body: JSON.stringify({
+            hostId,
+            title,
+            description,
+            propertyType,
+            price,
+            address,
+            city,
+            maxGuests,
+            numBeds,
+            numBedrooms,
+            numBaths
+        })
     })
 
     if(res.ok) {
@@ -59,7 +71,7 @@ export const createListing = listing => async (dispatch) => {
 }
 
 export const updateListing = listing => async (dispatch) => {
-    const res = await fetch (`/api/listings/${listing.id}`, {
+    const res = await csrfFetch (`/api/listings/${listing.id}`, {
         method: 'PATCH',
         headers: {
             'Content-Type' : 'application/json'
@@ -74,7 +86,7 @@ export const updateListing = listing => async (dispatch) => {
 }
 
 export const deleteListing = listingId => async (dispatch) => {
-    const res = await fetch (`/api/listings/${listingId}`, {
+    const res = await csrfFetch (`/api/listings/${listingId}`, {
         method: 'DELETE',
     })
 

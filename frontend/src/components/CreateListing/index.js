@@ -1,27 +1,44 @@
-import { useDispatch } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 import React, { useEffect, useState } from "react"
 import { createListing } from "../../store/listing"
 import './ListingForm.css'
 
 const ListingForm = () => {
     const dispatch = useDispatch()
-
+    const sessionUser = useSelector(state => state.session.user)
+    console.log(sessionUser.id)
+    
     const [title, setTitle] = useState('')
     const [description, setDescription] = useState('')
     const [propertyType, setPropertyType] = useState('')
     const [address, setAddress] = useState('')
     const [city, setCity] = useState('')
-    const [price, setPrice] = useState(0)
-    const [maxGuests, setMaxGuests] = useState(0)
-    const [numBeds, setNumBeds] = useState(0)
-    const [numBaths, setNumBaths] = useState(0)
-    const [numBedrooms, setNumBedrooms] = useState(0)
-    const [hostId, setHostId] = useState(0)
+    const [price, setPrice] = useState()
+    const [maxGuests, setMaxGuests] = useState()
+    const [numBeds, setNumBeds] = useState()
+    const [numBaths, setNumBaths] = useState()
+    const [numBedrooms, setNumBedrooms] = useState()
+    
+    const listing = {
+        title, 
+        description,
+        propertyType,
+        address,
+        city,
+        price,
+        maxGuests,
+        numBeds,
+        numBaths,
+        numBedrooms,
+        hostId: sessionUser.id
+    };
+    // useEffect(()=>{
+    //     setHostId(sessionUser.id)
+    // }, [])
 
     const handleSubmit = e => {
         e.preventDefault();
-        // listing = {...listing, title, body};
-        // dispatch(createListing(listing))
+        dispatch(createListing(listing))
     }
 
     return (
@@ -37,7 +54,6 @@ const ListingForm = () => {
                 <input type="text" value={numBaths} placeholder="number of bathrooms" onChange={e=>setNumBaths(e.target.value)} />
                 <input type="text" value={numBedrooms} placeholder="number of bedrooms" onChange={e=>setNumBedrooms(e.target.value)}/>
                 <input type="textarea" value={description} placeholder="description" onChange={e=>setDescription(e.target.value)}/>
-                <input type="text" value={hostId} placeholder='host' onChange={e=>setHostId(e.target.value)}/>
                 <input type="submit" />
             </form>
         </div>

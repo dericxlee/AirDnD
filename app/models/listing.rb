@@ -28,6 +28,7 @@ class Listing < ApplicationRecord
     validates :num_beds, presence: true
     validates :num_bedrooms, presence: true
     validates :num_baths, presence: true
+    validates :max_guests, presence: true
     
     belongs_to :host,
     foreign_key: :host_id,

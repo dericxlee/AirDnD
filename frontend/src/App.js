@@ -3,7 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 import Navigation from './components/Navigation/index.js';
 import ListingIndex from './components/ListingIndex/index.js';
 import ListingShow from './components/ListingShow/index.js';
-import ListingForm from './components/ListingForm/index.js';
+import ListingForm from './components/CreateListing/index.js';
 
 function App() {
   return (
@@ -14,7 +14,7 @@ function App() {
       <Switch>
         <Route exact path='/' component={ListingIndex}/>
         <Route exact path='/listings/new' component={ListingForm}></Route>
-        <Route exact path='/listings/:listingId' component={ListingShow}/>
+        <Route path='/listings/:listingId' component={ListingShow}/>
       </Switch>
     </>
   );
