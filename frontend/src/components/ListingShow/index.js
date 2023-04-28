@@ -13,7 +13,7 @@ const ListingShow = () => {
 
     useEffect(()=> {
         dispatch(fetchListing(listingId))
-    }, [dispatch, listingId])
+    }, [])
 
     return (
         <div id='show-page-container'>

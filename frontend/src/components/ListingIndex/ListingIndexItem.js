@@ -11,10 +11,11 @@ const ListingIndexItem = ({listing}) => {
     return (
         <>
             <li id='listing-box'>
-                <Link to={`/listings/${listing.id}`}>Link here</Link>
-                <img id='index-photo' src="https://cdn.dribbble.com/users/226242/screenshots/18014512/airbnb_icon.png" alt="sample house" />
-                <p>{listing.title}</p>
-                <p>{listing.description}</p>
+                <NavLink to={`/listings/${listing.id}`}>
+                    <img id='index-photo' src="https://cdn.dribbble.com/users/226242/screenshots/18014512/airbnb_icon.png" alt="sample house" />
+                    <p class='nav-link-text'>{listing.city}, California</p>
+                    <p class='nav-link-text'>${listing.price} night</p>
+                </NavLink>
             </li>
         </>
     )

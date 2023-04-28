@@ -33,9 +33,11 @@ function Navigation() {
         </div>
       </div>
       <div id='utility-box'>
-        <div id='creation-btn-box'>
-            <button id='creation-btn'>Airdnd your home</button>
-        </div>
+        <NavLink to='/listings/new'>
+          <div id='creation-btn-box'>
+              <button id='creation-btn'>Airdnd your home</button>
+          </div>
+        </NavLink>
         <div id='language-btn-box'>
           <button id='language-btn'>
             <img id='language-btn-logo' src="https://e7.pngegg.com/pngimages/556/45/png-clipart-globe-world-computer-icons-globe-miscellaneous-globe-thumbnail.png" alt="globe" />
