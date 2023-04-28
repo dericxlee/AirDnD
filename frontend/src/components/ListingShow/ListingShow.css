@@ -1,0 +1,143 @@
+#show-page-container {
+    position: absolute;
+    display: flex;
+    flex-wrap: wrap;
+    top: 10%;
+    height: 90%;
+    width: 100%;
+}
+
+#show-page-title-box {
+    width: 100%;
+    height: 7%;
+    position: absolute;
+}
+
+#show-page-title {
+    font-size: 30px;
+    font-weight: lighter;
+    position: absolute;
+    left: 10%;
+    bottom: 10%;
+}
+
+#show-page-location-box {
+    width: 100%;
+    height: 5%;
+    position: absolute;
+    top: 7%;
+}
+
+#show-page-location {
+    position: absolute;
+    left: 10%;
+    font-size: 15px;
+    font-weight: lighter;
+}
+
+#photo-span-container{
+    height: 65%;
+    position: absolute;
+    top: 12%;
+}
+
+#photo-container {
+    display: flex;
+    height: 100%;
+    width: 80%;
+    flex-wrap: wrap;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#photo-divider-container {
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+    width: 50%;
+    justify-content: space-between;
+}
+
+#big-photo {
+    height: 100%;
+    width: 100%;
+}
+
+#small-photo {
+    height: 50%;
+    width: 50%;
+}
+
+#show-page-bottom-divider-box {
+    display: flex;
+    position: absolute;
+    top: 83%;
+    width: 100%;
+    height: 200%;
+}
+
+#show-page-information-box {
+    width: 60%;
+    height: inherit;
+}
+
+#show-page-booking-form {
+    width: 30%;
+    height: inherit;
+    background-color: yellow;
+}
+
+#show-page-host-box {
+    height: 5%;
+    width: 100%;
+}
+
+#show-page-host {
+    font-size: 24px;
+    position: absolute;
+    top: 0%;
+    margin-left: 10%;
+}
+
+#show-page-attribute-box {
+    position: absolute;
+    top: 2.5%;
+    height: 2%;
+    width: 100%;
+}
+
+#show-page-attribute {
+    list-style-type: disc;
+    font-size: 16px;
+    position: absolute;
+    display: flex;
+    top: 0%;
+    left: 10%;
+    height: 2%;
+}
+
+#show-page-attribute li {
+    margin-right: 20px;
+}
+
+#show-page-attribute li:first-child {
+    list-style-type: none;
+}
+
+#show-page-description-line {
+    top: 2%;
+    margin-left: 20%;
+    margin-right: 10%;
+}
+
+#show-page-description-box {
+    width: 100%;
+    height: 5%;
+}
+
+#show-page-description {
+    left: 10%;
+    font-size: 16px;
+}
+
+

@@ -78,4 +78,22 @@ ApplicationRecord.transaction do
         num_baths: 2
     )
 
+    20.times do 
+        Listing.create!({
+            host_id: 1,
+            title: 'Dummy Title',
+            description: 'Fake Description',
+            address: '123 Fake Avenue',
+            city: 'San Francisco',
+            property_type: 'Entire home',
+            price: rand(1000),
+            max_guests: rand(10),
+            num_beds: rand(10),
+            num_bedrooms: rand(10),
+            num_baths: rand(10)
+        }) 
+    end
+
+    puts 'Seeding done'
+
 end

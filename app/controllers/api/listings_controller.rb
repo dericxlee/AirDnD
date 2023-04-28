@@ -1,4 +1,6 @@
 class Api::ListingsController < ApplicationController
+    wrap_parameters :listing, include: %i[property_type max_guests num_beds num_baths num_bedrooms host_id]
+    
     def create
         @listing = Listing.new(listing_params)
         
@@ -15,7 +17,7 @@ class Api::ListingsController < ApplicationController
     end
 
     def show
-        @listing = Listing.find_by(params[:id])
+        @listing = Listing.find(params[:id])
         render :show
     end
 

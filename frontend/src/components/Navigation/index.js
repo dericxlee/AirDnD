@@ -12,10 +12,10 @@ function Navigation() {
   return (
     <ul id='nav-bar'>
       <li id='home-icon'>
-        <NavLink exact to="/">AirDnD</NavLink>
+        <NavLink exact to="/">Airdnd</NavLink>
       </li>
       <li>
-        
+
       </li>
       <li id='profile-btn-box'>
         <ProfileButton id='profile-btn' />

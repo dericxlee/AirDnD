@@ -8,6 +8,7 @@
     /* border-bottom-style: solid;
     border-bottom: black; */
     border-block: 1px solid black;
+    z-index: 100;
 }
 
 #home-icon {
