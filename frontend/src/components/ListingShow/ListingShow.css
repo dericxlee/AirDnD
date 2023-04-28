@@ -88,8 +88,8 @@
 }
 
 #show-page-host-box {
-    height: 5%;
     width: 100%;
+    height: 1%;
 }
 
 #show-page-host {
@@ -100,42 +100,42 @@
 }
 
 #show-page-attribute-box {
-    position: absolute;
-    top: 2.5%;
+    top: 5%;
     height: 2%;
     width: 100%;
 }
 
 #show-page-attribute {
     list-style-type: disc;
-    font-size: 16px;
     position: absolute;
     display: flex;
-    top: 0%;
     left: 10%;
     height: 2%;
 }
 
 #show-page-attribute li {
+    top: 20%;
     margin-right: 20px;
+    font-size: 18px;
 }
 
 #show-page-attribute li:first-child {
     list-style-type: none;
 }
 
-#show-page-description-line {
-    top: 2%;
-    margin-left: 20%;
-    margin-right: 10%;
-}
-
 #show-page-description-box {
     width: 100%;
     height: 5%;
+    top: 3%;
+}
+
+#show-page-description-line {
+    margin-left: 17%;
+    width: 80%;
 }
 
 #show-page-description {
+    position: absolute;
     left: 10%;
     font-size: 16px;
 }

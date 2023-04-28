@@ -45,8 +45,8 @@ const ListingShow = () => {
                             <li>{listing?.numBaths} baths </li>
                         </ul>
                     </div>
-                    <hr id='show-page-description-line'></hr>
                     <div id='show-page-description-box'>
+                        <hr id='show-page-description-line'></hr>
                         <span id='show-page-description'>{listing?.description}</span>
                     </div>
                 </div>

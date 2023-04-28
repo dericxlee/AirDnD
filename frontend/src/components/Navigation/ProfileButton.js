@@ -6,6 +6,7 @@ import LoggedOutMenu from "./LoggedOutMenu";
 import LoginFormModal from "../LoginModal";
 import SignupFormModal from "../SignupModal";
 import DemoButton from "../DemoButton";
+import './ProfileButton.css'
 
 function ProfileButton() {
   const dispatch = useDispatch();
@@ -57,8 +58,8 @@ function ProfileButton() {
   // };
 
   return (
-    <div className='menu' id='menu'>
-      <button onClick={toggleMenu}>Profile
+    <div id='menu-btn-box'>
+      <button id='menu-btn' onClick={toggleMenu}>Profile
         <i className="fa-solid fa-user-circle" />
       </button>
       {showMenu && (
