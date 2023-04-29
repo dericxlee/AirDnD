@@ -1,0 +1,48 @@
+#listing-management-box {
+    position: absolute;
+    width: 100%;
+    top: 20%;
+    left: 10%;
+}
+
+#listing-table-box {
+    position: relative;
+    width: 80%;
+}
+
+#manage-listing-msg-box {
+    height: 50px;
+    min-height: 30px;
+    text-align: left;
+    width: 100%;
+}
+
+#manage-listing-msg {
+    font-size: 20px;
+}
+
+#new-listing-btn-box {
+    text-align: right;
+    height: 50px;
+    min-height: 30px;
+    width: 100%;
+}
+
+#new-listing-btn {
+    height: 80%;
+    margin-right: 5%;
+    background-color: teal;
+}
+
+
+#listing-table {
+    border: solid;
+    border-color: black;
+    width: 100%;
+    top: 100%;
+}
+
+#listing-table tr {
+    height: 10%;
+    width: 100%;
+}

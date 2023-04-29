@@ -1,6 +1,7 @@
 import { useDispatch } from "react-redux";
 import * as sessionActions from '../../store/session'
 import './LoggedOutMenu.css'
+import { NavLink } from "react-router-dom/cjs/react-router-dom.min";
 
 function LoggedInMenu({user}){
     const dispatch = useDispatch()
@@ -17,7 +18,7 @@ function LoggedInMenu({user}){
                 <li><button>Trips</button></li>
                 <li><button>Wishlists</button></li>
                 <hr />
-                <li><button>Manage listings</button></li>
+                <li><NavLink to='/listings/my'><button>Manage listings</button></NavLink></li>
                 <li><button>Account</button></li>
                 <hr />
                 <li><button>Help</button></li>

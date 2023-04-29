@@ -3,11 +3,16 @@ import { useEffect } from "react"
 import { getListings, fetchListings } from "../../store/listing"
 import ListingIndexItem from "./ListingIndexItem"
 import './ListingIndex.css'
-import ListingShow from "../ListingShow"
 
 const ListingIndex = () => {
     const dispatch = useDispatch()
+    const sessionUser = useSelector(state => state.session.user)
     const listings = useSelector(getListings)
+    let filterListings = listings
+
+    if(sessionUser){
+        filterListings = Object.values(listings).filter(l => l.hostId !== sessionUser.id)
+    }
 
     useEffect(()=> {
         dispatch(fetchListings())
@@ -16,7 +21,7 @@ const ListingIndex = () => {
     return (
         <ul id='listing-box-container'>
             {
-                listings.map(listing => <ListingIndexItem
+                filterListings.map(listing => <ListingIndexItem
                     listing={listing}
                     key={listing.id}
                 />)
