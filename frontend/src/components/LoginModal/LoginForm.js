@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import * as sessionActions from '../../store/session';
 import { useDispatch } from 'react-redux';
-import { Redirect } from 'react-router-dom';
 import './LoginForm.css'
 import DemoButton from '../DemoButton';
+import { useParams } from 'react-router-dom';
 
 function LoginForm() {
   const dispatch = useDispatch();

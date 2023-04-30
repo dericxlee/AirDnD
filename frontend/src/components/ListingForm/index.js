@@ -2,11 +2,13 @@ import { useDispatch, useSelector } from "react-redux"
 import React, { useEffect, useState } from "react"
 import { createListing } from "../../store/listing"
 import './ListingForm.css'
+import { useParams } from "react-router-dom";
 
 const ListingForm = () => {
     const dispatch = useDispatch()
     const sessionUser = useSelector(state => state.session.user)
-    console.log(sessionUser.id)
+    const {listingId} = useParams()
+    console.log(listingId)
     
     const [title, setTitle] = useState('')
     const [description, setDescription] = useState('')

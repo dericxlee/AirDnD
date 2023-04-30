@@ -18,7 +18,7 @@ function LoggedInMenu({user}){
                 <li><button>Trips</button></li>
                 <li><button>Wishlists</button></li>
                 <hr />
-                <li><NavLink to='/listings/my'><button>Manage listings</button></NavLink></li>
+                <li><NavLink to='/client'><button>Manage listings</button></NavLink></li>
                 <li><button>Account</button></li>
                 <hr />
                 <li><button>Help</button></li>

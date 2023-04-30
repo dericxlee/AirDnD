@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { getListings , fetchListings} from "../../store/listing";
 import { useEffect } from "react";
 import './ListingManagement.css'
+import ListingDeleteButton from "./ListingDeleteButton";
+import { NavLink } from "react-router-dom";
 
 const ListingManagement = () => {
     const dispatch = useDispatch()
@@ -32,15 +34,15 @@ const ListingManagement = () => {
                     </tr>
                     {
                         filterListings.map(listing => 
-                            <tr>
+                            <tr id='listing-table-data' listing={listing} key={listing.id}>
                                 <th>{listing.id}</th>
                                 <th>{listing.title}</th>
                                 <th><button>Connect Roomtype</button></th>
                                 <th><button>Connect Listing</button></th>
                                 <th>Listed</th>
-                                <th><button>Edit</button></th>
+                                <th><NavLink to={`/client/${listing.id}`}><button>Edit</button></NavLink></th>
                                 <th></th>
-                                <th><button>Delete</button></th>
+                                <th><ListingDeleteButton listingId={listing.id}/></th>
                             </tr>
                         )
                     }

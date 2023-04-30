@@ -1,7 +1,7 @@
 #listing-management-box {
     position: absolute;
     width: 100%;
-    top: 20%;
+    top: 10%;
     left: 10%;
 }
 
@@ -42,7 +42,18 @@
     top: 100%;
 }
 
-#listing-table tr {
-    height: 10%;
+#listing-table-header {
+    height: 8vh;
+    width: 100%;
+    background-color: yellow;
+}
+
+#listing-table tr th {
+    border: solid;
+    border-color: black;
+}
+
+#listing-table-data {
+    height: 5vh;
     width: 100%;
 }

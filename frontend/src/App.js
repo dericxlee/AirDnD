@@ -13,7 +13,8 @@ function App() {
         <Navigation/>
       </div>
       <Switch>
-        <Route exact path ='/listings/my' component={ListingManagement}></Route>
+        <Route exact path ='/client' component={ListingManagement}></Route>
+        <Route path='/client/:listingId' component={ListingForm}></Route>
         <Route exact path='/' component={ListingIndex}/>
         <Route exact path='/listings/new' component={ListingForm}></Route>
         <Route path='/listings/:listingId' component={ListingShow}/>

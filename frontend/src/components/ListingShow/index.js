@@ -1,9 +1,8 @@
 import { useDispatch, useSelector } from "react-redux"
 import { useParams } from "react-router-dom";
-import { getListing, getListings, fetchListing } from "../../store/listing";
+import { getListing, fetchListing } from "../../store/listing";
 import { useEffect } from "react";
 import './ListingShow.css'
-import { useState } from "react";
 
 
 const ListingShow = () => {
