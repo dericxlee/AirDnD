@@ -5,8 +5,10 @@ import ListingIndex from './components/ListingIndex/index.js';
 import ListingShow from './components/ListingShow/index.js';
 import ListingForm from './components/ListingForm/index.js';
 import ListingManagement from './components/ListingManagement/index.js';
+import { useDispatch } from 'react-redux';
 
 function App() {
+
   return (
     <>
       <div>
@@ -14,10 +16,10 @@ function App() {
       </div>
       <Switch>
         <Route exact path ='/client' component={ListingManagement}></Route>
-        <Route path='/client/:listingId' component={ListingForm}></Route>
+        <Route path='/client/:listingId/' component={ListingForm}></Route>
         <Route exact path='/' component={ListingIndex}/>
         <Route exact path='/listings/new' component={ListingForm}></Route>
-        <Route path='/listings/:listingId' component={ListingShow}/>
+        <Route path='/listings/:listingId/' component={ListingShow}/>
       </Switch>
     </>
   );

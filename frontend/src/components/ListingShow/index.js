@@ -8,21 +8,15 @@ import './ListingShow.css'
 const ListingShow = () => {
     const {listingId} = useParams();
     const dispatch = useDispatch();
-    const listing = useSelector(getListing(parseInt(listingId)));
-    console.log(listingId)
-    // const [listing, setListing] = useState({})
-
-    // useEffect(()=> {
-    //     if(!listing){
-    //         dispatch(getListing(listingId))
-    //     }
-    // }, [dispatch, listingId])
-
-    if(!listing) console.log('fail')
+    const listing = useSelector(getListing(listingId));
 
     useEffect(()=> {
         dispatch(fetchListing(listingId))
     }, [dispatch, listingId])
+
+    // useEffect(() => {
+    //     console.log(listing)
+    // }, [listing])
 
     return (
         <div id='show-page-container'>

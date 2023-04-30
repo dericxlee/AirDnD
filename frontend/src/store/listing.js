@@ -1,34 +1,38 @@
 import csrfFetch from "./csrf.js";
 
-export const RECEIVE_LISTINGS = 'listings/RECEIVE_LISTINGS'
-export const RECEIVE_LISTING = 'listings/RECEIVE_LISTING'
-export const REMOVE_LISTING = 'listings/REMOVE_LISTING'
+// export const RECEIVE_LISTINGS = 'listings/RECEIVE_LISTINGS'
+export const RECEIVE_LISTINGS = 'listings/receiveListings'
+export const RECEIVE_LISTING = 'listings/receiveListing'
+export const REMOVE_LISTING = 'listings/removeListing'
+// export const RECEIVE_LISTING = 'listings/RECEIVE_LISTING'
+// export const REMOVE_LISTING = 'listings/REMOVE_LISTING'
 
 const receiveListings = listings => ({
     type: RECEIVE_LISTINGS,
     listings
-})
+});
 
 const receiveListing = listing => ({
     type: RECEIVE_LISTING,
     listing
-})
+});
 
 const removeListing = listingId => ({
     type: REMOVE_LISTING,
     listingId
-})
+});
 
-export const getListing = listingId => state => {
-    return state?.listings ? state.listings[listingId] : null;
-}
 
 export const getListings = state => {
     return state?.listings ? Object.values(state.listings) : [];
-}
+};
+
+export const getListing = (listingId) => state => {
+    return state?.listings ? state.listings[listingId] : null;
+};
 
 export const fetchListings = () => async (dispatch) => {
-    const res = await fetch (`/api/listings/`)
+    const res = await csrfFetch (`/api/listings/`)
 
     if(res.ok) {
         const listings = await res.json()
@@ -37,10 +41,12 @@ export const fetchListings = () => async (dispatch) => {
 }
 
 export const fetchListing = listingId => async (dispatch) => {
-    const res = await csrfFetch (`/api/listings/${listingId}`)
+    const res = await csrfFetch (`/api/listings/${listingId}`);
+    // const data = await res.json()
 
     if(res.ok) {
         const listing = await res.json()
+        // console.log(listing, 'fetch')
         dispatch(receiveListing(listing))
     }
 }
@@ -73,9 +79,6 @@ export const createListing = listing => async (dispatch) => {
 export const updateListing = listing => async (dispatch) => {
     const res = await csrfFetch (`/api/listings/${listing.id}`, {
         method: 'PATCH',
-        headers: {
-            'Content-Type' : 'application/json'
-        },
         body: JSON.stringify(listing)
     })
 
@@ -95,12 +98,25 @@ export const deleteListing = listingId => async (dispatch) => {
     }
 }
 
-const listingReducer = (state = {}, action) => {
+const listingsReducer = (state = {}, action) => {
+    // let newState
     switch(action.type){
         case RECEIVE_LISTINGS:
+            // newState = {...state}
+            // action.listings.forEach((listing)=>{
+            //     newState[listing.id] = listing;
+            // })
+            // // return action.listings
+            // return newState;
             return {...action.listings};
         case RECEIVE_LISTING:
-            return {...state, [action.listing.id]: action.listing};
+            // return action.listing.id
+            // return {...state, [action.listing.id]: action.listing};
+            // console.log(action.listing.id, 'test')
+            // console.log(action)
+            // console.log([action.listing.id])
+            return {...state, [action.listing.id] : action.listing};
+            // return action.listing
         case REMOVE_LISTING:
             const newState = {...state};
             delete newState[action.listingId];
@@ -110,4 +126,4 @@ const listingReducer = (state = {}, action) => {
     }
 }
 
-export default listingReducer;
+export default listingsReducer;
