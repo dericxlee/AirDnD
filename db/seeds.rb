@@ -7,12 +7,18 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 
-ApplicationRecord.transaction do 
+ApplicationRecord.transaction do
+    Trip.destroy_all
     Listing.destroy_all
     User.destroy_all
 
+    puts 'destroyed all'
+
+    ApplicationRecord.connection.reset_pk_sequence!('trips')
     ApplicationRecord.connection.reset_pk_sequence!('listings')
     ApplicationRecord.connection.reset_pk_sequence!('users')
+
+    puts 'reset id'
 
     User.create!(
         email: 'admin@test.com',
@@ -21,6 +27,32 @@ ApplicationRecord.transaction do
         last_name: 'admin',
         birthdate: '1/1/2000'
     )
+
+    User.create!(
+        email: 'chefcurry@test.com',
+        password: 'test',
+        first_name: 'Steph',
+        last_name: 'Curry',
+        birthdate: '1/1/2000'
+    )
+
+    User.create!(
+        email: 'kingjames@test.com',
+        password: 'test',
+        first_name: 'Lebron',
+        last_name: 'James',
+        birthdate: '1/1/2000'
+    )
+
+    User.create!(
+        email: 'thebrow@test.com',
+        password: 'test',
+        first_name: 'Anthony',
+        last_name: 'Davis',
+        birthdate: '1/1/2000'
+    )
+
+    puts 'Users done'
 
     Listing.create!(
         host_id: 1,
@@ -80,19 +112,56 @@ ApplicationRecord.transaction do
 
     20.times do 
         Listing.create!({
-            host_id: 1,
-            title: 'Dummy Title',
-            description: 'Fake Description',
-            address: '123 Fake Avenue',
-            city: 'San Francisco',
-            property_type: 'Entire home',
-            price: rand(1000),
-            max_guests: rand(10),
-            num_beds: rand(10),
-            num_bedrooms: rand(10),
-            num_baths: rand(10)
+            host_id: rand(1..3),
+            title: 'Short Dummy Title',
+            description: 'Long dummy description here',
+            address: '123 Address',
+            city: ['San Francisco', 'San Jose', 'Los Angeles'].sample,
+            property_type: ['Entire home', 'Private room'].sample,
+            price: rand(100..2000),
+            max_guests: rand(1..10),
+            num_beds: rand(1..10),
+            num_bedrooms: rand(1..10),
+            num_baths: rand(1..10)
         }) 
     end
+
+    puts 'Listings done'
+
+    Trip.create!(
+        user_id: 1,
+        listing_id: 5,
+        start_date: '1/1/2024',
+        closing_date: '1/9/2024',
+    )
+
+    Trip.create!(
+        user_id: 1,
+        listing_id: 6,
+        start_date: '1/1/2024',
+        closing_date: '1/9/2024',
+    )
+
+    # Trip.create!(
+    #     user_id: 1,
+    #     listing_id: 7,
+    #     start_date: '1/1/2024',
+    #     closing_date: '1/9/2024',
+    # )
+
+    # Trip.create!(
+    #     user_id: 1,
+    #     listing_id: 8,
+    #     start_date: '1/1/2024',
+    #     closing_date: '1/9/2024',
+    # )
+
+    # test_trip2 = Trip.create!(
+    #     user_id: 1,
+    #     listing_id: 8,
+    #     start_date: '01/06/2024',
+    #     closing_date: '01/10/2024',
+    # )
 
     puts 'Seeding done'
 
