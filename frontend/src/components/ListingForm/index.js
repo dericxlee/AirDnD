@@ -9,17 +9,18 @@ const ListingForm = () => {
     const dispatch = useDispatch()
     const sessionUser = useSelector(state => state.session.user)
     const {listingId} = useParams()
-    let listing = useSelector(getListing(listingId))
+    const formType = listingId ? 'Update' : 'Create' 
+    let listing = useSelector(getListing(listingId));
     const hostId = sessionUser.id
 
     useEffect(()=> {
-        if(listingId && !listing){
+        if(formType === 'Update'){
             // console.log('dispatch')
             dispatch(fetchListing(listingId))
         }
     }, [dispatch, listingId])
 
-    if(!listingId){
+    if(formType === 'Create'){
         listing = {
             title: '', 
             description: '',
@@ -34,13 +35,13 @@ const ListingForm = () => {
         };
     }
 
-    const persistListing = useRef(listing)
+    // const persistListing = useRef(listing)
+    // console.log(persistListing)
 
-    useEffect(()=> {
-        persistListing.current = listing;
-    }, [dispatch, listing])
+    // useEffect(()=> {
+    //     persistListing.current = listing;
+    // }, [dispatch, listing])
 
-    console.log(persistListing)
 
     const [title, setTitle] = useState(listing?.title)
     const [description, setDescription] = useState(listing?.description)
@@ -53,7 +54,7 @@ const ListingForm = () => {
     const [numBaths, setNumBaths] = useState(listing?.numBaths)
     const [numBedrooms, setNumBedrooms] = useState(listing?.numBedrooms)
     
-    
+
 
     // const [title, setTitle] = useState(persistListing.title)
     // const [description, setDescription] = useState(persistListing.description)
@@ -76,6 +77,8 @@ const ListingForm = () => {
             dispatch(updateListing(listing))
         }
     }
+
+    console.log(listing)
 
     return (
         <div id='listing-form-box'>
