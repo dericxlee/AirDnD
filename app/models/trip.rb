@@ -18,6 +18,18 @@ class Trip < ApplicationRecord
 
     validate :no_overlapping_trip
     
+    belongs_to :user,
+    foreign_key: :user_id,
+    class_name: :User
+
+    belongs_to :listing,
+    foreign_key: :listing_id,
+    class_name: :Listing
+
+    has_one :host,
+    through: :listing,
+    source: :host
+
     def period
         start_date..closing_date
     end
@@ -25,16 +37,6 @@ class Trip < ApplicationRecord
     private
 
     def no_overlapping_trip
-        # same_listing_trips = Trip
-        #     .where(listing_id: listing_id)
-
-        # overlapping_trip = same_listing_trips
-        #     .where(start_date: period)
-        #     .or(Trip.where(closing_date: period))
-        #     .or(Trip.where(start_date: start_date..., closing_date: ...closing_date))
-        #     .where.not(id: id)
-        #     .exists?
-
         overlapping_trip = Trip
             .where(listing_id: listing_id)
             .where(start_date: ..closing_date, closing_date: start_date..)
@@ -42,4 +44,5 @@ class Trip < ApplicationRecord
             .exists?
         errors.add(:base, 'Trip cannot overlap existing trips') if overlapping_trip
     end
+
 end

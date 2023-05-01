@@ -34,7 +34,11 @@ class User < ApplicationRecord
     has_many :listings,
     foreign_key: :host_id,
     class_name: :Listing
-    
+
+    has_many :trips,
+    foreign_key: :user_id,
+    class_name: :Trip
+
     def validate_age
         if birthdate.present? && birthdate > 18.years.ago.to_date
             errors.add(:base, 'Users must be over 18 years old')

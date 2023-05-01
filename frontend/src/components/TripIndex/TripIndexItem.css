@@ -1,0 +1,10 @@
+#trip-info-box {
+    height: 100%;
+    width: 20%;
+    margin: 20px;
+}
+
+#trip-info-photo {
+    height: 80%;
+    width: 100%;
+}

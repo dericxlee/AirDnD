@@ -6,6 +6,8 @@ import ListingShow from './components/ListingShow/index.js';
 import ListingForm from './components/ListingForm/index.js';
 import ListingManagement from './components/ListingManagement/index.js';
 import { useDispatch } from 'react-redux';
+import TripIndex from './components/TripIndex/index.js';
+
 
 function App() {
 
@@ -15,6 +17,7 @@ function App() {
         <Navigation/>
       </div>
       <Switch>
+        <Route exact path='/trips' component={TripIndex}/>
         <Route exact path ='/client' component={ListingManagement}/>
         <Route exact path='/' component={ListingIndex}/>
         <Route exact path='/listings/new' component={ListingForm}/>

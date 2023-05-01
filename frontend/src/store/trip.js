@@ -1,3 +1,4 @@
+import { useSelector } from "react-redux";
 import csrfFetch from "./csrf.js";
 
 export const RECEIVE_TRIPS = 'trips/receiveTrips'
@@ -20,6 +21,10 @@ const removeTrip = tripId => ({
 });
 
 export const getTrips = state => {
+    // const allTrips = Object.values(state.trips);
+    // const sessionUser = state.session.user
+    // return state?.trips ? allTrips.filter(trip => trip.userId === 2) : [];
+
     return state?.trips ? Object.values(state.trips) : [];
 };
 
@@ -64,7 +69,7 @@ export const createTrip = trip => async (dispatch) => {
 };
 
 export const deleteTrip = tripId => async (dispatch) => {
-    const res = await csrfFetch (`/api/trip/${tripId}`, {
+    const res = await csrfFetch (`/api/trips/${tripId}`, {
         method: 'DELETE',
     })
 

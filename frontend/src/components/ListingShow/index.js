@@ -38,7 +38,7 @@ const ListingShow = () => {
             <div id='show-page-bottom-divider-box'>
                 <div id='show-page-information-box'>
                     <div id='show-page-host-box'>
-                        <p id='show-page-host'>{listing?.propertyType} hosted by {listing?.hostId}</p>
+                        <p id='show-page-host'>{listing?.propertyType} hosted by {listing?.host.firstName}</p>
                     </div>
                     <div id='show-page-attribute-box'>
                         <ul id='show-page-attribute'>
