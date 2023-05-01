@@ -1,0 +1,101 @@
+#trip-form-container {
+    height: 65vh;
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2%;
+    border: solid;
+    border-color: black;
+    background-color: white;
+    border-radius: 3%;
+    display: flex;
+    flex-direction: column;
+}
+
+#trip-form-price-container {
+    top: 0%;
+    width: 100%;
+    height: 9%;
+}
+
+#trip-form-price-box {
+    width: 100%;
+    margin-top: 7%;
+    margin-left: 7%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#trip-form-price-box p {
+    font-size: 24px;
+}
+
+#trip-form-price {
+    margin-right: 2%;
+    font-weight: bold;
+}
+
+#trip-form-input-field-container {
+    margin-top: 9%;
+    height: 35%;
+    width: 100%;
+}
+
+#trip-form {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#trip-form-input-field-box {
+    margin-left: auto;
+    margin-right: auto;
+    height: 70%;
+    width: 85%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.trip-form-date-input {
+    height: 48%;
+    width: 48%;
+}
+
+#num-guest-input {
+    height: 48%;
+    width: 96.5%;
+}
+
+#trip-form-submit-box {
+    margin-top: 5%;
+    height: 25%;
+    width: 100%;
+}
+
+#trip-form-btn {
+    margin-left: 7.5%;
+    height: 100%;
+    width: 85%;
+    background-color: purple;
+    color: white;
+}
+
+#trip-form-payment-container {
+    height: 45%;
+    width: 100%;
+}
+
+#trip-form-payment-msg {
+    margin-top: 5%;
+    text-align: center;
+    height: 5%;
+}
+
+
+
+
+
+
+
+

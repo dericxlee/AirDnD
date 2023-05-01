@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { getListing, fetchListing } from "../../store/listing";
 import { useEffect } from "react";
 import './ListingShow.css'
+import TripForm from "../TripForm";
 
 
 const ListingShow = () => {
@@ -54,7 +55,7 @@ const ListingShow = () => {
                     </div>
                 </div>
                 <div id='show-page-booking-form'>
-                    Reservation form here
+                    <TripForm listing={listing}/>
                 </div>
             </div>
         </div>
