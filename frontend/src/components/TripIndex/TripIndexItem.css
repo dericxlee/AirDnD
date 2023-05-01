@@ -1,10 +1,38 @@
-#trip-info-box {
+#trip-info-container {
     height: 100%;
-    width: 20%;
-    margin: 20px;
+    width: 33%;
+    margin: 5px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#trip-info-photo-box {
+    height: 100%;
+    width: 50%;
 }
 
 #trip-info-photo {
-    height: 80%;
+    height: 60%;
     width: 100%;
+    margin-top: 25%;
+    margin-bottom: auto;
+}
+
+#trip-info-box {
+    height: 100%;
+    width: 50%;
+    margin-top: 15%;
+    margin-bottom: auto;
+}
+
+.bold-header {
+    font-size: 18px;
+    font-weight: bold;
+    margin-left: 7%;
+}
+
+#trip-info {
+    margin-left: 7%;
+    margin-top: 2%;
+    margin-bottom: 2%;
 }
