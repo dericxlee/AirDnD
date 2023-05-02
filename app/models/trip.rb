@@ -14,7 +14,7 @@
 class Trip < ApplicationRecord
     validates :user_id, presence: true
     validates :listing_id, presence: true
-    validates :start_date, presence: true, comparison: {less_than: :closing_date, greater_than: :today}
+    validates :start_date, presence: true, comparison: {less_than: :closing_date}
     validates :closing_date, presence: true, comparison: {greater_than: :start_date}
     validates :num_guests, numericality: {greater_than: 0}, comparison: {less_than_or_equal_to: :max_guests}
 

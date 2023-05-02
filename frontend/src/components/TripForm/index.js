@@ -3,16 +3,17 @@ import { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useEffect } from 'react'
 import { createTrip } from '../../store/trip'
+import { useHistory } from 'react-router-dom'
 
 const TripForm = ({listing}) => {
     const dispatch = useDispatch()
+    const history = useHistory()
     const sessionUser = useSelector(state => state.session.user)
 
     const numToIntStr = (num) => {
         const numToInt = Math.trunc(num)
         return numToInt.toLocaleString()
     }
-
     
     const price = listing?.price.toLocaleString()
     const [numGuests, setNumGuests] = useState(1)
@@ -44,9 +45,12 @@ const TripForm = ({listing}) => {
 
     const handleSubmit = e => {
         e.preventDefault();
+        setTimeout(()=> {
+            dispatch(createTrip(trip))
+            history.push('/trips')
+        }, 1000)
         // trip = {...trip}
         // trip = {...trip, userId, listingId, startDate, closingDate}
-        dispatch(createTrip(trip))
     }
 
     useEffect(()=> {

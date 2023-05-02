@@ -11,8 +11,12 @@ const TripIndex = () => {
     const dispatch = useDispatch()
     const sessionUser = useSelector(state => state.session.user)
     const trips = useSelector(getTrips)
-    const filterTrips = trips.filter(trip => trip.userId === sessionUser.id)
-    
+
+    const today = new Date().toJSON().slice(0, 10);
+    // console.log(trip.startDate)
+
+    const futureTrips = trips.filter(trip => trip.userId === sessionUser.id && trip.closingDate > today)
+    const pastTrips = trips.filter(trip => trip.userId === sessionUser.id && trip.closingDate < today)
 
     useEffect(()=>{
         dispatch(fetchTrips())
@@ -29,7 +33,7 @@ const TripIndex = () => {
                 </div>
                 <div id='trips-info-box-container'>
                     {
-                        filterTrips.map(trip => <TripIndexItem
+                        futureTrips.map(trip => <TripIndexItem
                             trip={trip}
                             key={trip.id}
                         />)
@@ -37,7 +41,17 @@ const TripIndex = () => {
                 </div>
             </div>
             <div id='past-trips-box'>
-                <p className='trips-sub-header'>Where you've been</p>
+                <div id='past-trips-banner'>
+                    <p className='trips-sub-header'>Where you've been</p>
+                </div>
+                <div id='past-trips-info-box-container'>
+                    {
+                        pastTrips.map(trip => <TripIndexItem
+                            trip={trip}
+                            key={trip.id}
+                        />)
+                    }
+                </div>
             </div>
             <div id='trips-index-footer-box'>
                 <p>Can't find your reservation here?</p>
