@@ -38,4 +38,6 @@ class Listing < ApplicationRecord
     foreign_key: :listing_id,
     class_name: :Trip
 
+    has_one_attached :photo
+
 end
