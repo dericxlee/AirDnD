@@ -55,7 +55,7 @@ ApplicationRecord.transaction do
     puts 'Users done'
 
     Listing.create!(
-        host_id: 1,
+        host_id: 2,
         title: 'Big Mansion',
         description: 'Nice view and place',
         address: '123 Main Street',
@@ -69,7 +69,7 @@ ApplicationRecord.transaction do
     )
 
     Listing.create!(
-        host_id: 1,
+        host_id: 3,
         title: 'Small House',
         description: 'Affordable',
         address: '456 Webster Street',
@@ -83,7 +83,7 @@ ApplicationRecord.transaction do
     )
 
     Listing.create!(
-        host_id: 1,
+        host_id: 3,
         title: 'Vacation Home',
         description: 'Great beach view, swimming pool',
         address: '123 Beachfront Ave',
@@ -97,7 +97,7 @@ ApplicationRecord.transaction do
     )
 
     Listing.create!(
-        host_id: 1,
+        host_id: 4,
         title: 'Cabin',
         description: 'In the forest',
         address: '123 Forest Ave',
@@ -130,16 +130,20 @@ ApplicationRecord.transaction do
 
     Trip.create!(
         user_id: 1,
-        listing_id: 5,
-        start_date: '1/1/2024',
-        closing_date: '1/9/2024',
+        listing_id: 1,
+        start_date: '5/5/2023',
+        closing_date: '5/9/2023',
+        num_guests: 1,
     )
+
+    puts 'first trip done'
 
     Trip.create!(
         user_id: 1,
-        listing_id: 6,
+        listing_id: 2,
         start_date: '1/1/2024',
         closing_date: '1/9/2024',
+        num_guests: 1,
     )
 
     # Trip.create!(

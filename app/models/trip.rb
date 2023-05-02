@@ -9,12 +9,14 @@
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
 #  closing_date :date             not null
+#  num_guests   :integer          not null
 #
 class Trip < ApplicationRecord
     validates :user_id, presence: true
     validates :listing_id, presence: true
-    validates :start_date, presence: true, comparison: {less_than: :closing_date}
+    validates :start_date, presence: true, comparison: {less_than: :closing_date, greater_than: :today}
     validates :closing_date, presence: true, comparison: {greater_than: :start_date}
+    validates :num_guests, numericality: {greater_than: 0}, comparison: {less_than_or_equal_to: :max_guests}
 
     validate :no_overlapping_trip
     
@@ -32,6 +34,14 @@ class Trip < ApplicationRecord
 
     def period
         start_date..closing_date
+    end
+
+    def today
+        Date.today
+    end
+
+    def max_guests
+        self.listing.max_guests
     end
 
     private

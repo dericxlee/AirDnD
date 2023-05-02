@@ -1,4 +1,4 @@
-json.extract! trip, :id, :user_id, :listing_id, :start_date, :closing_date
+json.extract! trip, :id, :user_id, :listing_id, :start_date, :closing_date, :num_guests
 
 json.user do
     json.first_name trip.user.first_name

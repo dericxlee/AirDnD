@@ -15,7 +15,7 @@ const TripForm = ({listing}) => {
 
     
     const price = listing?.price.toLocaleString()
-    
+    const [numGuests, setNumGuests] = useState(1)
     const [stringStartDate, setStringStartDate] = useState("2023-05-03")
     const [stringClosingDate, setStringClosingDate] = useState("2023-05-08")
     const [startDate, setStartDate] = useState(new Date(stringStartDate))
@@ -36,8 +36,11 @@ const TripForm = ({listing}) => {
         userId: sessionUser.id,
         listingId: listing.id,
         startDate: stringStartDate,
-        closingDate: stringClosingDate
+        closingDate: stringClosingDate,
+        numGuests: numGuests
     }
+
+    console.log(trip)
 
     const handleSubmit = e => {
         e.preventDefault();
@@ -88,7 +91,7 @@ const TripForm = ({listing}) => {
                         <div id='trip-form-date-box'>
                             <input className='trip-form-date-input' type="date" value={stringStartDate} onChange={e=>setStringStartDate(e.target.value)}/>
                             <input className='trip-form-date-input' type="date" value={stringClosingDate} onChange={e=>setStringClosingDate(e.target.value)}/>
-                            <input id='num-guest-input' type="number" min='1' max={listing?.maxGuests}/> 
+                            <input id='num-guest-input' type="number" value={numGuests} min='1' max={listing?.maxGuests} onChange={e=>setNumGuests(e.target.value)}/> 
                         </div>
                     </div>
                     <div id='trip-form-submit-box'>

@@ -51,14 +51,15 @@ export const fetchTrip = tripId => async (dispatch) => {
 };
 
 export const createTrip = trip => async (dispatch) => {
-    const {userId, listingId, startDate, closingDate} = trip
+    const {userId, listingId, startDate, closingDate, numGuests} = trip
     const res = await csrfFetch (`/api/trips/`, {
         method: 'POST',
         body: JSON.stringify({
             userId,
             listingId,
             startDate,
-            closingDate
+            closingDate,
+            numGuests
         })
     })
 
