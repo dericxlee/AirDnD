@@ -1,5 +1,6 @@
 class Api::TripsController < ApplicationController
-    wrap_parameters :trip, include: %i[user_id listing_id start_date closing_date]
+    # wrap_parameters :trip, include: %i[user_id listing_id start_date closing_date]
+    wrap_parameters include: Trip.attribute_names + ['userId', 'listingId', 'startDate', 'closingDate']
 
     def create
         @trip = Trip.new(trip_params)
@@ -38,6 +39,6 @@ class Api::TripsController < ApplicationController
     private
 
     def trip_params
-        params.require(:trip).permits(:user_id, :listing_id, :start_date, :closing_date)
+        params.require(:trip).permit(:user_id, :listing_id, :start_date, :closing_date)
     end
 end

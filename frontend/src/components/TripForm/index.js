@@ -1,25 +1,62 @@
 import './TripForm.css'
 import { useState } from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { useEffect } from 'react'
+import { createTrip } from '../../store/trip'
 
 const TripForm = ({listing}) => {
     const dispatch = useDispatch()
+    const sessionUser = useSelector(state => state.session.user)
+
+    const numToIntStr = (num) => {
+        const numToInt = Math.trunc(num)
+        return numToInt.toLocaleString()
+    }
+
     
     const price = listing?.price.toLocaleString()
     
-    const [startDate, setStartDate] = useState(new Date("2023-05-03"))
-    const [closingDate, setClosingDate] = useState(new Date("2023-05-07"))
+    const [stringStartDate, setStringStartDate] = useState("2023-05-03")
+    const [stringClosingDate, setStringClosingDate] = useState("2023-05-08")
+    const [startDate, setStartDate] = useState(new Date(stringStartDate))
+    const [closingDate, setClosingDate] = useState(new Date(stringClosingDate))
+    
     const calcNumDays = () => {
         return (closingDate - startDate)/(1000*3600*24)
     }
     const [numDays, setNumDays] = useState(calcNumDays())
     const [nightlyFee, setNightlyFee] = useState(0)
+    const [strNightlyFee, setStrNightlyFee] = useState(nightlyFee)
     const [hospitalityFee, setHospitalityFee] = useState(0)
+    const [strHospitalityFee, setStrHospitalityFee] = useState(hospitalityFee)
     const [netTotal, setNetTotal] = useState(0)
+    const [strNetTotal, setStrNetTotal] = useState(netTotal)
+
+    const trip = {
+        userId: sessionUser.id,
+        listingId: listing.id,
+        startDate: stringStartDate,
+        closingDate: stringClosingDate
+    }
+
+    const handleSubmit = e => {
+        e.preventDefault();
+        // trip = {...trip}
+        // trip = {...trip, userId, listingId, startDate, closingDate}
+        dispatch(createTrip(trip))
+    }
 
     useEffect(()=> {
-        setNumDays(calcNumDays())
+        setTimeout(()=> {
+            setStartDate(new Date(stringStartDate))
+            setClosingDate(new Date(stringClosingDate))
+        }, 0)
+    }, [dispatch, stringStartDate, stringClosingDate])
+
+    useEffect(()=> {
+        setTimeout(()=> {
+            setNumDays(calcNumDays())
+        }, 1)
     }, [dispatch, startDate, closingDate])
 
     useEffect(() => {
@@ -32,9 +69,10 @@ const TripForm = ({listing}) => {
 
     useEffect(()=> {
         setNetTotal(nightlyFee + hospitalityFee)
+        setStrNightlyFee(numToIntStr(nightlyFee))
+        setStrHospitalityFee(numToIntStr(hospitalityFee))
+        setStrNetTotal(numToIntStr(netTotal))
     }, [dispatch, nightlyFee, hospitalityFee])
-
-    // console.log((closingDate - startDate)/ (1000*3600*24))
 
     return (
         <div id='trip-form-container'>
@@ -45,12 +83,12 @@ const TripForm = ({listing}) => {
                 </div>
             </div>
             <div id='trip-form-input-field-container'>
-                <form id='trip-form'>
+                <form id='trip-form' onSubmit={handleSubmit}>
                     <div id='trip-form-input-field-box'>
                         <div id='trip-form-date-box'>
-                            <input className='trip-form-date-input' type="date" value={startDate} onChange={e=>setStartDate(e.target.value)}/>
-                            <input className='trip-form-date-input' type="date" value={closingDate} onChange={e=>setClosingDate(e.target.value)}/>
-                            <input id='num-guest-input' type="number" />
+                            <input className='trip-form-date-input' type="date" value={stringStartDate} onChange={e=>setStringStartDate(e.target.value)}/>
+                            <input className='trip-form-date-input' type="date" value={stringClosingDate} onChange={e=>setStringClosingDate(e.target.value)}/>
+                            <input id='num-guest-input' type="number" min='1' max={listing?.maxGuests}/> 
                         </div>
                     </div>
                     <div id='trip-form-submit-box'>
@@ -62,16 +100,16 @@ const TripForm = ({listing}) => {
                 <div id='trip-form-payment-msg'>You won't be charged yet</div>
                 <div id='trip-form-nightly-fee'>
                     <div id='trip-form-sub-calc'>${price} x {numDays} nights</div>
-                    <div id='trip-form-sub-total'>{nightlyFee}</div>
+                    <div id='trip-form-sub-total'>${strNightlyFee}</div>
                 </div>
                 <div id='trip-form-hospitality-fee'>
                     <div id='trip-form-sub-calc'>Hospitality fees</div>
-                    <div id='trip-form-sub-total'>{hospitalityFee}</div>
+                    <div id='trip-form-sub-total'>${strHospitalityFee}</div>
                 </div>
-                <hr />
+                <hr id='trip-form-line-break'/>
                 <div id='trip-form-total-fee'>
                     <div id='trip-form-sub-calc'>Total before taxes</div>
-                    <div id='trip-form-sub-total'>{netTotal}</div>
+                    <div id='trip-form-sub-total'>${strNetTotal}</div>
                 </div>
             
             </div>

@@ -1,5 +1,5 @@
 class Api::ListingsController < ApplicationController
-    wrap_parameters :listing, include: %i[title description address city price property_type max_guests num_beds num_baths num_bedrooms host_id :host]
+    wrap_parameters :listing, include: %i[title description address city price property_type max_guests num_beds num_baths num_bedrooms host_id host]
     
     def create
         @listing = Listing.new(listing_params)

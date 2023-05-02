@@ -49,12 +49,16 @@
 }
 
 #trip-form-input-field-box {
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 7.5%;
+    margin-right: 7.5%;
     height: 70%;
     width: 85%;
     display: flex;
     flex-wrap: wrap;
+}
+
+#trip-form-date-box {
+    width: 100%;
 }
 
 .trip-form-date-input {
@@ -64,7 +68,7 @@
 
 #num-guest-input {
     height: 48%;
-    width: 96.5%;
+    widtH: 96.5%;
 }
 
 #trip-form-submit-box {
@@ -87,10 +91,55 @@
 }
 
 #trip-form-payment-msg {
-    margin-top: 5%;
+    margin-top: 8%;
     text-align: center;
     height: 5%;
 }
+
+#trip-form-nightly-fee {
+    margin-top: 15%;
+    margin-left: 7%;
+    height: 10%;
+    width: 86%;
+    display: flex;
+    flex-direction: row;
+}
+
+#trip-form-sub-calc {
+    height: 100%;
+    width: 50%;
+    text-align: left;
+}
+
+#trip-form-sub-total {
+    height: 100%;
+    width: 50%;
+    text-align: right;
+}
+
+#trip-form-hospitality-fee {
+    margin-top: 5%;
+    margin-left: 7%;
+    height: 10%;
+    width: 86%;
+    display: flex;
+    flex-direction: row;
+}
+
+#trip-form-total-fee {
+    margin-top: 8%;
+    margin-left: 7%;
+    height: 10%;
+    width: 86%;
+    display: flex;
+    flex-direction: row;
+    font-weight: bold;
+}
+
+#trip-form-line-break {
+    width: 90%;
+}
+
 
 
 
