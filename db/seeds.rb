@@ -24,7 +24,7 @@ require "open-uri"
 
     puts 'reset id'
 
-    User.create!(
+    admin = User.create!(
         email: 'admin@test.com',
         password: 'test',
         first_name: 'John',
@@ -32,7 +32,7 @@ require "open-uri"
         birthdate: '1/1/2000'
     )
 
-    User.create!(
+    curry = User.create!(
         email: 'chefcurry@test.com',
         password: 'test',
         first_name: 'Steph',
@@ -40,7 +40,9 @@ require "open-uri"
         birthdate: '1/1/2000'
     )
 
-    User.create!(
+    curry.photo.attach(io: URI.open('https://airdnb-dev.s3.us-west-1.amazonaws.com/curry.png'), filename: 'curry.png')
+
+    james = User.create!(
         email: 'kingjames@test.com',
         password: 'test',
         first_name: 'Lebron',
@@ -48,7 +50,9 @@ require "open-uri"
         birthdate: '1/1/1984'
     )
 
-    User.create!(
+    james.photo.attach(io: URI.open('https://airdnb-dev.s3.us-west-1.amazonaws.com/lebron.jpeg'), filename: 'lebron.jpeg')
+
+    davis = User.create!(
         email: 'thebrow@test.com',
         password: 'test',
         first_name: 'Anthony',
@@ -56,7 +60,9 @@ require "open-uri"
         birthdate: '1/1/2000'
     )
 
-    User.create!(
+    davis.photo.attach(io: URI.open('https://airdnb-dev.s3.us-west-1.amazonaws.com/davis.png'), filename: 'davis.png')
+
+    harden = User.create!(
         email: 'thebeard@test.com',
         password: 'test',
         first_name: 'James',
@@ -64,13 +70,17 @@ require "open-uri"
         birthdate: '1/1/2000'
     )
 
-    User.create!(
+    harden.photo.attach(io: URI.open('https://airdnb-dev.s3.us-west-1.amazonaws.com/beard.png'), filename: 'beard.png')
+
+    durant = User.create!(
         email: 'slimreaper@test.com',
         password: 'test',
         first_name: 'Kevin',
         last_name: 'Durant',
         birthdate: '1/1/2000'
     )
+
+    durant.photo.attach(io: URI.open('https://airdnb-dev.s3.us-west-1.amazonaws.com/kd35.png'), filename: 'kd35.png')
 
     puts 'Users done'
 

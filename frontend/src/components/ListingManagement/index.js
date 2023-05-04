@@ -5,7 +5,7 @@ import { useEffect } from "react";
 import './ListingManagement.css'
 import ListingDeleteButton from "./ListingDeleteButton";
 import { NavLink } from "react-router-dom";
-import NewListingButton from "../NewListingButton";
+import NewListingButton from "../ListingFormModal";
 import ListingEditButton from "./ListingEditButton";
 
 const ListingManagement = () => {

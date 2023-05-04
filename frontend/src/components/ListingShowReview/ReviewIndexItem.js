@@ -7,7 +7,7 @@ const ReviewIndexItem = ({review}) => {
         <div id='review-index-item-box'>
             <div id='review-user-box'>
                 <div id='review-user-avatar-box'>
-
+                    <img className='nav-avatar' src={review.user.photoUrl} alt="" />
                 </div>
                 <div id='review-user-info-box'>
                     <p>{review.user.firstName}</p>

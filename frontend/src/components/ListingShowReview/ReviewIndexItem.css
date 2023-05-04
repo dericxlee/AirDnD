@@ -1,19 +1,19 @@
 #review-index-item-box {
     width: 45%;
-    height: 20%;
+    height: 25%;
     margin: 2%;
     margin-top: 5%;;
 }
 
 #review-user-box {
-    height: 30%;
+    height: 40%;
     width: 100%;
     display: flex;
     flex-direction: row;
 }
 
 #review-user-avatar-box {
-    width: 20%;
+    width: 18%;
     height: 100%;
 }
 

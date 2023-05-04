@@ -3,7 +3,7 @@ import React, { useEffect } from "react"
 import './TripIndexItem.css'
 import { deleteTrip } from "../../store/trip"
 
-const TripIndexItem = ({trip, id}) => {
+const TripIndexItem = ({trip}) => {
     const dispatch = useDispatch()
 
     const handleClick = (e) => {

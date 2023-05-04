@@ -59,8 +59,15 @@ function ProfileButton() {
 
   return (
     <div id='menu-btn-box'>
-      <button id='menu-btn' onClick={toggleMenu}>Profile
-        <i className="fa-solid fa-user-circle" />
+      <button id='menu-btn' onClick={toggleMenu}>
+        <div id='menu-btn-inner-box'>
+          <div id='menu-btn-left'>
+            <img className='setting-icon' src="https://p7.hiclipart.com/preview/275/263/707/hamburger-button-computer-icons-menu-menu-thumbnail.jpg" alt="" />
+          </div>
+          <div id='menu-btn-right'>
+            <img className="nav-avatar" src={sessionUser?.photoUrl}/>
+          </div>
+        </div>
       </button>
       {showMenu && (
         sessionLinks

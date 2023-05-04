@@ -5,11 +5,49 @@
 
 #menu-btn {
     height: 50%;
-    width: 35%;
+    width: 25%;
     top: 50%;
     position: absolute;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
-    left: 82.5%;
+    left: 95%;
+    border-bottom-left-radius: 30%;
+    border-bottom-right-radius: 30%;
+    border-top-left-radius: 30%;
+    border-top-right-radius: 30%;
+}
+
+#menu-btn-inner-box {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+#menu-btn-left {
+    height: 100%;
+    width: 50%;
+    vertical-align: middle;
+}
+
+
+#menu-btn-right {
+    height: 100%;
+    width: 50%;
+    display: inline-block;
+}
+
+.setting-icon {
+    margin-top: 25%;
+    height: 50%;
+    width: 60%;
     background-color: white;
+}
+
+.nav-avatar {
+    height: 100%;
+    width: 100%;
+    display: inline-block;
+    overflow: hidden;
+    border-radius: 50%;
 }

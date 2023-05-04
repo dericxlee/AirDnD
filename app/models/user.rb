@@ -43,6 +43,8 @@ class User < ApplicationRecord
     foreign_key: :user_id,
     class_name: :Review
 
+    has_one_attached :photo
+
     def validate_age
         if birthdate.present? && birthdate > 18.years.ago.to_date
             errors.add(:base, 'Users must be over 18 years old')
