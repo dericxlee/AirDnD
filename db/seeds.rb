@@ -8,13 +8,16 @@
 
 require "open-uri"
 
-ApplicationRecord.transaction do
+# ApplicationRecord.transaction do
+    Review.destroy_all
     Trip.destroy_all
     Listing.destroy_all
     User.destroy_all
 
+
     puts 'destroyed all'
 
+    ApplicationRecord.connection.reset_pk_sequence!('reviews')
     ApplicationRecord.connection.reset_pk_sequence!('trips')
     ApplicationRecord.connection.reset_pk_sequence!('listings')
     ApplicationRecord.connection.reset_pk_sequence!('users')
@@ -71,7 +74,7 @@ ApplicationRecord.transaction do
 
     puts 'Users done'
 
-    mansion1 = File.open('app/assets/images/mansion1.jpeg')
+    # mansion1 = File.open('app/assets/images/mansion1.jpeg')
     # mansion2 = File.open('app/assets/images/mansion1.jpeg')
     
     mansion = Listing.create!(
@@ -89,9 +92,9 @@ ApplicationRecord.transaction do
         This stunning property, which features a private soccer field, tennis court, and luxury pool and spa, is the perfect place for both relaxation and recreation. Perfect for the family!',
     )
         
-    # mansion.photos.attach(io: URI.open('https://airdnb-dev.s3.us-west-1.amazonaws.com/107167782-1671217197698-11870ElliceStreet102.jpeg'), 
-    #     filename: '107167782-1671217197698-11870ElliceStreet102.jpeg')
-    mansion.photos.attach(io: mansion1, filename: 'mansion1.jpeg')
+    mansion.photos.attach(io: URI.open('https://airdnb-dev.s3.us-west-1.amazonaws.com/107167782-1671217197698-11870ElliceStreet102.jpeg'), 
+        filename: '107167782-1671217197698-11870ElliceStreet102.jpeg')
+    # mansion.photos.attach(io: mansion1, filename: 'mansion1.jpeg')
 
     Listing.create!(
         host_id: 3,
@@ -234,6 +237,26 @@ ApplicationRecord.transaction do
         num_guests: 2,
     )
 
+    puts 'all trips done'
+
+    Review.create!(
+        user_id: 1,
+        listing_id: 1,
+        body: 'nice place'
+    )
+
+    Review.create!(
+        user_id: 2,
+        listing_id: 1,
+        body: 'great hose'
+    )
+
+    Review.create!(
+        user_id: 4,
+        listing_id: 1,
+        body: 'fantastic stay'
+    )
+
     # Trip.create!(
     #     user_id: 1,
     #     listing_id: 8,
@@ -255,4 +278,4 @@ ApplicationRecord.transaction do
 
     puts 'Seeding done'
 
-end
+# end

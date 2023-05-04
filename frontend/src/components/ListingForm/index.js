@@ -3,22 +3,24 @@ import React, { useEffect, useState } from "react"
 import { createListing, fetchListing, updateListing, getListing } from "../../store/listing"
 import './ListingForm.css'
 import { useParams } from "react-router-dom";
-import { useRef } from "react";
 
-const ListingForm = () => {
+const ListingForm = ({listing}) => {
     const dispatch = useDispatch()
     const sessionUser = useSelector(state => state.session.user)
-    const {listingId} = useParams()
-    const formType = listingId ? 'Update' : 'Create' 
-    let listing = useSelector(getListing(listingId));
+    // const {listingId} = useParams()
+    const formType = listing ? 'Update' : 'Create' 
+    // let listing = useSelector(getListing(listingId));
     const hostId = sessionUser.id
+
+    // console.log(listing.id, 'form')
+    console.log(formType, 'formtype')
 
     useEffect(()=> {
         if(formType === 'Update'){
             // console.log('dispatch')
-            dispatch(fetchListing(listingId))
+            dispatch(fetchListing(listing.id))
         }
-    }, [dispatch, listingId])
+    }, [dispatch])
 
     if(formType === 'Create'){
         listing = {
@@ -71,10 +73,11 @@ const ListingForm = () => {
     const handleSubmit = e => {
         e.preventDefault();
         listing = {...listing, title, propertyType, address, city, price, maxGuests, numBeds, numBaths, numBedrooms, description, hostId}
-        if(!listingId){
+        if(formType === 'Create'){
             dispatch(createListing(listing))
         } else {
             dispatch(updateListing(listing))
+            console.log('updating')
         }
     }
 

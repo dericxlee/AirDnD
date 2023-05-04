@@ -6,9 +6,10 @@ Rails.application.routes.draw do
   # post 'api/test', to: 'application#test'
 
   namespace :api, defaults: { format: :json } do
+    resources :reviews
     resources :users, only: :create
-    resources :listings
     resources :trips
+    resources :listings
     resource :session, only: [:show, :create, :destroy]
   end
 

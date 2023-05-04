@@ -4,6 +4,7 @@ import { getListing, fetchListing } from "../../store/listing";
 import { useEffect } from "react";
 import './ListingShow.css'
 import TripForm from "../TripForm";
+import ListingShowReviews from "../ListingShowReviews";
 
 
 const ListingShow = () => {
@@ -15,10 +16,14 @@ const ListingShow = () => {
         dispatch(fetchListing(listingId))
     }, [dispatch, listingId])
 
-    console.log(listing?.photoUrls[0])
+    // console.log(listing?.photoUrls[0])
     // useEffect(() => {
     //     console.log(listing)
     // }, [listing])
+
+    const reviews = listing?.reviews
+
+    console.log(reviews)
 
     return (
         <div id='show-page-container'>
@@ -53,6 +58,9 @@ const ListingShow = () => {
                     <div id='show-page-description-box'>
                         <hr id='show-page-description-line'></hr>
                         <p id='show-page-description'>{listing?.description}</p>
+                    </div>
+                    <div id='reviews-index-container'>
+                        <ListingShowReviews reviews={reviews}/>
                     </div>
                 </div>
                 <div id='show-page-booking-form'>
