@@ -35,13 +35,13 @@ const TripForm = ({listing}) => {
 
     const trip = {
         userId: sessionUser.id,
-        listingId: listing.id,
+        listingId: listing?.id,
         startDate: stringStartDate,
         closingDate: stringClosingDate,
         numGuests: numGuests
     }
 
-    console.log(trip)
+    // console.log(trip)
 
     const handleSubmit = e => {
         e.preventDefault();

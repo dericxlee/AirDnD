@@ -1,6 +1,6 @@
 import { deleteListing } from "../../store/listing"
 import { useDispatch } from "react-redux"
-
+import './ListingDeleteButton.css'
 
 const ListingDeleteButton = ({listingId}) => {
     const dispatch = useDispatch()
@@ -12,7 +12,7 @@ const ListingDeleteButton = ({listingId}) => {
     }
 
     return (
-        <button onClick={handleClick}>Delete</button>
+        <button className='delete-btn' onClick={handleClick}>Delete</button>
     )
 }
 

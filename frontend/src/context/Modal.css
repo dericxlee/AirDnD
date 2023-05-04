@@ -23,8 +23,10 @@
     position: absolute;
     background-color:white;
     border-radius: 5%;
-    width: 38%;
+    width: 35%;
+    min-width: 450px;
     height: 88%;
+    min-height: 88%;
     align-content: flex-start;
 }
 

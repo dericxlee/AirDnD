@@ -1,4 +1,5 @@
 json.extract! listing, :id, :host_id, :title, :description, :property_type, :address, :city, :price, :max_guests, :num_baths, :num_beds, :num_bedrooms
+json.photoUrls listing.photos.map { |file| file.url}
 
 json.host do
     json.first_name listing.host.first_name

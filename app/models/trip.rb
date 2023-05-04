@@ -32,6 +32,8 @@ class Trip < ApplicationRecord
     through: :listing,
     source: :host
 
+    has_one_attached :photo
+
     def period
         start_date..closing_date
     end

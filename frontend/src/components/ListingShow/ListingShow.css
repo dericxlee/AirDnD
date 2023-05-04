@@ -126,6 +126,7 @@
     width: 100%;
     height: 5%;
     top: 3%;
+    word-wrap: break-word;
 }
 
 #show-page-description-line {
@@ -134,7 +135,7 @@
 }
 
 #show-page-description {
-    position: absolute;
+    margin-left: 15%;
     left: 10%;
     font-size: 16px;
 }

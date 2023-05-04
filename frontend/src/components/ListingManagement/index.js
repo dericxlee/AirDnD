@@ -20,7 +20,7 @@ const ListingManagement = () => {
         <div id='listing-management-box'>
             <div id='listing-table-box'>
                 <div id='manage-listing-msg-box'><p id='manage-listing-msg'>Manage Listing</p></div>
-                <div id='new-listing-btn-box'><button id='new-listing-btn'>Create New Listing</button></div>
+                <div id='new-listing-btn-box'><button id='new-listing-btn'>+ Create New Listing</button></div>
                 <table id='listing-table'>
                     <tr id='listing-table-header'>
                         <th>Airdnd Listing ID</th>
@@ -37,10 +37,10 @@ const ListingManagement = () => {
                             <tr id='listing-table-data' listing={listing} key={listing.id}>
                                 <th>{listing.id}</th>
                                 <th>{listing.title}</th>
-                                <th><button>Connect Roomtype</button></th>
-                                <th><button>Connect Listing</button></th>
+                                <th><button className='dummy-btn'>Connect Roomtype</button></th>
+                                <th><button className='dummy-btn'>Connect Listing</button></th>
                                 <th>Listed</th>
-                                <th><NavLink to={`/client/${listing.id}`}><button>Edit</button></NavLink></th>
+                                <th><NavLink to={`/client/${listing.id}`}><button className='dummy-btn'>Edit</button></NavLink></th>
                                 <th></th>
                                 <th><ListingDeleteButton listingId={listing.id}/></th>
                             </tr>

@@ -11,4 +11,5 @@
 #
 class Review < ApplicationRecord
     validates :user_id, :listing_id, :body, presence: true
+    validates :user_id, uniqueness: {scope: :listing_id}
 end

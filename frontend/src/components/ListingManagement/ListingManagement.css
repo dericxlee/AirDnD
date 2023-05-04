@@ -3,10 +3,12 @@
     width: 100%;
     top: 10%;
     left: 10%;
+    display: flex;
+    flex-direction: column;
 }
 
 #listing-table-box {
-    position: relative;
+    margin-top: 2%;
     width: 80%;
 }
 
@@ -32,28 +34,46 @@
     height: 80%;
     margin-right: 5%;
     background-color: teal;
+    color: white;
 }
 
 
 #listing-table {
-    border: solid;
+    border-bottom: solid;
     border-color: black;
     width: 100%;
     top: 100%;
 }
 
 #listing-table-header {
-    height: 8vh;
+    height: 6vh;
     width: 100%;
-    background-color: yellow;
+    text-align: left;
+}
+
+#listing-table-header th {
+    font-weight: bold;
+    top: 50%;
+    vertical-align: middle;
 }
 
 #listing-table tr th {
-    border: solid;
+    border-bottom: solid;
     border-color: black;
 }
 
 #listing-table-data {
     height: 5vh;
     width: 100%;
+    text-align: left;
+}
+
+#listing-table-data th {
+    margin-left: 5vw;
+    vertical-align: middle;
+}
+
+.dummy-btn {
+    background-color: green;
+    color: white;
 }

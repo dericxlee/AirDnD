@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
 import * as sessionActions from "../../store/session";
 import './SignupForm.css'
+import { Link } from "react-router-dom";
 
 function SignupForm() {
   const dispatch = useDispatch();
@@ -13,25 +14,31 @@ function SignupForm() {
   const [lastName, setLastName] = useState("");
   const [birthdate, setBirthdate] = useState("")
   const [errors, setErrors] = useState([]);
+  const [checked, setChecked] = useState(false)
 
-  // if (sessionUser) return <Redirect to="/" />;
+  const handleCheck = () => {
+    setChecked(!checked)
+    // console.log(checked)
+  }
 
   const handleSubmit = (e) => {
     e.preventDefault();
     
     setErrors([]);
-    return dispatch(sessionActions.signup({ email, password, firstName, lastName, birthdate }))
-      .catch(async (res) => {
-      let data;
-      try {
-        data = await res.clone().json();
-      } catch {
-        data = await res.text();
-      }
-      if (data?.errors) setErrors(data.errors);
-      else if (data) setErrors([data]);
-      else setErrors([res.statusText]);
-    });
+    if(checked) {
+      return dispatch(sessionActions.signup({ email, password, firstName, lastName, birthdate }))
+        .catch(async (res) => {
+        let data;
+        try {
+          data = await res.clone().json();
+        } catch {
+          data = await res.text();
+        }
+        if (data?.errors) setErrors(data.errors);
+        else if (data) setErrors([data]);
+        else setErrors([res.statusText]);
+      });
+    } 
   };
 
   return (
@@ -89,10 +96,29 @@ function SignupForm() {
             />
           </div>
           <p id='marketing-msg'>We'll send you marketing promotions, special offers, inspiration, and policy updates via email.</p>
-          <div id='checkbox-div'>
-            <input id='checkbox-box'
-              type="checkbox" 
-            />
+          <div id='checkbox-container'>
+            <div id='checkbox-div'>
+              <input id='checkbox'
+                type="checkbox"
+                defaultChecked={checked}
+                onChange={handleCheck}
+              />
+              <div id='marketing-opt-div'>
+              
+                I don't want to receive marketing messages from Airdnd. 
+                I can also opt out of receiving these at any time in my account settings or via the link in the message.
+              </div>
+            </div>
+          </div>
+          <div id='terms-and-conditions-container'>
+            <div id='terms-and-conditions-box'>
+              <p>By selecting Agree and continue below, I agree to Airdnd's 
+                <Link> Terms of Service, </Link>
+                <Link>Payments Terms of Service, </Link>
+                <Link>Privacy Policy, </Link>and
+                <Link> Nondiscrimination Policy</Link>
+              </p>
+            </div>
           </div>
           <div id='signup-submit-box'>
             <button id='signup-submit-btn' type="submit">Agree and continue</button>

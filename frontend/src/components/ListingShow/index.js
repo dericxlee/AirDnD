@@ -15,6 +15,7 @@ const ListingShow = () => {
         dispatch(fetchListing(listingId))
     }, [dispatch, listingId])
 
+    console.log(listing?.photoUrls[0])
     // useEffect(() => {
     //     console.log(listing)
     // }, [listing])
@@ -26,7 +27,7 @@ const ListingShow = () => {
             <div id='photo-span-container'>
                 <div id='photo-container'>
                     <div id='photo-divider-container'>
-                        <img id='big-photo' src="https://cdn.dribbble.com/users/226242/screenshots/18014512/airbnb_icon.png" alt="sample photo" />
+                        <img id='big-photo' src={listing?.photoUrls[0]} alt="sample photo" />
                     </div>
                     <div id='photo-divider-container'>
                         <img id='small-photo' src="https://cdn.dribbble.com/users/226242/screenshots/18014512/airbnb_icon.png" alt="sample" />
@@ -51,7 +52,7 @@ const ListingShow = () => {
                     </div>
                     <div id='show-page-description-box'>
                         <hr id='show-page-description-line'></hr>
-                        <span id='show-page-description'>{listing?.description}</span>
+                        <p id='show-page-description'>{listing?.description}</p>
                     </div>
                 </div>
                 <div id='show-page-booking-form'>

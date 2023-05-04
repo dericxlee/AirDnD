@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
+require "open-uri"
 
 ApplicationRecord.transaction do
     Trip.destroy_all
@@ -70,7 +71,10 @@ ApplicationRecord.transaction do
 
     puts 'Users done'
 
-    Listing.create!(
+    mansion1 = File.open('app/assets/images/mansion1.jpeg')
+    # mansion2 = File.open('app/assets/images/mansion1.jpeg')
+    
+    mansion = Listing.create!(
         host_id: 2,
         title: 'Modern Mansion',
         address: '30 Paradise Drive',
@@ -82,8 +86,12 @@ ApplicationRecord.transaction do
         num_bedrooms: 6,
         num_baths: 6,
         description: 'This gorgeous Malibu estate is designed to dazzle. 
-            This stunning property, which features a private soccer field, tennis court, and luxury pool and spa, is the perfect place for both relaxation and recreation. Perfect for the family!',
+        This stunning property, which features a private soccer field, tennis court, and luxury pool and spa, is the perfect place for both relaxation and recreation. Perfect for the family!',
     )
+        
+    # mansion.photos.attach(io: URI.open('https://airdnb-dev.s3.us-west-1.amazonaws.com/107167782-1671217197698-11870ElliceStreet102.jpeg'), 
+    #     filename: '107167782-1671217197698-11870ElliceStreet102.jpeg')
+    mansion.photos.attach(io: mansion1, filename: 'mansion1.jpeg')
 
     Listing.create!(
         host_id: 3,
@@ -233,12 +241,17 @@ ApplicationRecord.transaction do
     #     closing_date: '1/9/2024',
     # )
 
-    # test_trip2 = Trip.create!(
+    # test_trip = Trip.create!(
     #     user_id: 1,
     #     listing_id: 8,
-    #     start_date: '01/06/2024',
-    #     closing_date: '01/10/2024',
-    # )
+    #     start_date: '01/11/2024',
+    #     closing_date: '10/11/2024',
+    #     num_guests: 1
+    # );
+
+    # file = File.open('app/assets/images/mansion1.jpeg')
+
+    # test_trip.photo.attach(io: file, filename: 'mansion1.jpeg')
 
     puts 'Seeding done'
 
