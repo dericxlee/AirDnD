@@ -4,7 +4,7 @@ import { getListing, fetchListing } from "../../store/listing";
 import { useEffect } from "react";
 import './ListingShow.css'
 import TripForm from "../TripForm";
-import ListingShowReviews from "../ListingShowReviews";
+import ListingShowReviews from "../ListingShowReview";
 
 
 const ListingShow = () => {
@@ -22,8 +22,7 @@ const ListingShow = () => {
     // }, [listing])
 
     const reviews = listing?.reviews
-
-    console.log(reviews)
+    const length = reviews?.length
 
     return (
         <div id='show-page-container'>
@@ -58,9 +57,16 @@ const ListingShow = () => {
                     <div id='show-page-description-box'>
                         <hr id='show-page-description-line'></hr>
                         <p id='show-page-description'>{listing?.description}</p>
+                        <hr id='show-page-description-line'/>
                     </div>
-                    <div id='reviews-index-container'>
-                        <ListingShowReviews reviews={reviews}/>
+                    <div id='reviews-index-mega-container'>
+                        <div id='reviews-index-header'>
+                            <li>4.87</li>
+                            <li><span>{length} reviews</span></li>
+                        </div>
+                        <div id='reviews-index-container'>
+                            <ListingShowReviews reviews={reviews}/>
+                        </div>
                     </div>
                 </div>
                 <div id='show-page-booking-form'>

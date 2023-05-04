@@ -140,4 +140,43 @@
     font-size: 16px;
 }
 
+#reviews-index-mega-container {
+    width: 100%;
+    height: 100%;
+
+}
+
+#reviews-index-header {
+    display: flex;
+    flex-direction: row;
+    height: 1%;
+    margin-left: 16%;
+}
+
+#reviews-index-header li {
+    font-size: 22px;
+    margin-right: 1%;
+    font-weight: bold;
+}
+
+#reviews-index-header li:first-child {
+    list-style: none;
+}
+
+#reviews-index-header li span {
+    position: relative;
+    left: -15%;
+}
+
+#reviews-index-container {
+    width: 85%;
+    height: 20%;
+    top: 5%;
+    margin-left: 15%;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    column-count: 2;
+}
+
 

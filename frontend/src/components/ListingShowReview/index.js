@@ -6,7 +6,7 @@ const ListingShowReviews = ({reviews}) => {
         // console.log(reviews)
         reviews?.map(review => <ReviewIndexItem
             review={review}
-            key={review.id}
+            key={review?.id}
         />)
     )
 };

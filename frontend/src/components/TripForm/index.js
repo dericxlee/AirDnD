@@ -34,7 +34,7 @@ const TripForm = ({listing}) => {
     const [strNetTotal, setStrNetTotal] = useState(netTotal)
 
     const trip = {
-        userId: sessionUser.id,
+        userId: sessionUser?.id,
         listingId: listing?.id,
         startDate: stringStartDate,
         closingDate: stringClosingDate,

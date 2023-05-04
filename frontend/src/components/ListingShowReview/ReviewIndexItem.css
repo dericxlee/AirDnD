@@ -1,0 +1,38 @@
+#review-index-item-box {
+    width: 45%;
+    height: 20%;
+    margin: 2%;
+    margin-top: 5%;;
+}
+
+#review-user-box {
+    height: 30%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+#review-user-avatar-box {
+    width: 20%;
+    height: 100%;
+}
+
+#review-user-info-box {
+    width: 80%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+#review-user-info-box p {
+    height: 50%;
+    font-size: 16px;
+}
+
+#review-user-info-box p:first-child {
+    font-weight: bold;
+}
+
+#review-body-box {
+    margin-top: 2%;
+}
