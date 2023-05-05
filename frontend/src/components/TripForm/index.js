@@ -9,6 +9,7 @@ const TripForm = ({listing}) => {
     const dispatch = useDispatch()
     const history = useHistory()
     const sessionUser = useSelector(state => state.session.user)
+    const [reserve, setReserve] = useState('Reserve')
     
     const addDays = (num) => {
         const today = new Date()
@@ -81,6 +82,7 @@ const TripForm = ({listing}) => {
 
     const handleSubmit = e => {
         e.preventDefault();
+        setReserve('Reserving')
         setTimeout(()=> {
             dispatch(createTrip(trip))
             history.push('/trips')
@@ -154,7 +156,7 @@ const TripForm = ({listing}) => {
                         </div>
                     </div>
                     <div id='trip-form-submit-box'>
-                        <button id='trip-form-btn'>Reserve</button>
+                        <button id='trip-form-btn'>{reserve}</button>
                     </div>
                 </form>
             </div>

@@ -57,6 +57,10 @@
     width: 85%;
     display: flex;
     flex-wrap: wrap;
+    /* border: solid;
+    border-color: black;
+    border-radius: 10% / 20%;
+    z-index: 200; */
 }
 
 #trip-form-date-box {
@@ -89,14 +93,14 @@
     text-indent: 3%;
     font-size: 16px;
     font-family: Arial, Helvetica, sans-serif;
-
 }
 
 
 #trip-form-guest-box {
     height: 50%;
-    width: 100%;
+    width: 98.8%;
     border: solid;
+    border-top: none;
     border-color: black;
     position: relative;
 }
@@ -149,7 +153,7 @@
     font-size: 16px;
     font-family: Arial, Helvetica, sans-serif;
     color: white;
-    border-radius: 5% / 18%;
+    border-radius: 5% / 25%;
 }
 
 #trip-form-payment-container {
