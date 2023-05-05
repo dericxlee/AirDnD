@@ -56,24 +56,40 @@
     height: 70%;
     width: 85%;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     /* border: solid;
     border-color: black;
     border-radius: 10% / 20%;
-    z-index: 200; */
+    z-index: 1000; */
+}
+
+#trip-form-both-date-box {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: row;
+    border: solid;
+    border-color: black;
+    /* border-radius: 10% / 25%; */
 }
 
 #trip-form-date-box {
-    width: 49%;
-    height: 50%;
-    border: solid;
+    width: 100%;
+    height: 100%;
+    /* border: solid;
+    border-color: black; */
+}
+
+#trip-form-date-box:first-child {
+    border-right: solid;
     border-color: black;
+    
 }
 
 #trip-form-date-header {
     position: relative;
     height: 40%;
-    width: 98%;
+    width: 100%;
 }
 
 #trip-form-date-header span {
@@ -98,7 +114,7 @@
 
 #trip-form-guest-box {
     height: 50%;
-    width: 98.8%;
+    width: 100%;
     border: solid;
     border-top: none;
     border-color: black;
@@ -139,7 +155,7 @@
 }
 
 #trip-form-submit-box {
-    margin-top: 5%;
+    margin-top: 9%;
     height: 30%;
     width: 100%;
 }

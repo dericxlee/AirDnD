@@ -135,17 +135,19 @@ const TripForm = ({listing}) => {
             <div id='trip-form-input-field-container'>
                 <form id='trip-form' onSubmit={handleSubmit}>
                     <div id='trip-form-input-field-box'>
-                        <div id='trip-form-date-box'>
-                            <div id='trip-form-date-header'>
-                                <span>CHECK-IN</span>
+                        <div id='trip-form-both-date-box'>
+                            <div id='trip-form-date-box'>
+                                <div id='trip-form-date-header'>
+                                    <span>CHECK-IN</span>
+                                </div>
+                                <input className='trip-form-date-input' type="date" value={stringStartDate} onChange={e=>setStringStartDate(e.target.value)}/>
                             </div>
-                            <input className='trip-form-date-input' type="date" value={stringStartDate} onChange={e=>setStringStartDate(e.target.value)}/>
-                        </div>
-                        <div id='trip-form-date-box'>
-                            <div id='trip-form-date-header'>
-                                <span>CHECKOUT</span>
+                            <div id='trip-form-date-box'>
+                                <div id='trip-form-date-header'>
+                                    <span>CHECKOUT</span>
+                                </div>
+                                <input className='trip-form-date-input' type="date" value={stringClosingDate} onChange={e=>setStringClosingDate(e.target.value)}/>
                             </div>
-                            <input className='trip-form-date-input' type="date" value={stringClosingDate} onChange={e=>setStringClosingDate(e.target.value)}/>
                         </div>
                         <div id='trip-form-guest-box'>
                             <div id='trip-form-guest-header'>
@@ -175,7 +177,6 @@ const TripForm = ({listing}) => {
                     <div id='trip-form-sub-calc'>Total before taxes</div>
                     <div id='trip-form-sub-total'>${strNetTotal}</div>
                 </div>
-            
             </div>
         </div>
     )
