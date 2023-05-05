@@ -9,7 +9,7 @@ const ListingIndexItem = ({listing}) => {
         <>
             <li id='listing-box'>
                 <NavLink to={`/listings/${listing.id}`}>
-                    <img id='index-photo' src="https://cdn.dribbble.com/users/226242/screenshots/18014512/airbnb_icon.png" alt="sample house" />
+                    <img id='index-photo' src={listing.photoUrls[0]} alt="sample house" />
                     <p className='nav-link-text'>{listing.city}, California</p>
                     <p className='nav-link-text'>${price} night</p>
                 </NavLink>

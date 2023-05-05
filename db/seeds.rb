@@ -27,8 +27,8 @@ require "open-uri"
     admin = User.create!(
         email: 'admin@test.com',
         password: 'test',
-        first_name: 'John',
-        last_name: 'Doe',
+        first_name: 'admin',
+        last_name: 'admin',
         birthdate: '1/1/2000'
     )
 
@@ -86,7 +86,7 @@ require "open-uri"
     
     listing_1 = Listing.create!(
         host_id: 2,
-        title: 'Hollywood Hills Modern Sanctuary–Jaw Dropping View',
+        title: "Hollywood Hills Modern Sanctuary, Jaw Dropping View?",
         address: '1 Hollywood Dr',
         city: 'Hollywood',
         property_type: 'Luxury stay',
@@ -125,6 +125,12 @@ require "open-uri"
             Expansive backyard and pool area.',
     )
 
+    listing_2.photos.attach(io: URI.open('https://airdnb-dev.s3.us-west-1.amazonaws.com/listing2/beverly1.webp'), filename: 'beverly1.webp')
+    listing_2.photos.attach(io: URI.open('https://airdnb-dev.s3.us-west-1.amazonaws.com/listing2/beverly2.webp'), filename: 'beverly2.webp')
+    listing_2.photos.attach(io: URI.open('https://airdnb-dev.s3.us-west-1.amazonaws.com/listing2/beverly3.webp'), filename: 'beverly3.webp')
+    listing_2.photos.attach(io: URI.open('https://airdnb-dev.s3.us-west-1.amazonaws.com/listing2/beverly4.webp'), filename: 'beverly4.webp')
+    listing_2.photos.attach(io: URI.open('https://airdnb-dev.s3.us-west-1.amazonaws.com/listing2/beverly5.webp'), filename: 'beverly5.webp')
+
     listing_3 = Listing.create!(
         host_id: 3,
         title: 'Petra Manor',
@@ -142,6 +148,12 @@ require "open-uri"
             You're 1.5 miles from the Pier.",
     )
 
+    listing_3.photos.attach(io: URI.open('https://airdnb-dev.s3.us-west-1.amazonaws.com/listing3/petra1.webp'), filename: 'petra1.webp')
+    listing_3.photos.attach(io: URI.open('https://airdnb-dev.s3.us-west-1.amazonaws.com/listing3/petra2.webp'), filename: 'petra2.webp')
+    listing_3.photos.attach(io: URI.open('https://airdnb-dev.s3.us-west-1.amazonaws.com/listing3/petra3.webp'), filename: 'petra3.webp')
+    listing_3.photos.attach(io: URI.open('https://airdnb-dev.s3.us-west-1.amazonaws.com/listing3/petra4.webp'), filename: 'petra4.webp')
+    listing_3.photos.attach(io: URI.open('https://airdnb-dev.s3.us-west-1.amazonaws.com/listing3/petra5.webp'), filename: 'petra5.webp')
+
     listing_4 = Listing.create!(
         host_id: 3,
         title: 'Runyon Canyon Villa',
@@ -158,8 +170,14 @@ require "open-uri"
             Private gated driveway and 3 car garage provides ample parking - a short walk to Runyon Canyon hiking trails and the famous Hollywood sign!'
     )
 
+    listing_4.photos.attach(io: URI.open('https://airdnb-dev.s3.us-west-1.amazonaws.com/listing4/runyon1.webp'), filename: 'runyon1.webp')
+    listing_4.photos.attach(io: URI.open('https://airdnb-dev.s3.us-west-1.amazonaws.com/listing4/runyon2.webp'), filename: 'runyon2.webp')
+    listing_4.photos.attach(io: URI.open('https://airdnb-dev.s3.us-west-1.amazonaws.com/listing4/runyon3.webp'), filename: 'runyon3.webp')
+    listing_4.photos.attach(io: URI.open('https://airdnb-dev.s3.us-west-1.amazonaws.com/listing4/runyon4.webp'), filename: 'runyon4.webp')
+    listing_4.photos.attach(io: URI.open('https://airdnb-dev.s3.us-west-1.amazonaws.com/listing4/runyon5.webp'), filename: 'runyon5.webp')
+
     listing_5 = Listing.create!(
-        host_id: 1,
+        host_id: 4,
         title: 'Pitchouline Estate',
         address: '5 Pitch Dr',
         city: 'Fallbrook',
@@ -177,8 +195,14 @@ require "open-uri"
             It is the perfect family luxury retreat"
     )
 
+    listing_5.photos.attach(io: URI.open('https://airdnb-dev.s3.us-west-1.amazonaws.com/listing5/pitch1.webp'), filename: 'pitch1.webp')
+    listing_5.photos.attach(io: URI.open('https://airdnb-dev.s3.us-west-1.amazonaws.com/listing5/pitch2.webp'), filename: 'pitch2.webp')
+    listing_5.photos.attach(io: URI.open('https://airdnb-dev.s3.us-west-1.amazonaws.com/listing5/pitch3.webp'), filename: 'pitch3.webp')
+    listing_5.photos.attach(io: URI.open('https://airdnb-dev.s3.us-west-1.amazonaws.com/listing5/pitch4.webp'), filename: 'pitch4.webp')
+    listing_5.photos.attach(io: URI.open('https://airdnb-dev.s3.us-west-1.amazonaws.com/listing5/pitch5.webp'), filename: 'pitch5.webp')
+
     listing_6 = Listing.create!(
-        host_id: 1,
+        host_id: 5,
         title: 'The Ranch Almaden',
         address: '6 Ranch Dr',
         city: 'San Jose',
@@ -194,8 +218,14 @@ require "open-uri"
             Large pool with waterfall and bocce court nearby.",
     )
 
+    listing_6.photos.attach(io: URI.open('https://airdnb-dev.s3.us-west-1.amazonaws.com/listing6/ranch1.webp'), filename: 'ranch1.webp')
+    listing_6.photos.attach(io: URI.open('https://airdnb-dev.s3.us-west-1.amazonaws.com/listing6/ranch2.webp'), filename: 'ranch2.webp')
+    listing_6.photos.attach(io: URI.open('https://airdnb-dev.s3.us-west-1.amazonaws.com/listing6/ranch3.webp'), filename: 'ranch3.webp')
+    listing_6.photos.attach(io: URI.open('https://airdnb-dev.s3.us-west-1.amazonaws.com/listing6/ranch4.webp'), filename: 'ranch4.webp')
+    listing_6.photos.attach(io: URI.open('https://airdnb-dev.s3.us-west-1.amazonaws.com/listing6/ranch5.webp'), filename: 'ranch5.webp')
+
     listing_7 = Listing.create!(
-        host_id: 1,
+        host_id: 4,
         title: 'Relaxing Oceanfront Home just Minutes to Beaches',
         address: '7 Ocean Dr',
         city: 'Santa Cruz',
@@ -211,8 +241,14 @@ require "open-uri"
             This spacious home is the perfect family getaway.',
     )
 
+    listing_7.photos.attach(io: URI.open('https://airdnb-dev.s3.us-west-1.amazonaws.com/listing7/ocean1.webp'), filename: 'ocean1.webp')
+    listing_7.photos.attach(io: URI.open('https://airdnb-dev.s3.us-west-1.amazonaws.com/listing7/ocean2.webp'), filename: 'ocean2.webp')
+    listing_7.photos.attach(io: URI.open('https://airdnb-dev.s3.us-west-1.amazonaws.com/listing7/ocean3.webp'), filename: 'ocean3.webp')
+    listing_7.photos.attach(io: URI.open('https://airdnb-dev.s3.us-west-1.amazonaws.com/listing7/ocean4.webp'), filename: 'ocean4.webp')
+    listing_7.photos.attach(io: URI.open('https://airdnb-dev.s3.us-west-1.amazonaws.com/listing7/ocean5.webp'), filename: 'ocean5.webp')
+
     listing_8 = Listing.create!(
-        host_id: 1,
+        host_id: 6,
         title: 'The Great Yosemite Retreat',
         address: '8 Yosemite Dr',
         city: 'Mariposa',
@@ -227,6 +263,12 @@ require "open-uri"
             Enjoy endless hours of entertainment in the spacious living room, or take a few laps in the pool while taking in the magnificent mountain view. 
             A fully-equipped kitchen and cozy bedrooms offer plenty of comfort and convenience, while access to hiking trails nearby ensures you can explore your surroundings at will.'
     )
+
+    listing_8.photos.attach(io: URI.open('https://airdnb-dev.s3.us-west-1.amazonaws.com/listing8/yose1.webp'), filename: 'yose1.webp')
+    listing_8.photos.attach(io: URI.open('https://airdnb-dev.s3.us-west-1.amazonaws.com/listing8/yose2.webp'), filename: 'yose2.webp')
+    listing_8.photos.attach(io: URI.open('https://airdnb-dev.s3.us-west-1.amazonaws.com/listing8/yose3.webp'), filename: 'yose3.webp')
+    listing_8.photos.attach(io: URI.open('https://airdnb-dev.s3.us-west-1.amazonaws.com/listing8/yose4.webp'), filename: 'yose4.webp')
+    listing_8.photos.attach(io: URI.open('https://airdnb-dev.s3.us-west-1.amazonaws.com/listing8/yose5.webp'), filename: 'yose5.webp')
 
     listing_9 = Listing.create!(
         host_id: 1,
@@ -245,8 +287,14 @@ require "open-uri"
             But if you love working (that's OK too). With fast wifi throughout, this home is a perfect place to work remotely, write your great American novel or host Zooms."
     )
 
+    listing_9.photos.attach(io: URI.open('https://airdnb-dev.s3.us-west-1.amazonaws.com/listing9/beach1.webp'), filename: 'beach1.webp')
+    listing_9.photos.attach(io: URI.open('https://airdnb-dev.s3.us-west-1.amazonaws.com/listing9/beach2.webp'), filename: 'beach2.webp')
+    listing_9.photos.attach(io: URI.open('https://airdnb-dev.s3.us-west-1.amazonaws.com/listing9/beach3.webp'), filename: 'beach3.webp')
+    listing_9.photos.attach(io: URI.open('https://airdnb-dev.s3.us-west-1.amazonaws.com/listing9/beach4.webp'), filename: 'beach4.webp')
+    listing_9.photos.attach(io: URI.open('https://airdnb-dev.s3.us-west-1.amazonaws.com/listing9/beach5.webp'), filename: 'beach5.webp')
+    
     listing_10 = Listing.create!(
-        host_id: 1,
+        host_id: 3,
         title: "EAGLE'S WATCH MALIBU",
         address: '10 Eagle Dr',
         city: 'Malibu',
@@ -262,6 +310,12 @@ require "open-uri"
             Stay in ultimate luxury in this one of a kind serene modern marvel."
     )
 
+    listing_10.photos.attach(io: URI.open('https://airdnb-dev.s3.us-west-1.amazonaws.com/listing10/eagle1.webp'), filename: 'eagle1.webp')
+    listing_10.photos.attach(io: URI.open('https://airdnb-dev.s3.us-west-1.amazonaws.com/listing10/eagle2.webp'), filename: 'eagle2.webp')
+    listing_10.photos.attach(io: URI.open('https://airdnb-dev.s3.us-west-1.amazonaws.com/listing10/eagle3.webp'), filename: 'eagle3.webp')
+    listing_10.photos.attach(io: URI.open('https://airdnb-dev.s3.us-west-1.amazonaws.com/listing10/eagle4.webp'), filename: 'eagle4.webp')
+    listing_10.photos.attach(io: URI.open('https://airdnb-dev.s3.us-west-1.amazonaws.com/listing10/eagle5.webp'), filename: 'eagle5.webp')
+
     listing_11 = Listing.create!(
         host_id: 3,
         title: "Trousdale Grand",
@@ -274,9 +328,15 @@ require "open-uri"
         num_bedrooms: 8,
         num_baths: 7,
         description: 'Panoramic views stretch from downtown Los Angeles to Catalina Island at this ultra-luxurious estate in Beverly Hills. 
-        Floor-to-ceiling glass invites the incredible vista inside, while multiple lounge areas on the terrace create even more living space for your large group. 
-        After a relaxing day by the pool, venture down to Santa Monica for a beachfront dinner and a moonlit selfie on the pier.'
+            Floor-to-ceiling glass invites the incredible vista inside, while multiple lounge areas on the terrace create even more living space for your large group. 
+            After a relaxing day by the pool, venture down to Santa Monica for a beachfront dinner and a moonlit selfie on the pier.'
     )
+
+    listing_11.photos.attach(io: URI.open('https://airdnb-dev.s3.us-west-1.amazonaws.com/listing11/grand1.webp'), filename: 'grand1.webp')
+    listing_11.photos.attach(io: URI.open('https://airdnb-dev.s3.us-west-1.amazonaws.com/listing11/grand2.webp'), filename: 'grand2.webp')
+    listing_11.photos.attach(io: URI.open('https://airdnb-dev.s3.us-west-1.amazonaws.com/listing11/grand3.webp'), filename: 'grand3.webp')
+    listing_11.photos.attach(io: URI.open('https://airdnb-dev.s3.us-west-1.amazonaws.com/listing11/grand4.webp'), filename: 'grand4.webp')
+    listing_11.photos.attach(io: URI.open('https://airdnb-dev.s3.us-west-1.amazonaws.com/listing11/grand5.webp'), filename: 'grand5.webp')
 
     listing_12 = Listing.create!(
         host_id: 1,
@@ -295,8 +355,14 @@ require "open-uri"
             This unit is on the ground floor of a single-family home in an Oakland neighborhood."
     )
 
+    listing_12.photos.attach(io: URI.open('https://airdnb-dev.s3.us-west-1.amazonaws.com/listing12/cozy1.webp'), filename: 'cozy1.webp')
+    listing_12.photos.attach(io: URI.open('https://airdnb-dev.s3.us-west-1.amazonaws.com/listing12/cozy2.webp'), filename: 'cozy2.webp')
+    listing_12.photos.attach(io: URI.open('https://airdnb-dev.s3.us-west-1.amazonaws.com/listing12/cozy3.webp'), filename: 'cozy3.webp')
+    listing_12.photos.attach(io: URI.open('https://airdnb-dev.s3.us-west-1.amazonaws.com/listing12/cozy4.webp'), filename: 'cozy4.webp')
+    listing_12.photos.attach(io: URI.open('https://airdnb-dev.s3.us-west-1.amazonaws.com/listing12/cozy5.webp'), filename: 'cozy5.webp')
+
     listing_13 = Listing.create!(
-        host_id: 4,
+        host_id: 2,
         title: "The Palace",
         address: '13 King Dr',
         city: 'Los Angeles',
@@ -312,6 +378,12 @@ require "open-uri"
             Dramatic entry and huge living room overlook enormous deep grounds with cabana ste, bbq center, spa. 
             This magnificent property is truly a baroque masterpiece."
     )
+
+    listing_13.photos.attach(io: URI.open('https://airdnb-dev.s3.us-west-1.amazonaws.com/listing13/palace1.webp'), filename: 'palace1.webp')
+    listing_13.photos.attach(io: URI.open('https://airdnb-dev.s3.us-west-1.amazonaws.com/listing13/palace2.webp'), filename: 'palace2.webp')
+    listing_13.photos.attach(io: URI.open('https://airdnb-dev.s3.us-west-1.amazonaws.com/listing13/palace3.webp'), filename: 'palace3.webp')
+    listing_13.photos.attach(io: URI.open('https://airdnb-dev.s3.us-west-1.amazonaws.com/listing13/palace4.webp'), filename: 'palace4.webp')
+    listing_13.photos.attach(io: URI.open('https://airdnb-dev.s3.us-west-1.amazonaws.com/listing13/palace5.webp'), filename: 'palace5.webp')
 
     listing_14 = Listing.create!(
         host_id: 1,
@@ -331,6 +403,12 @@ require "open-uri"
             Great location for hiking, biking, close proximity to Muir Woods and Mt. Tamalpais- something for everyone! 
             This incredibly special place will give you memories for a lifetime."
     )
+
+    listing_14.photos.attach(io: URI.open('https://airdnb-dev.s3.us-west-1.amazonaws.com/listing14/stun1.webp'), filename: 'stun1.webp')
+    listing_14.photos.attach(io: URI.open('https://airdnb-dev.s3.us-west-1.amazonaws.com/listing14/stun2.webp'), filename: 'stun2.webp')
+    listing_14.photos.attach(io: URI.open('https://airdnb-dev.s3.us-west-1.amazonaws.com/listing14/stun3.webp'), filename: 'stun3.webp')
+    listing_14.photos.attach(io: URI.open('https://airdnb-dev.s3.us-west-1.amazonaws.com/listing14/stun4.webp'), filename: 'stun4.webp')
+    listing_14.photos.attach(io: URI.open('https://airdnb-dev.s3.us-west-1.amazonaws.com/listing14/stun5.webp'), filename: 'stun5.webp')
 
     listing_15 = Listing.create!(
         host_id: 5,
@@ -352,8 +430,11 @@ require "open-uri"
             This Shorebird unit includes free parking."
     )
 
-
-
+    listing_15.photos.attach(io: URI.open('https://airdnb-dev.s3.us-west-1.amazonaws.com/listing15/condo1.webp'), filename: 'condo1.webp')
+    listing_15.photos.attach(io: URI.open('https://airdnb-dev.s3.us-west-1.amazonaws.com/listing15/condo2.webp'), filename: 'condo2.webp')
+    listing_15.photos.attach(io: URI.open('https://airdnb-dev.s3.us-west-1.amazonaws.com/listing15/condo3.webp'), filename: 'condo3.webp')
+    listing_15.photos.attach(io: URI.open('https://airdnb-dev.s3.us-west-1.amazonaws.com/listing15/condo4.webp'), filename: 'condo4.webp')
+    listing_15.photos.attach(io: URI.open('https://airdnb-dev.s3.us-west-1.amazonaws.com/listing15/condo5.webp'), filename: 'condo5.webp')
 
     # 20.times do 
     #     Listing.create!({
@@ -375,17 +456,17 @@ require "open-uri"
 
     Trip.create!(
         user_id: 1,
-        listing_id: 2,
-        start_date: '4/5/2023',
-        closing_date: '4/9/2023',
+        listing_id: 1,
+        start_date: '4/4/2023',
+        closing_date: '7/4/2023',
         num_guests: 2,
     )
 
     Trip.create!(
         user_id: 1,
-        listing_id: 3,
-        start_date: '4/2/2023',
-        closing_date: '4/9/2023',
+        listing_id: 2,
+        start_date: '9/2/2023',
+        closing_date: '11/2/2023',
         num_guests: 2,
     )
 
@@ -393,58 +474,46 @@ require "open-uri"
 
     Trip.create!(
         user_id: 1,
-        listing_id: 1,
-        start_date: '1/1/2024',
-        closing_date: '1/9/2024',
-        num_guests: 1,
+        listing_id: 4,
+        start_date: '1/9/2024',
+        closing_date: '6/9/2024',
+        num_guests: 2,
     )
 
     Trip.create!(
         user_id: 1,
-        listing_id: 4,
-        start_date: '3/1/2024',
-        closing_date: '3/9/2024',
+        listing_id: 7,
+        start_date: '3/7/2024',
+        closing_date: '6/7/2024',
         num_guests: 2,
     )
 
     puts 'all trips done'
 
     Review.create!(
-        user_id: 1,
+        user_id: 5,
         listing_id: 1,
-        body: 'nice place'
+        body: 'beautiful house. had a great time staying there for the whole month on new year occasion with the family'
     )
 
     Review.create!(
-        user_id: 2,
+        user_id: 3,
         listing_id: 1,
-        body: 'great hose'
+        body: 'Location, location, location. This mansion is all about the proximity to downtown Beverly Hills plus large salt water pool and spa. 
+            We enjoyed the beautiful rooms and comfortable beds with the softest sheets. 
+            Also noteworthy, the living room is very spacious and comfortable with a large 4k TV. 
+            We also enjoyed the patio furniture along with the outdoor BBQ and dining area. 
+            This was wonderful for a celebratory dinner.'
     )
 
     Review.create!(
         user_id: 4,
         listing_id: 1,
-        body: 'fantastic stay'
+        body: 'Perfect location in stunning Beverly Hills. 
+            The house was impeccably cleaned and there was plenty of room for all the guests. 
+            I left a bag there by accident on check-out day, and the property manager was nice enough to ship it to me. 
+            Would stay here again for sure!',
     )
-
-    # Trip.create!(
-    #     user_id: 1,
-    #     listing_id: 8,
-    #     start_date: '1/1/2024',
-    #     closing_date: '1/9/2024',
-    # )
-
-    # test_trip = Trip.create!(
-    #     user_id: 1,
-    #     listing_id: 8,
-    #     start_date: '01/11/2024',
-    #     closing_date: '10/11/2024',
-    #     num_guests: 1
-    # );
-
-    # file = File.open('app/assets/images/mansion1.jpeg')
-
-    # test_trip.photo.attach(io: file, filename: 'mansion1.jpeg')
 
     puts 'Seeding done'
 
