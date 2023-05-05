@@ -1,8 +1,10 @@
 #trip-form-container {
-    height: 65vh;
-    width: 85%;
+    height: 18%;
+    width: 90%;
+    min-height: 70vh;
+    min-width: 50vh;
     margin-left: auto;
-    margin-right: auto;
+    /* margin-right: auto; */
     margin-top: 2%;
     border: solid;
     border-color: black;
@@ -58,22 +60,83 @@
 }
 
 #trip-form-date-box {
-    width: 100%;
+    width: 49%;
+    height: 50%;
+    border: solid;
+    border-color: black;
+}
+
+#trip-form-date-header {
+    position: relative;
+    height: 40%;
+    width: 98%;
+}
+
+#trip-form-date-header span {
+    position: absolute;
+    bottom: 0;
+    left: 10%;
+    font-size: 11px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .trip-form-date-input {
-    height: 48%;
-    width: 48%;
+    height: 58%;
+    width: 98%;
+    border: none;
+    outline: none;
+    text-indent: 3%;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+
+#trip-form-guest-box {
+    height: 50%;
+    width: 100%;
+    border: solid;
+    border-color: black;
+    position: relative;
+}
+
+#trip-form-guest-header {
+    position: relative;
+    height: 40%;
+    width: 98%;
+}
+
+#trip-form-guest-header span {
+    position: absolute;
+    bottom: 0;
+    left: 5%;
+    font-size: 11px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 #num-guest-input {
-    height: 48%;
-    widtH: 96.5%;
+    height: 56%;
+    width: 98%;
+    border: none;
+    outline: none;
+    text-indent: 3%;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#num-guest-overlay {
+    position: absolute;
+    top: 55%;
+    left: 9.5%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
 }
 
 #trip-form-submit-box {
     margin-top: 5%;
-    height: 25%;
+    height: 30%;
     width: 100%;
 }
 
@@ -81,8 +144,12 @@
     margin-left: 7.5%;
     height: 100%;
     width: 85%;
-    background-color: purple;
+    background-color: red;
+    background-image: linear-gradient(red, purple);
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
     color: white;
+    border-radius: 5% / 18%;
 }
 
 #trip-form-payment-container {

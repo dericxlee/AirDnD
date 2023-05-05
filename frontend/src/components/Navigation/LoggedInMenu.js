@@ -1,13 +1,16 @@
 import { useDispatch } from "react-redux";
 import * as sessionActions from '../../store/session'
 import './LoggedOutMenu.css'
-import { NavLink } from "react-router-dom/cjs/react-router-dom.min";
+import { NavLink, useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 function LoggedInMenu({user}){
     const dispatch = useDispatch()
+    const history = useHistory()
+
     const logout = (e) => {
         e.preventDefault();
         dispatch(sessionActions.logout());
+        history.push('/')
     }
 
     return (

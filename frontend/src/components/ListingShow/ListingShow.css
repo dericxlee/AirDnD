@@ -1,7 +1,7 @@
 #show-page-container {
     position: absolute;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     top: 10%;
     height: 90%;
     width: 100%;
@@ -14,8 +14,8 @@
 }
 
 #show-page-title {
-    font-size: 30px;
-    font-weight: lighter;
+    font-size: 24px;
+    font-family: Arial, Helvetica, sans-serif;
     position: absolute;
     left: 10%;
     bottom: 10%;
@@ -30,9 +30,13 @@
 
 #show-page-location {
     position: absolute;
+    top: 12%;
     left: 10%;
-    font-size: 15px;
+    font-size: 16px;
     font-weight: lighter;
+    color: red;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: underline;
 }
 
 #photo-span-container{
@@ -67,20 +71,31 @@
 #big-photo {
     height: 100%;
     width: 100%;
+    border-bottom-left-radius: 2.5%;
+    border-top-left-radius: 2.5%;
 }
 
-#top-small-photo {
+.top-small-photo {
     height: 49%;
     width: 49%;
     margin-bottom: 1%;
 }
 
 
-#small-photo {
+.small-photo {
     height: 48%;
     width: 49%;
     margin-top: 1%;
 }
+
+#third-photo {
+    border-top-right-radius: 5%;
+}
+
+#fifth-photo {
+    border-bottom-right-radius: 5%;
+}
+
 
 #show-page-bottom-divider-box {
     display: flex;
@@ -110,11 +125,12 @@
     position: absolute;
     top: 0%;
     margin-left: 10%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 500;
 }
 
 #show-page-attribute-box {
-    top: 5%;
-    height: 2%;
+    height: 1%;
     width: 100%;
 }
 
@@ -127,9 +143,11 @@
 }
 
 #show-page-attribute li {
-    top: 20%;
+    margin-top: 4%;
     margin-right: 20px;
-    font-size: 18px;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: lighter;
 }
 
 #show-page-attribute li:first-child {
@@ -138,39 +156,43 @@
 
 #show-page-description-box {
     width: 100%;
-    height: 5%;
-    top: 3%;
+    height: 12%;
     word-wrap: break-word;
 }
 
 #show-page-description-line {
+    margin-top: 4%;
+    margin-bottom: 4%;
     margin-left: 17%;
-    width: 80%;
+    width: 76%;
 }
 
 #show-page-description {
-    margin-left: 15%;
-    left: 10%;
+    margin-left: 17%;
+    font-family: sans-serif;
     font-size: 16px;
+    line-height: 24px;
+    margin-right: 8.5%;
 }
 
 #reviews-index-mega-container {
+    top: 200%;
     width: 100%;
     height: 100%;
-
 }
 
 #reviews-index-header {
     display: flex;
     flex-direction: row;
     height: 1%;
-    margin-left: 16%;
+    margin-left: 17%;
 }
 
 #reviews-index-header li {
     font-size: 22px;
     margin-right: 1%;
     font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 #reviews-index-header li:first-child {
@@ -179,7 +201,7 @@
 
 #reviews-index-header li span {
     position: relative;
-    left: -15%;
+    left: -10%;
 }
 
 #reviews-index-container {

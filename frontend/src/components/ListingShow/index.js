@@ -34,10 +34,10 @@ const ListingShow = () => {
                         <img id='big-photo' src={listing?.photoUrls[0]} alt="sample photo" />
                     </div>
                     <div id='photo-divider-container'>
-                        <img id='top-small-photo' src={listing?.photoUrls[1]} alt="sample" />
-                        <img id='top-small-photo' src={listing?.photoUrls[2]} alt="sample" />
-                        <img id='small-photo' src={listing?.photoUrls[3]} alt="sample" />
-                        <img id='small-photo' src={listing?.photoUrls[4]} alt="sample" />
+                        <img className='top-small-photo' src={listing?.photoUrls[1]} alt="sample" />
+                        <img className='top-small-photo' id='third-photo' src={listing?.photoUrls[2]} alt="sample" />
+                        <img className='small-photo' src={listing?.photoUrls[3]} alt="sample" />
+                        <img className='small-photo' id='fifth-photo' src={listing?.photoUrls[4]} alt="sample" />
                     </div>
                 </div>
             </div>

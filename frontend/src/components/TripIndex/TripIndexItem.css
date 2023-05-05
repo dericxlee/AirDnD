@@ -12,10 +12,14 @@
 }
 
 #trip-info-photo {
+    margin-left: 10%;
     height: 60%;
-    width: 100%;
+    min-height: 18vh;
+    min-width: 18vh;
+    width: 80%;
     margin-top: 25%;
     margin-bottom: auto;
+    border-radius: 15%;
 }
 
 #trip-info-box {
@@ -28,11 +32,18 @@
 .bold-header {
     font-size: 18px;
     font-weight: bold;
-    margin-left: 7%;
+    margin-left: 5%;
 }
 
-#trip-info {
+.trip-info {
     margin-left: 7%;
     margin-top: 2%;
     margin-bottom: 2%;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 20px;
+}
+
+.trip-info:first-child {
+    font-weight: bold;
 }

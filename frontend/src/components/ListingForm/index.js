@@ -98,33 +98,33 @@ const ListingForm = ({listing}) => {
     return (
         <div id='listing-form-container'>
             <div id='listing-form-box'>
-                <div id='listing-form-header'>{formType} your Listing</div>
+                <div id='listing-form-header'>{formType} your Listing!</div>
                 <form id='listing-form' onSubmit={handleSubmit}>
                     <div id='listing-title-box'>
-                        <p>Give your listing a name</p> 
-                        <input type="text" value={title} placeholder="Name of listing" onChange={e=>setTitle(e.target.value)}/>
+                        <p>Title</p> 
+                        <input type="text" value={title} placeholder="Title for your listing" onChange={e=>setTitle(e.target.value)}/>
                     </div>
                     <div id='listing-address-container'>
-                        <p>What's the address of your property?</p>
-                        <div id='listing-address-box'>
-                            <div id='listing-street-box'>
-                                Street Address: <input type="text" value={address} placeholder="Street address" onChange={e=>setAddress(e.target.value)} />
+                        <div>Address</div>
+                        <div id='listing-street-box'>
+                            <input type="text" value={address} placeholder="Street address" onChange={e=>setAddress(e.target.value)} />
+                        </div>
+                        <div id='listing-region-box'>
+                            <div id='listing-city-box'>
+                                <div>City</div>
+                                <input type="text" value={city} placeholder="City" onChange={e=>setCity(e.target.value)}/>
                             </div>
-                            <div id='listing-region-box'>
-                                <div id='listing-city-box'>
-                                    City: <input type="text" value={city} placeholder="City" onChange={e=>setCity(e.target.value)}/>
-                                </div>
-                                <div id='listing-state-box'>
-                                    State: <input type="text" value='California' readOnly />
-                                </div>
-                                <div id='listing-country-box'>
-                                    Country: <input type="text" value='United States' readOnly />
-                                </div>
+                            <div id='listing-state-box'>
+                                <div>State</div>
+                                <input type="text" value='CA' readOnly />
+                            </div>
+                            <div id='listing-country-box'>
+                                <input type="text" value='United States' readOnly />
                             </div>
                         </div>
                     </div>
                     <div id='listing-property-box'>
-                        Property Type: <select placeholder="property type" value={propertyType} onChange={e => setPropertyType(e.target.value)}>
+                        Property type <select placeholder="property type" value={propertyType} onChange={e => setPropertyType(e.target.value)}>
                             <option value="Entire home">Entire home</option>
                             <option value="Private room">Private room</option>
                             <option value="Luxury stay">Luxury stay</option>
@@ -132,56 +132,69 @@ const ListingForm = ({listing}) => {
                     </div>
                     <div id='listing-slider-box'>
                         <div className='slider-box' id='listing-form-price-container'>
-                            <p>Price your space</p>
-                            <div id='listing-form-price-input'>
-                                <p>Enter a value</p>
-                                <input type="text" value={price} onChange={e=>setPrice(e.target.value)}/>
-                                $1<input type="range" min='1' max='3000' value={price} onChange={e=>{setPrice(e.target.value)}}/>$3,000
+                            <div className='slider-left-box'>
+                                <div>Price per night</div>
+                                <input id='price-input-box' type="number" value={price} onChange={e=>setPrice(e.target.value)}/>
+                            </div>
+                            <div className='slider-right-box'>
+                                <div>$1</div>
+                                <input type="range" min='1' max='5000' value={price} onChange={e=>{setPrice(e.target.value)}}/>
+                                <div>$5,000</div>
                             </div>
                         </div>
-
                         <div className='slider-box' id='listing-form-guest-container'>
-                            <p>Max Number of guests allowed</p>
-                            <div id='listing-form-guest-input'>
-                                <p>Enter a value</p>
-                                <input type="text" value={maxGuests} onChange={e=>setMaxGuests(e.target.value)}/>
-                                1 guest<input type="range" min='1' max='20' value={maxGuests} onChange={e=>setMaxGuests(e.target.value)}/>20 guests
+                            <div className='slider-left-box'>
+                                <div>Max number of guests</div>
+                                <input type="number" value={maxGuests} onChange={e=>setMaxGuests(e.target.value)}/>
+                            </div>
+                            <div className='slider-right-box'>
+                                <div>1</div>
+                                <input type="range" min='1' max='20' value={maxGuests} onChange={e=>setMaxGuests(e.target.value)}/>
+                                <div>20</div>
                             </div>
                         </div>
-
                         <div className='slider-box'>
-                            <p>Number of beds</p>
-                            <div id='listing-form-beds-input'>
-                                <p>Enter a value</p>
-                                <input type="text" value={numBeds} onChange={e=>setNumBeds(e.target.value)} />
-                                1 bed <input type="range" value={numBeds} min='1' max='20' onChange={e=>setNumBeds(e.target.value)}/> 20 beds
-                            </div>
-                        </div>
-
-                        <div className='slider-box'>
-                            <p>Number of Bathrooms</p>
-                            <div>
-                                <p>Enter a value</p>
-                                <input type="text" value={numBaths} onChange={e=>setNumBaths(e.target.value)} />
-                                1 bathroom <input type="range" value={numBaths} onChange={e=>setNumBaths(e.target.value)} /> 20 bathrooms
-                            </div>
-                        </div>
-
-                        <div className='slider-box'>
-                            <p>Number of Bedrooms</p>
-                            <div>
-                                <p>Enter a value</p>
+                            <div className='slider-left-box'>
+                                <div>Number of bedrooms</div>
                                 <input type="text" value={numBedrooms} onChange={e=>setNumBedrooms(e.target.value)}/>
-                                1 <input type="range" value={numBedrooms} onChange={e=>setNumBedrooms(e.target.value)}/>20
+                            </div>
+                            <div className='slider-right-box'>
+                                <div>1</div>
+                                <input type="range" value={numBedrooms} min='1' max='20' onChange={e=>setNumBedrooms(e.target.value)}/>
+                                <div>20</div>
+                            </div>
+                        </div>
+
+                        <div className='slider-box'>
+                            <div className='slider-left-box'>
+                                <div>Number of beds</div>
+                                <input type="text" value={numBeds} onChange={e=>setNumBeds(e.target.value)} />
+                            </div>
+                            <div className='slider-right-box'>
+                                <div>1</div>
+                                <input type="range" value={numBeds} min='1' max='20' onChange={e=>setNumBeds(e.target.value)}/>
+                                <div>20</div>
+                            </div>
+                        </div>
+
+                        <div className='slider-box'>
+                            <div className='slider-left-box'>
+                                <div>Number of bathrooms</div>
+                                <input type="text" value={numBaths} onChange={e=>setNumBaths(e.target.value)} />
+                            </div>
+                            <div className='slider-right-box'>
+                                <div>1</div>
+                                <input type="range" value={numBaths} min='1' max='20' onChange={e=>setNumBaths(e.target.value)} />
+                                <div>20</div>
                             </div>
                         </div>
                     </div>
                     <div id='listing-form-description-container'>
-                        <p>Describe your property</p>
-                        <input className='form-textarea' type="textarea" value={description} onChange={e=>setDescription(e.target.value)}/>
+                        <div>Description of your property</div>
+                        <textarea className='form-textarea' value={description} onChange={e=>setDescription(e.target.value)}/>
                     </div>
-                    <div id='listing-form-submission-btn'>
-                        <button type='submit'>{formType} your listing</button>
+                    <div id='listing-form-submit-box'>
+                        <button id='listing-form-btn' type='submit'>{formType}!</button>
                     </div>
                 </form>
             </div>

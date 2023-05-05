@@ -50,4 +50,6 @@
     display: inline-block;
     overflow: hidden;
     border-radius: 50%;
+    border: solid;
+    border-color: lightgray;
 }

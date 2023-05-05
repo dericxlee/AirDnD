@@ -1,7 +1,7 @@
 #trips-index-page {
     position: absolute;
     display: flex;
-    top: 15%;
+    top: 10%;
     width: 100%;
     height: 90%;
     justify-content: space-around;
@@ -10,41 +10,47 @@
 
 #trips-index-header {
     width: 100%;
-    height: 7%;
+    height: 8%;
+    position: relative;
 }
 
 #trips-index-header p {
-    font-size: 30px;
-    margin-left: 10%;
-    top: 0%;
+    font-size: 28px;
+    left: 10%;
+    bottom: 0%;
+    position: absolute;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#all-trips-container {
+    margin-top: 2%;
+    height: 80%;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
 }
 
 #upcoming-trips-box {
-    width: 80%;
-    height: 100%;
-    top: 20%;
+    width: 100%;
+    height: 50%;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     border: solid;
     border-color: black;
     max-height: 35vh;
 }
 
-#upcoming-trips-banner {
+.trips-banner {
     height: 10%;
     width: 100%;
 }
 
-#past-trips-banner {
-    height: 10%;
-    width: 100%;
-}
-
-.trips-sub-header {
+.trips-banner-header {
     margin-top: 2%;
     margin-left: 2%;
     height: 100%;
     font-size: 24px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 #trips-info-box-container {
@@ -63,9 +69,12 @@
 
 #past-trips-box {
     width: 100%;
-    margin-left: 10%;
-    top: 50%;
-    height: 30%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    max-height: 35vh;
+    border-bottom: solid;
+    border-color: gray;
 }
 
 #trips-index-footer-box {
@@ -73,4 +82,12 @@
     width: 100%;
     height: 10%;
     margin-left: 10%;
+}
+
+#trips-index-footer-box p {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#help-center {
+    color: red;
 }

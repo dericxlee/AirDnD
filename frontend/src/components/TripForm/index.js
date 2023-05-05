@@ -9,22 +9,58 @@ const TripForm = ({listing}) => {
     const dispatch = useDispatch()
     const history = useHistory()
     const sessionUser = useSelector(state => state.session.user)
+    
+    const addDays = (num) => {
+        const today = new Date()
+        today.setDate(today.getDate() + num)
+        return today.toISOString().split('T')[0];
+    };
 
     const numToIntStr = (num) => {
         const numToInt = Math.trunc(num)
-        return numToInt.toLocaleString()
+        if(!numToInt) return 'Calculating'
+        if(numToInt > 0){
+            return numToInt.toLocaleString();
+        } else {
+            return '0'
+        }
     }
     
+
+    // const [price, setPrice] = useState(0)
+
+    // useEffect(()=> {
+    //     setPrice(listing?.price.toLocaleString())
+    // }, [dispatch]) 
+
+    
     const price = listing?.price.toLocaleString()
+    
+    const [guest, setGuest] = useState('guest')
     const [numGuests, setNumGuests] = useState(1)
-    const [stringStartDate, setStringStartDate] = useState("2023-05-03")
-    const [stringClosingDate, setStringClosingDate] = useState("2023-05-08")
+    const [stringStartDate, setStringStartDate] = useState('2000-01-01')
+    const [stringClosingDate, setStringClosingDate] = useState('2000-01-01')
     const [startDate, setStartDate] = useState(new Date(stringStartDate))
     const [closingDate, setClosingDate] = useState(new Date(stringClosingDate))
     
-    const calcNumDays = () => {
-        return (closingDate - startDate)/(1000*3600*24)
+    useEffect(()=> {
+        setStringStartDate(addDays(1))
+        setStringClosingDate(addDays(5))
+    }, [dispatch])
+
+    useEffect(()=> {
+        if(numGuests > 1){
+            setGuest('guests');
+        } else {
+            setGuest('guest');
+        }
+    }, [dispatch, numGuests])
+
+    function calcNumDays() {
+        const diffDays = (closingDate - startDate)/(1000*3600*24)
+        return diffDays
     }
+
     const [numDays, setNumDays] = useState(calcNumDays())
     const [nightlyFee, setNightlyFee] = useState(0)
     const [strNightlyFee, setStrNightlyFee] = useState(nightlyFee)
@@ -63,7 +99,7 @@ const TripForm = ({listing}) => {
     useEffect(()=> {
         setTimeout(()=> {
             setNumDays(calcNumDays())
-        }, 1)
+        }, 300)
     }, [dispatch, startDate, closingDate])
 
     useEffect(() => {
@@ -75,11 +111,16 @@ const TripForm = ({listing}) => {
     }, [dispatch, nightlyFee])
 
     useEffect(()=> {
-        setNetTotal(nightlyFee + hospitalityFee)
         setStrNightlyFee(numToIntStr(nightlyFee))
         setStrHospitalityFee(numToIntStr(hospitalityFee))
-        setStrNetTotal(numToIntStr(netTotal))
+        setNetTotal(nightlyFee + hospitalityFee)
     }, [dispatch, nightlyFee, hospitalityFee])
+
+    useEffect(()=> {
+        setTimeout(()=> {
+            setStrNetTotal(numToIntStr(netTotal))
+        }, 0)
+    }, [dispatch, netTotal])
 
     return (
         <div id='trip-form-container'>
@@ -93,9 +134,23 @@ const TripForm = ({listing}) => {
                 <form id='trip-form' onSubmit={handleSubmit}>
                     <div id='trip-form-input-field-box'>
                         <div id='trip-form-date-box'>
+                            <div id='trip-form-date-header'>
+                                <span>CHECK-IN</span>
+                            </div>
                             <input className='trip-form-date-input' type="date" value={stringStartDate} onChange={e=>setStringStartDate(e.target.value)}/>
+                        </div>
+                        <div id='trip-form-date-box'>
+                            <div id='trip-form-date-header'>
+                                <span>CHECKOUT</span>
+                            </div>
                             <input className='trip-form-date-input' type="date" value={stringClosingDate} onChange={e=>setStringClosingDate(e.target.value)}/>
-                            <input id='num-guest-input' type="number" value={numGuests} min='1' max={listing?.maxGuests} onChange={e=>setNumGuests(e.target.value)}/> 
+                        </div>
+                        <div id='trip-form-guest-box'>
+                            <div id='trip-form-guest-header'>
+                                <span>GUESTS</span>
+                            </div>
+                            <input id='num-guest-input' type="number" value={numGuests} min='1' max={listing?.maxGuests} onChange={e=>setNumGuests(e.target.value)}/>
+                            <label id='num-guest-overlay'>{guest}</label> 
                         </div>
                     </div>
                     <div id='trip-form-submit-box'>

@@ -1,14 +1,12 @@
 import { useDispatch } from "react-redux"
-import React, { useEffect } from "react"
+import React from "react"
 import './TripIndexItem.css'
-import { deleteTrip } from "../../store/trip"
 
-const TripIndexItem = ({trip}) => {
+const TripIndexPastItem = ({trip}) => {
     const dispatch = useDispatch()
 
     const handleClick = (e) => {
         e.preventDefault()
-        dispatch(deleteTrip(trip.id))
     }
     
     return (
@@ -20,10 +18,10 @@ const TripIndexItem = ({trip}) => {
                 <p className='trip-info'>{trip.listing.city}</p>
                 <p className='trip-info'>Hosted by {trip.host.firstName}</p>
                 <p className='trip-info'>{trip.startDate}-{trip.closingDate}</p>
-                <button className='trip-info' onClick={handleClick}>Cancel Trip</button>
+                <button className='trip-info' onClick={handleClick}>Write Review</button>
             </div>
         </div>
     )
 }
 
-export default TripIndexItem;
+export default TripIndexPastItem;

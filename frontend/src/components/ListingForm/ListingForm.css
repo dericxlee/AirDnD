@@ -1,6 +1,6 @@
 #listing-form-container {
     position: absolute;
-    top: 10%;
+    top: 5%;
     height: 90%;
     width: 100%;
 }
@@ -13,9 +13,9 @@
 }
 
 #listing-form-header {
-    height: 8%;
+    height: 6%;
     width: 100%;
-    font-size: 24px;
+    font-size: 20px;
     font-weight: bold;
     text-align: center;
 }
@@ -24,7 +24,7 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 80%;
+    height: 95%;
 }
 
 #listing-title-box {
@@ -34,79 +34,135 @@
 }
 
 #listing-title-box p {
-    font-size: 20px;
+    font-size: 16px;
 }
 
 #listing-title-box input {
     height: 70%;
-    width: 30%;
-    margin-left: 1%;
+    width: 60%;
+    margin-left: 2%;
 }
 
 #listing-address-container {
-    margin-top: 1%;
+    margin-top: 2%;
     height: 15%;
-    width: 100%;
-}
-
-#listing-address-container p {
-    font-size: 20px;
-}
-
-#listing-address-box {
-    height: 80%;
     width: 100%;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
 }
 
 #listing-street-box {
-    height: 50%;
+    height: 40%;
     margin-top: 1%;
 }
 
 #listing-street-box input {
-    width: 50%;
+    width: 98.5%;
+    height: 100%;
 }
 
 #listing-region-box {
-    height: 50%;
+    height: 40%;
     display: flex;
     flex-direction: row;
-    margin-top: 0.5%;
+    margin-top: 3%;
 }
 
-#listing-region-box div {
-    width: 30%;;
+#listing-city-box {
+    width: 45%;
+    display: flex;
+    height: 100%;
+}
+
+#listing-city-box input {
+    width: 70%;
+    margin-left: 5%;
+    height: 100%;
+}
+
+#listing-city-box div {
+    margin-top: 5%;
+    font-size: 16px;
+}
+
+#listing-state-box {
+    width: 25%;
+    height: 100%;
+    display: flex;
+}
+
+#listing-state-box div {
+    margin-top: 8%;
+    font-size: 16px;
+}
+
+#listing-state-box input {
+    width: 40%;
+    margin-left: 10%;
+    height: 100%;
+}
+
+#listing-country-box {
+    width: 20;
+}
+
+#listing-country-box input {
+    height: 100%;
 }
 
 #listing-property-box {
-    height: 5%;
-    margin-top: 1%;
+    height: 8%;
+    margin-top: 5%;
+}
+
+#listing-property-box select{
+    height: 60%;
+    margin-left: 5%;
 }
 
 #listing-slider-box {
-    height: 50%;
+    height: 35%;
     display: flex;
     flex-direction: column;
     margin-top: 1%;
 }
 
 .slider-box {
-    height: 100%;
+    height: 15%;
     margin-top: 1%;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
-.slider-box div {
+.slider-left-box {
+    width: 48%;
+    justify-content: space-between;
+    height: 100%;
     display: flex;
     flex-direction: row;
 }
 
-.slider-box div input {
-    margin-left: 1%;
-    margin-right: 1%;
+.slider-left-box div {
+    margin-top: 4%;
+}
+
+.slider-left-box input {
+    height: 70%;
+    width: 25%;
+}
+
+.slider-right-box {
+    width: 48%;
+    justify-content: space-around;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.slider-right-box div {
+    margin-top: 5%;
 }
 
 #listing-form-description-container {
@@ -117,11 +173,22 @@
 }
 
 .form-textarea {
-    height: 80%
+    height: 100%;
+    margin-top: 1%;
+    box-sizing: border-box;
 }
 
+#listing-form-submit-box{
+    margin-top: 2%;
+    text-align: center;
+    height: 6%;
+    width: 100%;
+}
 
-#listing-form-submission-btn {
-    margin-top: 1%;
+#listing-form-btn {
+    height: 100%;
+    width: 30%;
+    background-color: green;
+    color: white;
 }
 
