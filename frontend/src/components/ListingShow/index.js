@@ -30,14 +30,14 @@ const ListingShow = () => {
             <div id='show-page-location-box'><p id='show-page-location'>{listing?.city}, California, United States</p></div>
             <div id='photo-span-container'>
                 <div id='photo-container'>
-                    <div id='photo-divider-container'>
+                    <div id='main-photo-divider-container'>
                         <img id='big-photo' src={listing?.photoUrls[0]} alt="sample photo" />
                     </div>
                     <div id='photo-divider-container'>
-                        <img id='small-photo' src="https://cdn.dribbble.com/users/226242/screenshots/18014512/airbnb_icon.png" alt="sample" />
-                        <img id='small-photo' src="https://cdn.dribbble.com/users/226242/screenshots/18014512/airbnb_icon.png" alt="sample" />
-                        <img id='small-photo' src="https://cdn.dribbble.com/users/226242/screenshots/18014512/airbnb_icon.png" alt="sample" />
-                        <img id='small-photo' src="https://cdn.dribbble.com/users/226242/screenshots/18014512/airbnb_icon.png" alt="sample" />
+                        <img id='top-small-photo' src={listing?.photoUrls[1]} alt="sample" />
+                        <img id='top-small-photo' src={listing?.photoUrls[2]} alt="sample" />
+                        <img id='small-photo' src={listing?.photoUrls[3]} alt="sample" />
+                        <img id='small-photo' src={listing?.photoUrls[4]} alt="sample" />
                     </div>
                 </div>
             </div>
