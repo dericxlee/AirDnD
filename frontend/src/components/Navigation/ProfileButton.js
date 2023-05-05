@@ -9,7 +9,6 @@ import DemoButton from "../DemoButton";
 import './ProfileButton.css'
 
 function ProfileButton() {
-  const dispatch = useDispatch();
   const sessionUser = useSelector(state => state.session.user);
   const [showMenu, setShowMenu] = useState(false);
   
@@ -51,11 +50,6 @@ function ProfileButton() {
   
     return () => document.removeEventListener("click", closeMenu);
   }, [showMenu, sessionUser]);
-
-  // const logout = (e) => {
-  //   e.preventDefault();
-  //   dispatch(sessionActions.logout());
-  // };
 
   return (
     <div id='menu-btn-box'>

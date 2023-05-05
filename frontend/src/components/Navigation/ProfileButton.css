@@ -11,10 +11,7 @@
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     left: 95%;
-    border-bottom-left-radius: 30%;
-    border-bottom-right-radius: 30%;
-    border-top-left-radius: 30%;
-    border-top-right-radius: 30%;
+    border-radius: 25% / 50%;
 }
 
 #menu-btn-inner-box {
@@ -45,7 +42,7 @@
 }
 
 .nav-avatar {
-    height: 100%;
+    height: 90%;
     width: 100%;
     display: inline-block;
     overflow: hidden;

@@ -18,7 +18,7 @@ const TripIndexPastItem = ({trip}) => {
                 <p className='trip-info'>{trip.listing.city}</p>
                 <p className='trip-info'>Hosted by {trip.host.firstName}</p>
                 <p className='trip-info'>{trip.startDate}-{trip.closingDate}</p>
-                <button className='trip-info' onClick={handleClick}>Write Review</button>
+                <button className='trip-info' id='create-review-btn' onClick={handleClick}>Write Review</button>
             </div>
         </div>
     )

@@ -24,7 +24,7 @@ require "open-uri"
 
     puts 'reset id'
 
-    admin = User.create!(
+    admin = User.new(
         email: 'admin@test.com',
         password: 'test',
         first_name: 'admin',
@@ -32,7 +32,7 @@ require "open-uri"
         birthdate: '1/1/2000'
     )
 
-    curry = User.create!(
+    curry = User.new(
         email: 'chefcurry@test.com',
         password: 'test',
         first_name: 'Steph',
@@ -42,7 +42,7 @@ require "open-uri"
 
     curry.photo.attach(io: URI.open('https://airdnb-dev.s3.us-west-1.amazonaws.com/curry.png'), filename: 'curry.png')
 
-    james = User.create!(
+    james = User.new(
         email: 'kingjames@test.com',
         password: 'test',
         first_name: 'Lebron',
@@ -52,7 +52,7 @@ require "open-uri"
 
     james.photo.attach(io: URI.open('https://airdnb-dev.s3.us-west-1.amazonaws.com/lebron.jpeg'), filename: 'lebron.jpeg')
 
-    davis = User.create!(
+    davis = User.new(
         email: 'thebrow@test.com',
         password: 'test',
         first_name: 'Anthony',
@@ -62,7 +62,7 @@ require "open-uri"
 
     davis.photo.attach(io: URI.open('https://airdnb-dev.s3.us-west-1.amazonaws.com/davis.png'), filename: 'davis.png')
 
-    harden = User.create!(
+    harden = User.new(
         email: 'thebeard@test.com',
         password: 'test',
         first_name: 'James',
@@ -72,7 +72,7 @@ require "open-uri"
 
     harden.photo.attach(io: URI.open('https://airdnb-dev.s3.us-west-1.amazonaws.com/beard.png'), filename: 'beard.png')
 
-    durant = User.create!(
+    durant = User.new(
         email: 'slimreaper@test.com',
         password: 'test',
         first_name: 'Kevin',
@@ -81,6 +81,13 @@ require "open-uri"
     )
 
     durant.photo.attach(io: URI.open('https://airdnb-dev.s3.us-west-1.amazonaws.com/kd35.png'), filename: 'kd35.png')
+
+    admin.save!
+    curry.save!
+    james.save!
+    davis.save!
+    harden.save!
+    durant.save!
 
     puts 'Users done'
     

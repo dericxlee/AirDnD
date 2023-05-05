@@ -20,7 +20,7 @@ const TripIndexItem = ({trip}) => {
                 <p className='trip-info'>{trip.listing.city}</p>
                 <p className='trip-info'>Hosted by {trip.host.firstName}</p>
                 <p className='trip-info'>{trip.startDate}-{trip.closingDate}</p>
-                <button className='trip-info' onClick={handleClick}>Cancel Trip</button>
+                <button className='trip-info' id='trip-cancel-btn' onClick={handleClick}>Cancel Trip</button>
             </div>
         </div>
     )

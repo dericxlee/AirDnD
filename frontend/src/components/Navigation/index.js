@@ -1,11 +1,9 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton.js';
-import LoginFormModal from '../LoginModal/index.js';
-import SignupFormModal from '../SignupModal/index.js';
 import './Navigation.css';
 import { Redirect } from 'react-router-dom/cjs/react-router-dom.min.js';
+
 
 function Navigation() {
   // const sessionUser = useSelector(state => state.session.user);
@@ -33,7 +31,7 @@ function Navigation() {
         </div>
       </div>
       <div id='utility-box'>
-        <NavLink to='/listings/new'>
+        <NavLink to='/'>
           <div id='creation-btn-box'>
               <button id='creation-btn'>Airdnd your home</button>
           </div>

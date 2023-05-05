@@ -18,7 +18,7 @@ const TripForm = ({listing}) => {
 
     const numToIntStr = (num) => {
         const numToInt = Math.trunc(num)
-        if(!numToInt) return 'Calculating'
+        if(numToInt === NaN) return 'Calculating'
         if(numToInt > 0){
             return numToInt.toLocaleString();
         } else {
