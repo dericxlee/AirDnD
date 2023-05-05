@@ -18,6 +18,8 @@ require "action_cable/engine"
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
+config.railties_order = [:all, :main_app]
+
 # module Airdnd
 #   class Application < Rails::Application
 #     # Initialize configuration defaults for originally generated Rails version.
