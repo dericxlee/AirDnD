@@ -25,7 +25,7 @@ function SignupForm() {
     e.preventDefault();
     
     setErrors([]);
-    if(checked) {
+    // if(checked) {
       return dispatch(sessionActions.signup({ email, password, firstName, lastName, birthdate }))
         .catch(async (res) => {
         let data;
@@ -38,7 +38,7 @@ function SignupForm() {
         else if (data) setErrors([data]);
         else setErrors([res.statusText]);
       });
-    } 
+    // } 
   };
 
   return (

@@ -24,6 +24,12 @@ function Navigation() {
             </div>
           </button>
         </NavLink>
+        <a id='github-box' href="https://github.com/dericxlee">
+          <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="github" />
+        </a>
+        <a id='linkedin-box' href="">
+          <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="linkedin" />
+        </a>
       </div>
       <div id='search-bar-span-box'>
         <div id='search-bar-box'>

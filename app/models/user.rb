@@ -30,7 +30,7 @@ class User < ApplicationRecord
     validate :validate_age
 
     before_validation :ensure_session_token
-    before_validation :generate_default_pic
+    # before_validation :generate_default_pic
 
     has_many :listings,
     foreign_key: :host_id,
@@ -76,10 +76,10 @@ class User < ApplicationRecord
         end
     end
 
-    def generate_default_pic
-        unless self.photo.attached?
-            file = URI.open("https://airdnb-dev.s3.us-west-1.amazonaws.com/default.jpeg");
-            self.photo.attach(io: file, filename: "default.jpeg")
-        end
-    end
+    # def generate_default_pic
+    #     unless self.photo.attached?
+    #         file = URI.open("https://airdnb-dev.s3.us-west-1.amazonaws.com/default.jpeg");
+    #         self.photo.attach(io: file, filename: "default.jpeg")
+    #     end
+    # end
 end

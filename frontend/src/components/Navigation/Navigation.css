@@ -36,6 +36,28 @@
     width: 100%;
 }
 
+#github-box {
+    margin-top: 2%;
+    height: 80%;
+    width: 20%;
+}
+
+#github-box img {
+    height: 100%;
+    width: 100%;
+}
+
+#linkedin-box {
+    margin-top: 2%;
+    height: 80%;
+    width: 20%;
+}
+
+#linkedin-box img {
+    height: 100%;
+    width: 100%;
+}
+
 #search-bar-span-box {
     height: 100%;
     width: 100%;
