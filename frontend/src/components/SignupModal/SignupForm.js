@@ -71,7 +71,7 @@ function SignupForm() {
               type="text" 
               value={birthdate}
               onChange={(e) => setBirthdate(e.target.value)}
-              placeholder="Birthdate (mm/dd/yyyy)"
+              placeholder="Birthdate (dd/mm/yyyy)"
               required
             />
           </div>
