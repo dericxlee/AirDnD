@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react"
 import { createListing, fetchListing, updateListing, getListing } from "../../store/listing"
 import './ListingForm.css'
 import { useParams } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 const ListingForm = ({listing}) => {
     const dispatch = useDispatch()
@@ -11,6 +12,7 @@ const ListingForm = ({listing}) => {
     const formType = listing ? 'Update' : 'Create' 
     // let listing = useSelector(getListing(listingId));
     const hostId = sessionUser.id
+    const history = useHistory()
 
     useEffect(()=> {
         if(formType === 'Update'){
@@ -72,8 +74,10 @@ const ListingForm = ({listing}) => {
         listing = {...listing, title, propertyType, address, city, price, maxGuests, numBeds, numBaths, numBedrooms, description, hostId}
         if(formType === 'Create'){
             dispatch(createListing(listing))
+            history.push('/')
         } else {
             dispatch(updateListing(listing))
+            history.push('/')
         }
     }
 
