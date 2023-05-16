@@ -12,9 +12,6 @@ const ListingForm = ({listing}) => {
     // let listing = useSelector(getListing(listingId));
     const hostId = sessionUser.id
 
-    // console.log(listing.id, 'form')
-    console.log(formType, 'formtype')
-
     useEffect(()=> {
         if(formType === 'Update'){
             // console.log('dispatch')
@@ -77,19 +74,17 @@ const ListingForm = ({listing}) => {
             dispatch(createListing(listing))
         } else {
             dispatch(updateListing(listing))
-            console.log('updating')
         }
     }
 
     const handleSelect = e => {
         e.preventDefault();
         setPropertyType(e.target.value)
-        console.log(propertyType)
     }
 
-    useEffect(()=> {
-        console.log(price)
-    }, [propertyType, price])
+    // useEffect(()=> {
+    //     console.log(price)
+    // }, [propertyType, price])
 
     // console.log(propertyType)
 

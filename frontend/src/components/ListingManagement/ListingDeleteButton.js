@@ -7,7 +7,6 @@ const ListingDeleteButton = ({listingId}) => {
     
     const handleClick = e => {
         e.preventDefault()
-        console.log(listingId)
         dispatch(deleteListing(listingId))
     }
 
