@@ -8,7 +8,8 @@ const ReviewForm = ({trip, review}) => {
     const sessionUser = useSelector(state => state.session.user);
     const [body, setBody] = useState('');
     const [rating, setRating] = useState(0);
-
+    
+    
     if(!review) {
         review = {
             userId: sessionUser?.id,
@@ -20,7 +21,7 @@ const ReviewForm = ({trip, review}) => {
     };
 
     useEffect(()=> {
-        if(review) {
+        if(review.id) {
             setBody(review.body)
             setRating(review.rating)
         }
@@ -33,6 +34,8 @@ const ReviewForm = ({trip, review}) => {
 
     const handleUpdate = (e) => {
         e.preventDefault()
+        review = {...review, body, rating}
+        // console.log(review)
         dispatch(updateReview(review))
     };
 
@@ -55,7 +58,7 @@ const ReviewForm = ({trip, review}) => {
                 <form className="review-form-input-box">
                     <input className='review-form-input-body' type="textarea" value={body} onChange={e=>setBody(e.target.value)}/>
                     <input type="text" value={rating} onChange={e=>setRating(e.target.value)}/>
-                    { !review ? (
+                    { !review.id ? (
                         <button onClick={handleCreate}>Create</button>
                     ) : (
                         <>

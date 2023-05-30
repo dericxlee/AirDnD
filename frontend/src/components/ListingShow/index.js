@@ -5,24 +5,30 @@ import { useEffect } from "react";
 import './ListingShow.css'
 import TripForm from "../TripForm";
 import ListingShowReviews from "../ListingShowReview";
+import { useState } from "react";
 
 
 const ListingShow = () => {
     const {listingId} = useParams();
     const dispatch = useDispatch();
     const listing = useSelector(getListing(listingId));
+    const [avgRating, setAvgRating] = useState(0);
 
     useEffect(()=> {
         dispatch(fetchListing(listingId))
     }, [dispatch, listingId])
 
-    // console.log(listing?.photoUrls[0])
-    // useEffect(() => {
-    //     console.log(listing)
-    // }, [listing])
-
     const reviews = listing?.reviews
+    const totalSum = reviews?.reduce((sum, review) => sum + review.rating, 0)
+    
     const length = reviews?.length
+
+    
+    const averageRating = (totalSum/length).toFixed(2)
+    
+    useEffect(()=> {
+        if(reviews) setAvgRating(averageRating)
+    }, [dispatch])
 
     return (
         <div id='show-page-container'>
@@ -61,7 +67,7 @@ const ListingShow = () => {
                     </div>
                     <div id='reviews-index-mega-container'>
                         <div id='reviews-index-header'>
-                            <li>4.87</li>
+                            <li>{avgRating}</li>
                             <li><span>{length} reviews</span></li>
                         </div>
                         <div id='reviews-index-container'>
