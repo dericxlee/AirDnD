@@ -1,14 +1,10 @@
 class Api::TripsController < ApplicationController
     # wrap_parameters :trip, include: %i[user_id listing_id start_date closing_date]
     wrap_parameters include: Trip.attribute_names + ['userId', 'listingId', 'startDate', 'closingDate', 'numGuests']
+    before_action :require_logged_in
 
     def create
         @trip = Trip.new(trip_params)
-        # @trip.user_id = params[:user_id]
-        # @trip.listing_id = params[:listing_id]
-        # @trip.start_date = params[:start_date]
-        # @trip.closing_date = params[:closing_date]
-
 
         if @trip.save!
             render :show
@@ -18,7 +14,8 @@ class Api::TripsController < ApplicationController
     end
 
     def index
-        @trips = Trip.all
+        @trips = Trip.where(user_id: current_user.id)
+
         render :index
     end
 

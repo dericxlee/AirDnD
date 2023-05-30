@@ -1,10 +1,9 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getListings , fetchListings} from "../../store/listing";
+import { getListings , manageListings} from "../../store/listing";
 import { useEffect } from "react";
 import './ListingManagement.css'
 import ListingDeleteButton from "./ListingDeleteButton";
-import { NavLink } from "react-router-dom";
 import NewListingButton from "../ListingFormModal";
 import ListingEditButton from "./ListingEditButton";
 
@@ -12,10 +11,9 @@ const ListingManagement = () => {
     const dispatch = useDispatch()
     const sessionUser = useSelector(state => state.session.user)
     const listings = useSelector(getListings)
-    const filterListings = Object.values(listings).filter(l => l.hostId === sessionUser.id)
 
     useEffect(()=> {
-        dispatch(fetchListings())
+        dispatch(manageListings())
     }, [dispatch])
 
     return (
@@ -35,7 +33,7 @@ const ListingManagement = () => {
                         <th>Delete</th>
                     </tr>
                     {
-                        filterListings.map(listing => 
+                        listings.map(listing => 
                             <tr id='listing-table-data' listing={listing} key={listing.id}>
                                 <th>{listing.id}</th>
                                 <th>{listing.title}</th>

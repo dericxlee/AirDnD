@@ -4,7 +4,6 @@ import { getTrips, fetchTrips } from "../../store/trip"
 import { useEffect } from "react"
 import TripIndexItem from "./TripIndexItem"
 import './TripIndex.css'
-import TripIndexPastItem from "./TripIndexPastItem"
 import { Link } from "react-router-dom"
 
 const TripIndex = () => {
@@ -14,8 +13,8 @@ const TripIndex = () => {
 
     const today = new Date().toJSON().slice(0, 10);
 
-    const futureTrips = trips.filter(trip => trip.userId === sessionUser.id && trip.closingDate > today)
-    const pastTrips = trips.filter(trip => trip.userId === sessionUser.id && trip.closingDate < today)
+    const futureTrips = trips.filter(trip => trip.closingDate > today)
+    const pastTrips = trips.filter(trip => trip.closingDate < today)
 
     useEffect(()=>{
         dispatch(fetchTrips())

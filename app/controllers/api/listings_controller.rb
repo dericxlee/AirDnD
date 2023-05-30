@@ -36,6 +36,12 @@ class Api::ListingsController < ApplicationController
         render :index
     end
 
+    def manage
+        @listings = Listing.where(host_id: current_user.id)
+
+        render :manage
+    end
+
     def show
         @listing = Listing.find(params[:id])
         render :show

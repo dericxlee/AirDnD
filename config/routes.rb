@@ -6,11 +6,14 @@ Rails.application.routes.draw do
   # post 'api/test', to: 'application#test'
 
   namespace :api, defaults: { format: :json } do
+    get '/listings/manage', to: 'listings#manage'
+
     resources :reviews
-    resources :users, only: :create
+    resources :users, only: [:create]
     resources :trips
     resources :listings
     resource :session, only: [:show, :create, :destroy]
+
   end
 
   get '*path', to: "static_pages#frontend_index"

@@ -41,8 +41,17 @@ export const fetchListings = (city, guests) => async (dispatch) => {
     if(res.ok) {
         const listings = await res.json()
         dispatch(receiveListings(listings))
-    }
-}
+    };
+};
+
+export const manageListings = () => async (dispatch) => {
+    const res = await csrfFetch (`/api/listings/manage`);
+
+    if(res.ok){
+        const listings = await res.json();
+        dispatch(receiveListings(listings))
+    };
+};
 
 export const fetchListing = listingId => async (dispatch) => {
     const res = await csrfFetch (`/api/listings/${listingId}`);
