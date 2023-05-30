@@ -5,8 +5,6 @@
     height: 10%;
     width: 100%;
     box-sizing: border-box;
-    /* border-bottom-style: solid;
-    border-bottom: black; */
     border-block: 1px solid black;
     z-index: 99;
 }
@@ -64,14 +62,13 @@
 }
 
 #search-bar-box {
-    height: 40%;
-    width: 15%;
+    height: 60%;
+    width: 17%;
     top: 50%;
     position: absolute;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     left: 50%;
-    z-index: 99;
 }
 
 #search-bar {

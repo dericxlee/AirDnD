@@ -1,4 +1,60 @@
 .search-bar {
     display: flex;
     flex-direction: row;
+    width: 100%;
+    height: 100%;
+    border: solid;
+    border-color: black 1px;
+    border-radius: 10% / 45%;
+    z-index: 100;
 }
+
+.search-city {
+    width: 45%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    height: 90%;
+}
+
+.search-city input {
+    height: 90%;
+    width: 90%;
+    margin-left: 10%;
+    border-bottom: none;
+    border-left: none;
+    border-top: none;
+    text-align: center;
+    font-size: 14px;
+}
+
+.search-guests {
+    width: 45%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    height: 90%;
+    display: flex;
+    flex-direction: row;
+    border: none;
+}
+
+.search-guests input {
+    width: 100%;
+    height: 90%;
+    border: none;
+    text-align: left;
+    font-size: 14px;
+}
+
+.search-guests button {
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 30%;
+    height: 70%;
+    background-color: red;
+    border-radius: 50%;
+}
+

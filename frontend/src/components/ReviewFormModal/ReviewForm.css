@@ -4,7 +4,7 @@
 }
 
 .review-form-info-box {
-    margin-top: 10%;
+    margin-top: 5%;
     height: 80%;
     margin-left: auto;
     margin-right: auto;
@@ -13,11 +13,31 @@
     flex-direction: column;
 }
 
+.review-form-host-box {
+    display: flex;
+    flex-direction: row;
+}
+
+.review-form-host-box p:last-child {
+    margin-left: 2%;
+    margin-top: .8%;
+}
+
+.review-form-title {
+    font-size: 20px;
+}
+
 .review-form-img {
-    width: 80%;
+    margin-top: 1%;
+    width: 100%;
     margin-left: auto;
     margin-right: auto;
-    height: 80%;
+    height: 100%;
+}
+
+.review-form-stay-date {
+    margin-top: 2%;
+    font-size: 12px;
 }
 
 .review-form-input-container {
@@ -33,6 +53,49 @@
     flex-direction: column;
 }
 
+.review-form-input-header {
+    font-size: 18px;
+    font-weight: bold;
+}
+
 .review-form-input-body {
+    margin-top: 2%;
+    height: 30%;
+    text-align: left;
+    vertical-align: top;
+}
+
+.review-form-rating-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2%;
+}
+
+.review-form-button-box {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    margin-top: 5%;
+    height: 25%;
+}
+
+.review-form-button-box button {
     height: 50%;
+    width: 40%;
+    font-size: 16px;
+    font-weight: bolder;
+    border-radius: 7% / 21%;
+}
+
+.review-form-create-btn {
+    background-color: yellowgreen;
+}
+
+.review-form-update-btn {
+    background-color: yellowgreen;
+}
+
+.review-form-delete-btn {
+    background-color: red;
 }

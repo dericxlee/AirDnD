@@ -16,11 +16,17 @@ const SearchBar = () => {
     };
 
     return (
-        <form className="search-bar">
-            <input type="text" value={city} onChange={e=>setCity(e.target.value)} />
-            <input type="text" value={guests} onChange={e=>setGuests(e.target.value)}/>
-            <button onClick={handleSearch}>Search</button>
+
+        <form className='search-bar'>
+            <div className='search-city'>
+                <input type="text" value={city} onChange={e=>setCity(e.target.value)} placeholder="Anywhere" />
+            </div>
+            <div className='search-guests'>
+                <input type="text" value={guests} onChange={e=>setGuests(e.target.value)} placeholder="Add guests"/>
+                <button onClick={handleSearch}></button>
+            </div>
         </form>
+        
     )
 };
 
