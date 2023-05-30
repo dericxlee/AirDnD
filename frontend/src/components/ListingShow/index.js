@@ -12,7 +12,6 @@ const ListingShow = () => {
     const {listingId} = useParams();
     const dispatch = useDispatch();
     const listing = useSelector(getListing(listingId));
-    const [avgRating, setAvgRating] = useState(0);
 
     useEffect(()=> {
         dispatch(fetchListing(listingId))
@@ -23,12 +22,7 @@ const ListingShow = () => {
     
     const length = reviews?.length
 
-    
     const averageRating = (totalSum/length).toFixed(2)
-    
-    useEffect(()=> {
-        if(reviews) setAvgRating(averageRating)
-    }, [dispatch])
 
     return (
         <div id='show-page-container'>
@@ -67,7 +61,7 @@ const ListingShow = () => {
                     </div>
                     <div id='reviews-index-mega-container'>
                         <div id='reviews-index-header'>
-                            <li>{avgRating}</li>
+                            <li>{ averageRating }</li>
                             <li><span>{length} reviews</span></li>
                         </div>
                         <div id='reviews-index-container'>
