@@ -24,5 +24,3 @@ const TripIndexPastItem = ({trip}) => {
         </div>
     )
 }
-
-export default TripIndexPastItem;

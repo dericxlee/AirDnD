@@ -36,6 +36,7 @@ const TripIndex = () => {
                             futureTrips.map(trip => <TripIndexItem
                                 trip={trip}
                                 key={trip.id}
+                                today={today}
                             />)
                         }
                     </div>
@@ -46,9 +47,10 @@ const TripIndex = () => {
                     </div>
                     <div id='past-trips-info-box-container'>
                         {
-                            pastTrips.map(trip => <TripIndexPastItem
+                            pastTrips.map(trip => <TripIndexItem
                                 trip={trip}
                                 key={trip.id}
+                                today={today}
                             />)
                         }
                     </div>
