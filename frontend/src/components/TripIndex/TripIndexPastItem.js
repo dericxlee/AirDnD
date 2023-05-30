@@ -1,9 +1,10 @@
 import { useDispatch } from "react-redux"
 import React from "react"
 import './TripIndexItem.css'
+import ReviewFormModal from "../ReviewFormModal"
 
 const TripIndexPastItem = ({trip}) => {
-    const dispatch = useDispatch()
+    const dispatch = useDispatch();
 
     const handleClick = (e) => {
         e.preventDefault()
@@ -18,7 +19,7 @@ const TripIndexPastItem = ({trip}) => {
                 <p className='trip-info'>{trip.listing.city}</p>
                 <p className='trip-info'>Hosted by {trip.host.firstName}</p>
                 <p className='trip-info'>{trip.startDate}-{trip.closingDate}</p>
-                <button className='trip-info' id='create-review-btn' onClick={handleClick}>Write Review</button>
+                <ReviewFormModal trip={trip}/>
             </div>
         </div>
     )

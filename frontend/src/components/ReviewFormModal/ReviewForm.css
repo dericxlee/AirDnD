@@ -1,0 +1,38 @@
+.review-form-info-container {
+    width: 100%;
+    height: 50%;
+}
+
+.review-form-info-box {
+    margin-top: 10%;
+    height: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+}
+
+.review-form-img {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    height: 80%;
+}
+
+.review-form-input-container {
+    width: 100%;
+    height: 50%;
+}
+
+.review-form-input-box {
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+}
+
+.review-form-input-body {
+    height: 50%;
+}

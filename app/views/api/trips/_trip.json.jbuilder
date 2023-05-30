@@ -16,4 +16,6 @@ json.listing do
     json.city trip.listing.city
     json.price trip.listing.price
     json.photoUrls trip.listing.photos.map {|file| file.url}
+    json.title trip.listing.title
+    json.id trip.listing.id
 end

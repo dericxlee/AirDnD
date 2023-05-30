@@ -48,13 +48,14 @@ export const fetchReview = reviewId => async (dispatch) => {
 }
 
 export const createReview = review => async(dispatch) => {
-    const {userId, listingId, body} = review
+    const {userId, listingId, body, rating} = review
     const res = await csrfFetch (`/api/reviews/`, {
         method: 'POST',
         body: JSON.stringify({
             userId,
             listingId,
-            body
+            body,
+            rating
         })
     })
 
