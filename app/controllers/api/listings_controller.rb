@@ -19,6 +19,20 @@ class Api::ListingsController < ApplicationController
 
     def index
         @listings = Listing.all
+
+        if params[:city].present?
+            @listings = @listings.where(city: params[:city])
+        end
+
+        if params[:guests].present?
+            guests = params[:guests].to_i
+            @listings = @listings.where("max_guests >= ?", guests)
+        end
+
+        if current_user
+            @listings = @listings.where.not(host_id: current_user.id )
+        end
+
         render :index
     end
 

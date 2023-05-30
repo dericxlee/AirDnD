@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import ProfileButton from './ProfileButton.js';
 import './Navigation.css';
 import { Redirect } from 'react-router-dom/cjs/react-router-dom.min.js';
-
+import SearchBar from '../SearchBar/index.js';
 
 function Navigation() {
   // const sessionUser = useSelector(state => state.session.user);
@@ -33,7 +33,7 @@ function Navigation() {
       </div>
       <div id='search-bar-span-box'>
         <div id='search-bar-box'>
-          <input id='search-bar' type="text" placeholder='Start your search' />
+          <SearchBar/>
         </div>
       </div>
       <div id='utility-box'>

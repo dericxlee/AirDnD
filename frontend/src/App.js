@@ -20,6 +20,7 @@ function App() {
         <Route exact path='/trips' component={TripIndex}/>
         <Route exact path ='/client' component={ListingManagement}/>
         <Route exact path='/' component={ListingIndex}/>
+        <Route path ='/search' component={ListingIndex}/>
         <Route path='/listings/:listingId/' component={ListingShow}/>
       </Switch>
     </>

@@ -31,8 +31,12 @@ export const getListing = (listingId) => state => {
     return state?.listings ? state.listings[listingId] : null;
 };
 
-export const fetchListings = () => async (dispatch) => {
-    const res = await csrfFetch (`/api/listings/`)
+export const fetchListings = (city, guests) => async (dispatch) => {
+    const params = new URLSearchParams()
+    if(city) params.append('city', city)
+    if(guests) params.append('guests', guests)
+
+    const res = await csrfFetch (`/api/listings/?${params.toString()}`);
 
     if(res.ok) {
         const listings = await res.json()
