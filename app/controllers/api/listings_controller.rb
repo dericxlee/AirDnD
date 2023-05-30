@@ -21,7 +21,8 @@ class Api::ListingsController < ApplicationController
         @listings = Listing.all
 
         if params[:city].present?
-            @listings = @listings.where(city: params[:city])
+            # @listings = @listings.where(city: params[:city])
+            @listings = @listings.where('LOWER(city) LIKE ?', "%#{params[:city].downcase}%")
         end
 
         if params[:guests].present?
