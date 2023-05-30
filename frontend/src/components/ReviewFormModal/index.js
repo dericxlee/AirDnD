@@ -1,9 +1,14 @@
-import React, {useState} from 'react';
+import React, { useState, useEffect} from 'react';
 import { Modal } from '../../context/Modal';
 import ReviewForm from './ReviewForm';
 
 const ReviewFormModal = ({trip}) => {
     const [showModal, setShowModal] = useState(false);
+    const [button, setButton] = useState('Write a Review')
+
+    useEffect(()=> {
+        if(trip.review) setButton('Edit your Review')
+    }, [trip])
 
     const handleOpen = (e) => {
         e.preventDefault();
@@ -17,10 +22,10 @@ const ReviewFormModal = ({trip}) => {
 
     return (
         <>
-            <button className='trip-info' id='create-review-btn' onClick={handleOpen}>Write a Review</button>
+            <button className='trip-info' id='create-review-btn' onClick={handleOpen}>{button}</button>
             {showModal && (
                 <Modal onClose={handleClose}>
-                    <ReviewForm trip={trip}/>
+                    <ReviewForm trip={trip} review={trip.review}/>
                 </Modal>
             )}
         </>

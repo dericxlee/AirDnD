@@ -19,3 +19,13 @@ json.listing do
     json.title trip.listing.title
     json.id trip.listing.id
 end
+
+if trip.review.nil?
+    json.review nil
+else
+    json.review do
+        json.id trip.review.id
+        json.body trip.review.body
+        json.rating trip.review.rating
+    end
+end

@@ -32,6 +32,10 @@ class Trip < ApplicationRecord
     through: :listing,
     source: :host
 
+    has_one :review,
+    foreign_key: :trip_id,
+    class_name: :Review
+
     has_one_attached :photo
 
     def period

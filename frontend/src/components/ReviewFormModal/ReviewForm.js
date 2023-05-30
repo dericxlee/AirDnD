@@ -1,25 +1,45 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { createReview } from "../../store/review";
+import { createReview, updateReview, deleteReview } from "../../store/review";
 import './ReviewForm.css'
 
-const ReviewForm = ({trip}) => {
+const ReviewForm = ({trip, review}) => {
     const dispatch = useDispatch();
     const sessionUser = useSelector(state => state.session.user);
     const [body, setBody] = useState('');
     const [rating, setRating] = useState(0);
 
-    const review = {
-        userId: sessionUser?.id,
-        listingId: trip.listing?.id,
-        body: body,
-        rating: rating
+    if(!review) {
+        review = {
+            userId: sessionUser?.id,
+            listingId: trip.listing?.id,
+            tripId: trip.id,
+            body: body,
+            rating: rating
+        };
     };
+
+    useEffect(()=> {
+        if(review) {
+            setBody(review.body)
+            setRating(review.rating)
+        }
+    }, [dispatch])
     
-    const handleSubmit = (e) => {
+    const handleCreate = (e) => {
         e.preventDefault()
         dispatch(createReview(review))
     };
+
+    const handleUpdate = (e) => {
+        e.preventDefault()
+        dispatch(updateReview(review))
+    };
+
+    const handleDelete = (e) => {
+        e.preventDefault()
+        dispatch(deleteReview(review.id))
+    }
 
     return (
         <>
@@ -35,7 +55,14 @@ const ReviewForm = ({trip}) => {
                 <form className="review-form-input-box">
                     <input className='review-form-input-body' type="textarea" value={body} onChange={e=>setBody(e.target.value)}/>
                     <input type="text" value={rating} onChange={e=>setRating(e.target.value)}/>
-                    <button onClick={handleSubmit}>Submit</button>
+                    { !review ? (
+                        <button onClick={handleCreate}>Create</button>
+                    ) : (
+                        <>
+                            <button onClick={handleUpdate}>Edit</button>
+                            <button onClick={handleDelete}>Delete</button>
+                        </>
+                    )}
                 </form>
             </div>
             

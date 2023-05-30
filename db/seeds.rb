@@ -477,8 +477,6 @@ require "open-uri"
         num_guests: 2,
     )
 
-    puts 'first trips done'
-
     Trip.create!(
         user_id: 1,
         listing_id: 4,
@@ -495,17 +493,45 @@ require "open-uri"
         num_guests: 2,
     )
 
+    Trip.create!(
+        user_id: 5,
+        listing_id: 1,
+        start_date: '1/1/2021',
+        closing_date: '7/1/2021',
+        num_guests: 2
+    )
+
+    Trip.create!(
+        user_id: 3,
+        listing_id: 1,
+        start_date: '1/1/2020',
+        closing_date: '7/1/2020',
+        num_guests: 2
+    )
+
+    Trip.create!(
+        user_id: 4,
+        listing_id: 1,
+        start_date: '1/1/2022',
+        closing_date: '7/1/2022',
+        num_guests: 2
+    )
+
     puts 'all trips done'
 
     Review.create!(
         user_id: 5,
         listing_id: 1,
+        trip_id: 5,
+        rating: 5,
         body: 'beautiful house. had a great time staying there for the whole month on new year occasion with the family'
     )
 
     Review.create!(
         user_id: 3,
         listing_id: 1,
+        trip_id: 6,
+        rating: 4,
         body: 'Location, location, location. This mansion is all about the proximity to downtown Beverly Hills plus large salt water pool and spa. 
             We enjoyed the beautiful rooms and comfortable beds with the softest sheets. 
             Also noteworthy, the living room is very spacious and comfortable with a large 4k TV. 
@@ -516,6 +542,8 @@ require "open-uri"
     Review.create!(
         user_id: 4,
         listing_id: 1,
+        trip_id: 7,
+        rating: 1,
         body: 'Perfect location in stunning Beverly Hills. 
             The house was impeccably cleaned and there was plenty of room for all the guests. 
             I left a bag there by accident on check-out day, and the property manager was nice enough to ship it to me. 
