@@ -4,7 +4,7 @@ import { createReview, updateReview, deleteReview } from "../../store/review";
 import './ReviewForm.css'
 import { Rating } from 'react-simple-star-rating';
 
-const ReviewForm = ({trip, review}) => {
+const ReviewForm = ({trip, review, handleClose}) => {
     const dispatch = useDispatch();
     const sessionUser = useSelector(state => state.session.user);
     const [body, setBody] = useState('');
@@ -43,17 +43,20 @@ const ReviewForm = ({trip, review}) => {
     const handleCreate = (e) => {
         e.preventDefault()
         dispatch(createReview(review))
+        handleClose()
     };
 
     const handleUpdate = (e) => {
         e.preventDefault()
         review = {...review, body, rating}
         dispatch(updateReview(review))
+        handleClose()
     };
 
     const handleDelete = (e) => {
         e.preventDefault()
         dispatch(deleteReview(review.id))
+        handleClose()
     };
 
     const handleRating = (rate) => {

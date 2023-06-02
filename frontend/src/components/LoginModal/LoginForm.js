@@ -30,7 +30,10 @@ function LoginForm() {
 
   return (
     <div id='login-form'>
-      <div id='modal-message'><p id='login-msg'>Log in</p></div>
+      <div id='modal-message'>
+        <p id='login-msg'>Log in</p>
+        <hr />
+      </div>
       <div id='modal-form'>
         <form onSubmit={handleSubmit}>
           <ul id='errors'>

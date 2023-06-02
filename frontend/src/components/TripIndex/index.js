@@ -56,7 +56,7 @@ const TripIndex = () => {
                 </div>
             </div>
             <div id='trips-index-footer-box'>
-                <p>Can't find your reservation here? <Link id='help-center'>Visit the Help Center</Link></p>
+                <p>Can't find your reservation here? Visit the Help Center</p>
             </div>
         </div>
     )

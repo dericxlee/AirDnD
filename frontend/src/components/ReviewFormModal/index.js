@@ -10,13 +10,13 @@ const ReviewFormModal = ({trip}) => {
         if(trip.review) setButton('Edit your Review')
     }, [trip])
 
-    const handleOpen = (e) => {
-        e.preventDefault();
+    const handleOpen = () => {
+        // e.preventDefault();
         setShowModal(true)
     };
 
-    const handleClose = (e) => {
-        e.preventDefault();
+    const handleClose = () => {
+        // e.preventDefault();
         setShowModal(false)
     };
 
@@ -25,7 +25,7 @@ const ReviewFormModal = ({trip}) => {
             <button className='trip-info' id='create-review-btn' onClick={handleOpen}>{button}</button>
             {showModal && (
                 <Modal onClose={handleClose}>
-                    <ReviewForm trip={trip} review={trip.review}/>
+                    <ReviewForm trip={trip} review={trip.review} handleClose={handleClose}/>
                 </Modal>
             )}
         </>

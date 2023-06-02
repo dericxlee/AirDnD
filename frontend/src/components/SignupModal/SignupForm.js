@@ -43,7 +43,10 @@ function SignupForm() {
 
   return (
     <div id='signup-form'>
-      <div id='signup-message'><p id='signup-msg'>Signing up</p></div>
+      <div id='signup-message'>
+        <p id='signup-msg'>Signing up</p>
+        <hr />
+      </div>
       <div id='modal-form-two'>
         <form onSubmit={handleSubmit}>
           <ul>
