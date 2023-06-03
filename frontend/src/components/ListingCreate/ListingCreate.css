@@ -1,3 +1,48 @@
 .listing-create-page {
-    margin-top: 20%;
+    top: 10%;
+    height: 90%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
 }
+
+.listing-radio-container {
+    margin-left: auto;
+    margin-right: auto;
+    width: 35%;
+    height: 30%;
+}
+
+.listing-radio-container p {
+    font-size: 30px;
+    height: 100%;
+}
+
+.listing-radio-box {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.listing-radio-box input[type='radio'] {
+    opacity: 0;
+    position: fixed;
+    width: 0;
+}
+
+.listing-radio-box label {
+    display: inline-block;
+    background-color: white;
+    border: 1px solid black;
+    height: 30%;
+    width: 100%;
+    margin-top: 5%;
+}
+
+.listing-radio-box input[type='radio']:checked + label {
+    background-color: blue;
+    border: 2px solid black;
+}
+
+
+
