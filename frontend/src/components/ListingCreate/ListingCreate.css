@@ -1,26 +1,25 @@
 .listing-create-page {
-    top: 10%;
-    height: 90%;
-    display: flex;
-    justify-content: center;
-    align-content: center;
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
 }
 
 .listing-radio-container {
     margin-left: auto;
     margin-right: auto;
-    width: 35%;
-    height: 30%;
+    margin-top: 15%;
+    width: 40%;
+    height: 35%;
 }
 
-.listing-radio-container p {
+.listing-radio-header {
     font-size: 30px;
-    height: 100%;
 }
 
 .listing-radio-box {
     display: flex;
     flex-direction: column;
+    margin-top: 5%;
     height: 100%;
 }
 
@@ -36,12 +35,68 @@
     border: 1px solid black;
     height: 30%;
     width: 100%;
-    margin-top: 5%;
+    margin-top: 2%;
+    border-radius: 2% / 12%;
+}
+
+.listing-radio-box label:hover {
+    border: 2px solid black;
+}
+
+.radio-label-box {
+    height: 60%;
+    margin-top: 2.5%;
+    margin-left: 2%;
+}
+
+.radio-label-box p:first-child {
+    font-weight: bold;
+    margin-bottom: 1%;
 }
 
 .listing-radio-box input[type='radio']:checked + label {
-    background-color: blue;
+    background-color: rgb(247, 247, 247);
     border: 2px solid black;
+}
+
+.listing-form-bottom-overlay {
+    position: absolute;
+    bottom: 0%;
+    height: 10%;
+    width: 100%;
+}
+
+.progress-bar-box {
+    height: 5%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.progress-bar-box div {
+    height: 100%;
+    width: 24.5%;
+    border: 1px solid black;
+}
+
+.listing-form-bottom-btns {
+    margin-left: 3%;
+    margin-right: 3%;
+    height: 95%;
+    width: 94%;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.listing-next-btn {
+    margin-top: auto;
+    margin-bottom: auto;
+    height: 60%;
+    width: 8%;
+    border-radius: 6% / 18%;
+    color: white;
+    background-color: black;
 }
 
 

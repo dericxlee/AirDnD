@@ -1,0 +1,29 @@
+.number-input-box {
+    width: 18%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.number-input-btn-box {
+    height: 100%;
+    width: 25%;
+}
+
+.number-input-display-box {
+    height: 100%;
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.input-button {
+    border: 1px solid black;
+    border-radius: 50%;
+    aspect-ratio: 1 / 1;
+    height: 100%;
+    background-color: white;
+    font-size: 26px;
+}

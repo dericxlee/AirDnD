@@ -45,7 +45,7 @@ const ListingCreate = ({existingListing}) => {
     return (
         <div className='listing-create-page'>
             <div className='listing-radio-container'>
-                <p>What type of place will guests have?</p>
+                <div className='listing-radio-header'>What type of place will guests have?</div>
                 <div className='listing-radio-box'>
                     <input 
                         type="radio"
@@ -55,18 +55,12 @@ const ListingCreate = ({existingListing}) => {
                         onChange={handleChange}
                         checked={propertyType === 'Entire home'} 
                     />
-                    <label for='entire-home'>An entire place</label>
-                
-                
-                    <input 
-                        type="radio" 
-                        id='luxury-stay'
-                        name='property'
-                        value='Luxury stay'
-                        onChange={handleChange}
-                        checked={propertyType === 'Luxury stay'}
-                    />
-                    <label for='luxury-stay'>Luxury Stay</label>
+                    <label for='entire-home'>
+                        <div className='radio-label-box'>
+                            <p>An entire place</p>
+                            <p>Guest have the whole place to themselves.</p>
+                        </div>
+                    </label>
                 
                     <input 
                         type="radio" 
@@ -76,11 +70,41 @@ const ListingCreate = ({existingListing}) => {
                         onChange={handleChange}
                         checked={propertyType === 'Private room'}
                     />
-                    <label for='private-room'>A room</label>
+                    <label for='private-room'>
+                        <div className='radio-label-box'>
+                            <p>A room</p>
+                            <p>Guests have their own room in a home, plus access to shared spaces.</p>
+                        </div>
+                    </label>
+                
+                    <input 
+                        type="radio" 
+                        id='luxury-stay'
+                        name='property'
+                        value='Luxury stay'
+                        onChange={handleChange}
+                        checked={propertyType === 'Luxury stay'}
+                    />
+                    <label for='luxury-stay'>
+                        <div className='radio-label-box'>
+                            <p>Luxury stay</p>
+                            <p>Guests have an entire estate to explore.</p>
+                        </div>
+                    </label>
+                
                 </div>
             </div>
-            <div>
-                <button onClick={handleNext}>Next</button>
+            <div className='listing-form-bottom-overlay'>
+                <div className='progress-bar-box'>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <div className='listing-form-bottom-btns'>
+                    <div></div>
+                    <button className='listing-next-btn' onClick={handleNext}>Next</button>
+                </div>
             </div>
         </div>
     )

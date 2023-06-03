@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import './ListingCreate.css'
+import './ListingAddress.css'
 import ListingInfo from "./ListingInfo";
 import ListingCreate from ".";
 
@@ -35,10 +36,40 @@ const ListingAddress = ({listing}) => {
 
     return (
         <div className='listing-create-page'>
-            <input type="text" value={address} onChange={e => setAddress(e.target.value)} />
-            <input type="text" value={city} onChange={e => setCity(e.target.value)} />
-            <button onClick={handleNext}>Next</button>
-            <button onClick={handleBack}>Back</button>
+            <div className='listing-address-box'>
+                <div>Enter the address of your property</div>
+                <div>Your address is only shared with guests after they've made a reservation.</div>
+                <div className='listing-street-box'>
+                    <div>Street Address</div>
+                    <input type="text" value={address} onChange={e => setAddress(e.target.value)} />
+                </div>
+                <div className='listing-region-box'>
+                    <div className='listing-city-box'>
+                        <div>City</div>
+                        <input type="text" value={city} onChange={e => setCity(e.target.value)} />
+                    </div>
+                    <div className='listing-state-box'>
+                        <div>State</div>
+                        <input type="text" value='CA'/>
+                    </div>
+                    <div className='listing-country-box'>
+                        <div>Country</div>
+                        <input type="text" value='United States' />
+                    </div>
+                </div>
+            </div>
+            <div className='listing-form-bottom-overlay'>
+                <div className='progress-bar-box'>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <div className='listing-form-bottom-btns'>
+                    <button className='listing-back-btn' onClick={handleBack}>Back</button>
+                    <button className='listing-next-btn' onClick={handleNext}>Next</button>
+                </div>
+            </div>
         </div>
     )
 }

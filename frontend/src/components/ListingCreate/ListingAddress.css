@@ -1,0 +1,54 @@
+.listing-address-box {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15%;
+    width: 40%;
+    height: 35%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 5%;
+    border: 1px solid black;
+}
+
+.listing-address-box > div {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2%;
+}
+
+.listing-address-box > div:first-child {
+    margin-top: 5%;
+}
+ 
+.listing-address-box > div:last-child {
+    margin-bottom: none;
+}
+
+
+
+.listing-region-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.listing-city-box {
+    width: 55%;
+    height: 100%;
+}
+
+.listing-state-box {
+    width: 10%;
+    height: 100%;
+}
+
+.listing-country-box {
+    width: 30%;
+    height: 100%;
+}
+
+.listing-address-box input {
+    width: 100%;
+    height: 70%;
+}
