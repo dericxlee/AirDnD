@@ -18,7 +18,9 @@ const ListingCreate = ({wipListing}) => {
     const existingListing = useSelector(getListing(listingId))
 
     useEffect(()=> {
-        dispatch(fetchListing(listingId))
+        if(listingId){
+            dispatch(fetchListing(listingId))
+        }
     }, [dispatch, listingId])
     
     let listing = {

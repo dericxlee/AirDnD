@@ -7,7 +7,10 @@
     display: flex;
     flex-direction: column;
     row-gap: 5%;
-    border: 1px solid black;
+}
+
+.listing-address-title {
+    font-size: 30px;
 }
 
 .listing-address-box > div {

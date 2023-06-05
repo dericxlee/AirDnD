@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react"
 import './ListingCreate.css'
 import { createListing, updateListing } from "../../store/listing"
-import { useDispatch, useSelector } from "react-redux"
+import { useDispatch } from "react-redux"
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min"
 import ListingPrice from "./ListingPrice";
 import ListingProgressBar from "./ListingProgressBar";
@@ -56,16 +56,17 @@ const ListingSubmit = ({listing, step, setStep, totalSteps}) => {
     return (
         <div className='listing-create-page'>
             <div className='listing-submit-container'>
-                Title your property
+                <div className='listing-submit-header'>Add details about your listing</div>
+                <div>Create a title</div>
                 <input type="text" value={title} onChange={e=> setTitle(e.target.value)}/>
-                Give a description of your listing
-                <input type="text" value={description} onChange={e=> setDescription(e.target.value)} />
+                <div>Create a description</div>
+                <input className='listing-textarea' value={description} onChange={e=> setDescription(e.target.value)} />
             </div>
             <div className='listing-form-bottom-overlay'>
                 <ListingProgressBar step={step} totalSteps={totalSteps}/>
                 <div className='listing-form-bottom-btns'>
                     <button className='listing-back-btn' onClick={handleBack}>Back</button>
-                    <button className='listing-next-btn' onClick={handleSubmit}>Submit</button>
+                    <button className='listing-submit-btn' onClick={handleSubmit}>Submit</button>
                 </div>
             </div>
         </div>

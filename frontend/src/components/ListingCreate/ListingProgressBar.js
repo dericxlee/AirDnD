@@ -16,7 +16,7 @@ const ListingProgressBar = ({step, totalSteps}) => {
         <div className='progress-bar-box'>
             {items}
         </div>
-    )
-}
+    );
+};
 
 export default ListingProgressBar;

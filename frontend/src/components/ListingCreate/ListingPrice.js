@@ -3,17 +3,21 @@ import ListingSubmit from "./ListingSubmit";
 import ListingInfo from "./ListingInfo";
 import ListingProgressBar from "./ListingProgressBar";
 import './ListingPrice.css'
+import NumberError from "./NumberError";
 
 const ListingPrice = ({listing, step, setStep, totalSteps}) => {
     const [price, setPrice] = useState(listing?.price)
     const [next, setNext] = useState(false)
     const [back, setBack] = useState(false)
+    const [errors, setErrors] = useState(false)
 
     const handleNext = () => {
-        if(price){
+        if(price > 0){
             setStep(step+1)
             setNext(true)
-        } 
+        } else {
+            setErrors(true)
+        }
     };
 
     const handleBack = () => {
@@ -56,10 +60,13 @@ const ListingPrice = ({listing, step, setStep, totalSteps}) => {
     return (
         <div className='listing-create-page'>
             <div className='listing-price-container'>
-                <div className='listing-price-title'>Quote a nightly price for your property</div>
+                <div className='listing-price-title'>Quote a nightly fee for your property</div>
                 <div className='listing-price-box'>
-                    $<input type="number" value={price} onChange={e=> setPrice(e.target.value)} />
+                    <div>$</div>
+                    <input className='listing-price-input' type="number" value={price} onChange={e=> setPrice(e.target.value)}/> 
+                    <div>per night</div>
                 </div>
+                <NumberError errors={errors}/>
             </div>
             <div className='listing-form-bottom-overlay'>
                 <ListingProgressBar step={step} totalSteps={totalSteps}/>
