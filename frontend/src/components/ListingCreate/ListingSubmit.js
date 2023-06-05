@@ -14,15 +14,25 @@ const ListingSubmit = ({listing, step, setStep, totalSteps}) => {
     const [description, setDescription] = useState(listing?.description);
     const [back, setBack] = useState(false);
 
+    const handleDispatch = (listing) => {
+        if(listing.id){
+            dispatch(updateListing(listing));
+            history.push('/client')
+        } else {
+            dispatch(createListing(listing))
+            history.push('/client')
+        };
+    }
+
     const handleSubmit = () => {
         if(title && description){
             listing = {
                 ...listing,
                 title: title,
                 description: description
-            }
-            dispatch(createListing(listing))
-        }
+            };
+            handleDispatch(listing)
+        };
     };
 
     const handleBack = () => {

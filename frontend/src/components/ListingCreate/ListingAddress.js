@@ -10,6 +10,7 @@ const ListingAddress = ({listing, step, setStep, totalSteps}) => {
     const [city, setCity] = useState(listing?.city)
     const [next, setNext] = useState(false)
     const [back, setBack] = useState(false)
+    const [error, setError] = useState([])
 
     const handleNext = () => {
         if(address && city){
@@ -39,7 +40,7 @@ const ListingAddress = ({listing, step, setStep, totalSteps}) => {
         listing = {...listing, address: address, city: city}
         return (
             <ListingCreate 
-                existingListing={listing}
+                wipListing={listing}
                 step={step}
                 setStep={setStep}
                 totalSteps={totalSteps}

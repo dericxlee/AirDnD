@@ -18,6 +18,7 @@ function App() {
       </div>
       <Switch>
         <Route exact path='/host' component={ListingCreate}/>
+        <Route path='/host/:listingId/' component={ListingCreate}/>
         <Route exact path='/trips' component={TripIndex}/>
         <Route exact path ='/client' component={ListingManagement}/>
         <Route exact path='/' component={ListingIndex}/>

@@ -1,32 +1,17 @@
 import React from "react";
-import { useState } from "react";
-import ListingForm from "../ListingForm";
-import { Modal } from "../../context/Modal";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import './ListingEditButton.css'
 
 const ListingEditButton = ({listing}) => {
-    const [showModal, setShowModal] = useState(false);
+    const history = useHistory()
 
-    const handleClick = (e) => {
-        e.preventDefault();
-        setShowModal(true)
-      }
-    
-    const handleClose = (e) => {
-        e.preventDefault()
-        setShowModal(false)
-    }
-
-    // console.log(listing, 'btn')
+    const handleClick = () => {
+        history.push(`/host/${listing.id}`)
+    };
 
     return (
         <>
           <button id='edit-listing-btn' onClick={handleClick}>Edit</button>
-          {showModal && (
-            <Modal onClose={handleClose}>
-              <ListingForm listing={listing}/>
-            </Modal>
-          )}
         </>
     );
 }

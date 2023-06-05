@@ -1,16 +1,25 @@
 import React, { useEffect, useState } from "react"
+import { useDispatch } from "react-redux"
 import './ListingCreate.css'
 import ListingAddress from "./ListingAddress"
 import ListingProgressBar from "./ListingProgressBar"
 import { useSelector } from "react-redux"
+import { getListing, fetchListing } from "../../store/listing"
+import { useParams } from "react-router-dom/cjs/react-router-dom.min"
 
-const ListingCreate = ({existingListing}) => {
-    const [propertyType, setPropertyType] = useState(existingListing?.propertyType || 'Entire home')
+const ListingCreate = ({wipListing}) => {
+    const [propertyType, setPropertyType] = useState(wipListing?.propertyType || 'Entire home')
     const sessionUser = useSelector(state => state.session.user)
     const [next, setNext] = useState(false)
     const [step, setStep] = useState(1)
+    const dispatch = useDispatch()
     const totalSteps = 5
+    const {listingId} = useParams()
+    const existingListing = useSelector(getListing(listingId))
 
+    useEffect(()=> {
+        dispatch(fetchListing(listingId))
+    }, [dispatch, listingId])
     
     let listing = {
         title: '', 
@@ -18,15 +27,17 @@ const ListingCreate = ({existingListing}) => {
         propertyType: '',
         address: '',
         city: '',
-        price: 500,
+        price: 300,
         maxGuests: 1,
         numBeds: 1,
         numBaths: 1,
         numBedrooms: 1,
         hostId: sessionUser.id
-    }
+    };
 
-    if(existingListing) {
+    if(wipListing) {
+        listing = wipListing
+    } else if (existingListing && !wipListing){
         listing = existingListing
     };
     
