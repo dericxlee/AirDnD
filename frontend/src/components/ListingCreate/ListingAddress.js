@@ -91,13 +91,7 @@ const ListingAddress = ({listing, step, setStep, totalSteps}) => {
                 </div>
                 <Errors errors={errors}/>
             </div>
-            <div className='listing-form-bottom-overlay'>
-                <ListingProgressBar step={step} totalSteps={totalSteps}/>
-                <div className='listing-form-bottom-btns'>
-                    <button className='listing-back-btn' onClick={handleBack}>Back</button>
-                    <button className='listing-next-btn' onClick={handleNext}>Next</button>
-                </div>
-            </div>
+            <ListingProgressBar step={step} totalSteps={totalSteps} handleNext={handleNext} handleBack={handleBack}/>
         </div>
     )
 }

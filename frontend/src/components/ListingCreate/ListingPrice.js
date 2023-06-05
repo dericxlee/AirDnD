@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import ListingSubmit from "./ListingSubmit";
 import ListingInfo from "./ListingInfo";
 import ListingProgressBar from "./ListingProgressBar";
 import './ListingPrice.css'
 import NumberError from "./NumberError";
+import ListingTitle from "./ListingTitle";
 
 const ListingPrice = ({listing, step, setStep, totalSteps}) => {
     const [price, setPrice] = useState(listing?.price)
@@ -32,7 +32,7 @@ const ListingPrice = ({listing, step, setStep, totalSteps}) => {
         };
 
         return (
-            <ListingSubmit 
+            <ListingTitle 
                 listing={listing} 
                 step={step}
                 setStep={setStep} 
@@ -68,13 +68,7 @@ const ListingPrice = ({listing, step, setStep, totalSteps}) => {
                 </div>
                 <NumberError errors={errors}/>
             </div>
-            <div className='listing-form-bottom-overlay'>
-                <ListingProgressBar step={step} totalSteps={totalSteps}/>
-                <div className='listing-form-bottom-btns'>
-                    <button className='listing-back-btn' onClick={handleBack}>Back</button>
-                    <button className='listing-next-btn' onClick={handleNext}>Next</button>
-                </div>
-            </div>
+            <ListingProgressBar step={step} totalSteps={totalSteps} handleNext={handleNext} handleBack={handleBack}/>
         </div>
     )
 }

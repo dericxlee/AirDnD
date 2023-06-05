@@ -3,16 +3,16 @@ import './ListingCreate.css'
 import { createListing, updateListing } from "../../store/listing"
 import { useDispatch } from "react-redux"
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min"
-import ListingPrice from "./ListingPrice";
 import ListingProgressBar from "./ListingProgressBar";
+import ListingTitle from "./ListingTitle"
 import './ListingSubmit.css'
 
 const ListingSubmit = ({listing, step, setStep, totalSteps}) => {
     const dispatch = useDispatch();
     const history = useHistory();
-    const [title, setTitle] = useState(listing?.title);
     const [description, setDescription] = useState(listing?.description);
     const [back, setBack] = useState(false);
+    const [errors, setErrors] = useState(false);
 
     const handleDispatch = (listing) => {
         if(listing.id){
@@ -25,13 +25,14 @@ const ListingSubmit = ({listing, step, setStep, totalSteps}) => {
     }
 
     const handleSubmit = () => {
-        if(title && description){
+        if(description){
             listing = {
                 ...listing,
-                title: title,
                 description: description
             };
             handleDispatch(listing)
+        } else {
+            setErrors(true);
         };
     };
 
@@ -41,10 +42,10 @@ const ListingSubmit = ({listing, step, setStep, totalSteps}) => {
     };
 
     if(back){
-        listing = {...listing, title: title, description: description}
+        listing = {...listing, description: description}
 
         return (
-            <ListingPrice 
+            <ListingTitle
                 listing={listing} 
                 step={step}
                 setStep={setStep} 
@@ -56,19 +57,11 @@ const ListingSubmit = ({listing, step, setStep, totalSteps}) => {
     return (
         <div className='listing-create-page'>
             <div className='listing-submit-container'>
-                <div className='listing-submit-header'>Add details about your listing</div>
-                <div>Create a title</div>
-                <input type="text" value={title} onChange={e=> setTitle(e.target.value)}/>
-                <div>Create a description</div>
+                <div className='listing-submit-header'>Create your description</div>
+                <div>Share what makes your place special</div>
                 <input className='listing-textarea' value={description} onChange={e=> setDescription(e.target.value)} />
             </div>
-            <div className='listing-form-bottom-overlay'>
-                <ListingProgressBar step={step} totalSteps={totalSteps}/>
-                <div className='listing-form-bottom-btns'>
-                    <button className='listing-back-btn' onClick={handleBack}>Back</button>
-                    <button className='listing-submit-btn' onClick={handleSubmit}>Submit</button>
-                </div>
-            </div>
+            <ListingProgressBar step={step} totalSteps={totalSteps} handleSubmit={handleSubmit} handleBack={handleBack}/>
         </div>
     )
 }

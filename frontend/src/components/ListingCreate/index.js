@@ -13,7 +13,7 @@ const ListingCreate = ({wipListing}) => {
     const [next, setNext] = useState(false)
     const [step, setStep] = useState(1)
     const dispatch = useDispatch()
-    const totalSteps = 5
+    const totalSteps = 6
     const {listingId} = useParams()
     const existingListing = useSelector(getListing(listingId))
 
@@ -119,13 +119,7 @@ const ListingCreate = ({wipListing}) => {
                 
                 </div>
             </div>
-            <div className='listing-form-bottom-overlay'>
-                <ListingProgressBar step={step} totalSteps={totalSteps}/>
-                <div className='listing-form-bottom-btns'>
-                    <div></div>
-                    <button className='listing-next-btn' onClick={handleNext}>Next</button>
-                </div>
-            </div>
+            <ListingProgressBar step={step} totalSteps={totalSteps} handleNext={handleNext}/>
         </div>
     )
 }

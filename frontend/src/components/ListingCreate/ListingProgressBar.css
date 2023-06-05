@@ -7,7 +7,6 @@
 
 .progress-bar-box div {
     height: 100%;
-    width: 19.5%;
 }
 
 .progress-incomplete {
@@ -16,5 +15,51 @@
 
 .progress-complete {
     background-color: black; 
+}
+
+.listing-form-bottom-btns {
+    margin-left: 3%;
+    margin-right: 3%;
+    height: 95%;
+    width: 94%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.listing-next-btn {
+    margin-top: auto;
+    margin-bottom: auto;
+    height: 60%;
+    width: 8%;
+    border-radius: 6% / 18%;
+    color: white;
+    background-color: black;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.listing-back-btn {
+    margin-top: auto;
+    margin-bottom: auto;
+    height: 60%;
+    width: 4%;
+    border: none;
+    color: black;
+    text-decoration: underline;
+    background-color: white;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.listing-submit-btn {
+    margin-top: auto;
+    margin-bottom: auto;
+    height: 60%;
+    width: 8%;
+    border-radius: 6% / 18%;
+    color: white;
+    background-color: green;
+    font-size: 16px;
+    font-weight: bold;
 }
 
