@@ -2,7 +2,6 @@ import React from "react";
 import './NumberInput.css'
 
 const NumberInput = ({input, setInput}) => {
-    const minusButton = document.getElementById('minus-input-button')
 
     const handleAdd = () => {
         setInput(input + 1)

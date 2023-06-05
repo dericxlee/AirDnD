@@ -3,36 +3,49 @@ import './ListingCreate.css'
 import './ListingAddress.css'
 import ListingInfo from "./ListingInfo";
 import ListingCreate from ".";
+import ListingProgressBar from "./ListingProgressBar";
 
-const ListingAddress = ({listing}) => {
+const ListingAddress = ({listing, step, setStep, totalSteps}) => {
     const [address, setAddress] = useState(listing?.address)
     const [city, setCity] = useState(listing?.city)
     const [next, setNext] = useState(false)
     const [back, setBack] = useState(false)
 
     const handleNext = () => {
-        setNext(true)
+        if(address && city){
+            setStep(step+1)
+            setNext(true)
+        }
     };
 
     const handleBack = () => {
+        setStep(step-1)
         setBack(true)
     };
 
-    if(address && city && next){
+    if(next){
         listing = {...listing, address: address, city: city}
         return (
-            <ListingInfo listing={listing}/>
+            <ListingInfo 
+                listing={listing}
+                step={step}
+                setStep={setStep}
+                totalSteps={totalSteps}
+            />
         )
-    };
+    }
 
     if(back){
         listing = {...listing, address: address, city: city}
         return (
-            <ListingCreate existingListing={listing}/>
+            <ListingCreate 
+                existingListing={listing}
+                step={step}
+                setStep={setStep}
+                totalSteps={totalSteps}
+            />
         )
     };
-
-    console.log(listing, 'step 2')
 
     return (
         <div className='listing-create-page'>
@@ -59,12 +72,7 @@ const ListingAddress = ({listing}) => {
                 </div>
             </div>
             <div className='listing-form-bottom-overlay'>
-                <div className='progress-bar-box'>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                </div>
+                <ListingProgressBar step={step} totalSteps={totalSteps}/>
                 <div className='listing-form-bottom-btns'>
                     <button className='listing-back-btn' onClick={handleBack}>Back</button>
                     <button className='listing-next-btn' onClick={handleNext}>Next</button>

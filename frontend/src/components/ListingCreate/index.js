@@ -1,12 +1,16 @@
 import React, { useEffect, useState } from "react"
 import './ListingCreate.css'
 import ListingAddress from "./ListingAddress"
+import ListingProgressBar from "./ListingProgressBar"
 import { useSelector } from "react-redux"
 
 const ListingCreate = ({existingListing}) => {
     const [propertyType, setPropertyType] = useState(existingListing?.propertyType || 'Entire home')
     const sessionUser = useSelector(state => state.session.user)
     const [next, setNext] = useState(false)
+    const [step, setStep] = useState(1)
+    const totalSteps = 5
+
     
     let listing = {
         title: '', 
@@ -27,7 +31,10 @@ const ListingCreate = ({existingListing}) => {
     };
     
     const handleNext = () => {
-        if(propertyType) setNext(true)
+        if(propertyType) {
+            setStep(step+1)
+            setNext(true)
+        };
     };
 
     const handleChange = (e) => {
@@ -38,7 +45,12 @@ const ListingCreate = ({existingListing}) => {
         listing = {...listing, propertyType: propertyType}
 
         return (
-            <ListingAddress listing={listing}/>
+            <ListingAddress 
+                listing={listing} 
+                step={step}
+                setStep={setStep} 
+                totalSteps={totalSteps} 
+            />
         )
     };
 
@@ -95,12 +107,7 @@ const ListingCreate = ({existingListing}) => {
                 </div>
             </div>
             <div className='listing-form-bottom-overlay'>
-                <div className='progress-bar-box'>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                </div>
+                <ListingProgressBar step={step} totalSteps={totalSteps}/>
                 <div className='listing-form-bottom-btns'>
                     <div></div>
                     <button className='listing-next-btn' onClick={handleNext}>Next</button>

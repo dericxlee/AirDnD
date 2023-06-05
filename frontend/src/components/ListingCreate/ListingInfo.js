@@ -1,12 +1,13 @@
 import React, { useState } from "react"
 import './ListingCreate.css'
-import ListingSubmit from "./ListingSubmit"
+import ListingPrice from "./ListingPrice"
 import ListingAddress from "./ListingAddress"
 import NumberInput from "../NumberInput"
+import ListingProgressBar from "./ListingProgressBar"
 import './ListingInfo.css'
 
 
-const ListingInfo = ({listing}) => {
+const ListingInfo = ({listing, step, setStep, totalSteps}) => {
     const [guests, setGuests] = useState(listing?.maxGuests)
     const [beds, setBeds] = useState(listing?.numBeds)
     const [baths, setBaths] = useState(listing?.numBaths)
@@ -15,14 +16,18 @@ const ListingInfo = ({listing}) => {
     const [back, setBack] = useState(false)
 
     const handleNext = () => {
-        setNext(true)
+        if(guests && beds && baths && bedrooms){
+            setStep(step+1)
+            setNext(true)
+        };
     };
 
     const handleBack = () => {
+        setStep(step-1)
         setBack(true)
     };
 
-    if(guests && beds && baths && bedrooms && next){
+    if(next){
         listing = {
             ...listing,
             maxGuests: guests, 
@@ -32,7 +37,12 @@ const ListingInfo = ({listing}) => {
         };
 
         return (
-            <ListingSubmit listing={listing}/>
+            <ListingPrice 
+                listing={listing} 
+                step={step}
+                setStep={setStep} 
+                totalSteps={totalSteps}
+            />
         );
     };
 
@@ -46,14 +56,19 @@ const ListingInfo = ({listing}) => {
         };
 
         return (
-            <ListingAddress listing={listing}/>
+            <ListingAddress 
+                listing={listing} 
+                step={step}
+                setStep={setStep} 
+                totalSteps={totalSteps}
+            />
         );
     }
 
     return (
         <div className='listing-create-page'>
             <div className='listing-info-input-container'>
-                <div>Share some basics about your place</div>
+                <div className='listing-info-header'>Share some basics about your place</div>
                 <div>You'll add more details later, like bed types.</div>
                 <div className='listing-info-input-box'>
                     Guests
@@ -73,12 +88,7 @@ const ListingInfo = ({listing}) => {
                 </div>
             </div>
             <div className='listing-form-bottom-overlay'>
-                <div className='progress-bar-box'>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                </div>
+                <ListingProgressBar step={step} totalSteps={totalSteps}/>
                 <div className='listing-form-bottom-btns'>
                     <button className='listing-back-btn' onClick={handleBack}>Back</button>
                     <button className='listing-next-btn' onClick={handleNext}>Next</button>

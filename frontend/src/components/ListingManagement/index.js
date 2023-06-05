@@ -4,7 +4,7 @@ import { getListings , manageListings} from "../../store/listing";
 import { useEffect } from "react";
 import './ListingManagement.css'
 import ListingDeleteButton from "./ListingDeleteButton";
-import NewListingButton from "../ListingFormModal";
+import ListingCreateButton from "./ListingCreateButton";
 import ListingEditButton from "./ListingEditButton";
 import { Redirect } from "react-router-dom/cjs/react-router-dom.min";
 
@@ -26,7 +26,7 @@ const ListingManagement = () => {
             <div id='listing-management-box'>
                 <div id='listing-table-box'>
                     <div id='manage-listing-msg-box'><p id='manage-listing-msg'>Manage Listing</p></div>
-                    <div id='new-listing-btn-box'><NewListingButton/></div>
+                    <div id='new-listing-btn-box'><ListingCreateButton/></div>
                     <table id='listing-table'>
                         <tr id='listing-table-header'>
                             <th>Airdnd Listing ID</th>

@@ -2,16 +2,21 @@
     margin-left: auto;
     margin-right: auto;
     margin-top: 15%;
-    width: 40%;
-    height: 35%;
+    width: 32%;
+    height: 50%;
     display: flex;
     flex-direction: column;
     row-gap: 5%;
-    border: 1px solid black;
+}
+
+.listing-info-header {
+    font-size: 24px;
+    font-weight: bold;
 }
 
 .listing-info-input-box {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    border-bottom: 1px solid gray;
 }

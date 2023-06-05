@@ -1,0 +1,19 @@
+.progress-bar-box {
+    height: 5%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.progress-bar-box div {
+    height: 100%;
+    width: 19.5%;
+}
+
+.progress-incomplete {
+    background-color: lightgray;
+}
+
+.progress-complete {
+    background-color: black; 
+}
