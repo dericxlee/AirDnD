@@ -1,16 +1,24 @@
-import React from "react"
+import React, { useState } from "react"
+import './ListingPhotos.css'
+import { useEffect } from "react";
 
 const ListingPhotos = () => {
-    const files = []
+    const [files, setFiles] = useState([]);
 
     const handleFile = (e) => {
-        files.push(e.target.files)
-        console.log(files)
+        const selectedFiles = Array.from(e.target.files)
+        setFiles([...files, ...selectedFiles])
     };
 
+    useEffect(()=> {
+        console.log(files)
+    }, [files])
+
     return (
-        <div>
-            <input type="file" onDrop={handleFile} />
+        <div className='listing-create-page'>
+            <div className='listing-photos-container'>
+                <input type="file" onDrop={handleFile} onChange={handleFile} multiple/>
+            </div>
         </div>
     )
 }

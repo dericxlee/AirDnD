@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import './Error.css'
+import './Errors.css'
 
 const Errors = ({ errors }) => {
     const errorRef = useRef(null);
@@ -14,7 +14,7 @@ const Errors = ({ errors }) => {
 
     return (
         <div ref={errorRef} className="error-message">
-            * Missing some information
+            * {errors}
         </div>
     );
 };

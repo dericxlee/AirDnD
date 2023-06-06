@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import './Error.css'
+import './Errors.css'
 
 const NumberError = ({ errors }) => {
     const errorRef = useRef(null);

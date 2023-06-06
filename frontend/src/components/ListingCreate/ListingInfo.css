@@ -13,6 +13,11 @@
     font-size: 30px;
 }
 
+.listing-info-subheader {
+    font-size: 16px;
+    color: gray;
+}
+
 .listing-info-input-box {
     display: flex;
     flex-direction: row;

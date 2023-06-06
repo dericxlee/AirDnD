@@ -2,7 +2,7 @@
     margin-left: auto;
     margin-right: auto;
     margin-top: 15%;
-    width: 35%;
+    width: 30%;
     height: 20%;
     display: flex;
     flex-direction: column;
@@ -11,9 +11,14 @@
     row-gap: 15%;
 }
 
-.listing-price-title {
+.listing-price-header {
     font-size: 30px;
     display: inline-block;
+}
+
+.listing-price-subheader {
+    font-size: 16px;
+    color: gray;
 }
 
 .listing-price-box {
@@ -22,7 +27,7 @@
     column-gap: 3%;
     width: 80%;
     min-height: 24px;
-    font-size: 24px;
+    font-size: 16px;
 }
 
 .listing-price-input {
@@ -40,6 +45,7 @@
     width: 50%;
     height: 100%;
     font-size: 20px;
+    border-radius: 2% / 10%;
 }
 
 input[type="number"]::-webkit-inner-spin-button,

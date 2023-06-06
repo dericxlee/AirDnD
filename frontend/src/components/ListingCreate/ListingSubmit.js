@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React, { useEffect, useState, useRef } from "react"
 import './ListingCreate.css'
 import { createListing, updateListing } from "../../store/listing"
 import { useDispatch } from "react-redux"
@@ -6,13 +6,34 @@ import { useHistory } from "react-router-dom/cjs/react-router-dom.min"
 import ListingProgressBar from "./ListingProgressBar";
 import ListingTitle from "./ListingTitle"
 import './ListingSubmit.css'
+import Errors from "./Errors"
 
 const ListingSubmit = ({listing, step, setStep, totalSteps}) => {
     const dispatch = useDispatch();
     const history = useHistory();
     const [description, setDescription] = useState(listing?.description);
     const [back, setBack] = useState(false);
-    const [errors, setErrors] = useState(false);
+    const [errors, setErrors] = useState('');
+    const errorMsg = 'Field cannot be blank';
+    const descrRef = useRef(null);
+
+    
+    const handleRef = () => {
+        const descrInput = descrRef.current
+        
+        if(descrRef && descrInput.value.trim() === ''){
+            descrInput.style.border = '2px solid red'
+        } else {
+            descrInput.style.border = '1px solid black'
+        };
+    };
+    
+    useEffect(()=> {
+        if(description){
+            setErrors('');
+            handleRef()
+        }
+    }, [description]);
 
     const handleDispatch = (listing) => {
         if(listing.id){
@@ -32,7 +53,8 @@ const ListingSubmit = ({listing, step, setStep, totalSteps}) => {
             };
             handleDispatch(listing)
         } else {
-            setErrors(true);
+            handleRef();
+            setErrors(errorMsg);
         };
     };
 
@@ -58,9 +80,11 @@ const ListingSubmit = ({listing, step, setStep, totalSteps}) => {
         <div className='listing-create-page'>
             <div className='listing-submit-container'>
                 <div className='listing-submit-header'>Create your description</div>
-                <div>Share what makes your place special</div>
-                <input className='listing-textarea' value={description} onChange={e=> setDescription(e.target.value)} />
+                <div className='listing-submit-subheader'>Share what makes your place special.</div>
+                <textarea className='listing-textarea' ref={descrRef} type='textarea' value={description} onChange={e=> setDescription(e.target.value)} />
+                <Errors errors={errors}/>
             </div>
+            <div className='listing-save-msg'>Hit save when you're done!</div>
             <ListingProgressBar step={step} totalSteps={totalSteps} handleSubmit={handleSubmit} handleBack={handleBack}/>
         </div>
     )

@@ -69,7 +69,7 @@ const ListingInfo = ({listing, step, setStep, totalSteps}) => {
         <div className='listing-create-page'>
             <div className='listing-info-input-container'>
                 <div className='listing-info-header'>Share some basics about your place</div>
-                <div>You'll add more details later, like bed types.</div>
+                <div className='listing-info-subheader'>You'll add more details later, like bed types.</div>
                 <div className='listing-info-input-box'>
                     Guests
                     <NumberInput input={guests} setInput={setGuests}/>

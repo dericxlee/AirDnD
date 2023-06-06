@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react"
-import { useDispatch } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 import './ListingCreate.css'
 import ListingAddress from "./ListingAddress"
 import ListingProgressBar from "./ListingProgressBar"
-import { useSelector } from "react-redux"
 import { getListing, fetchListing } from "../../store/listing"
 import { useParams } from "react-router-dom/cjs/react-router-dom.min"
+import { Redirect } from "react-router-dom/cjs/react-router-dom.min"
 
 const ListingCreate = ({wipListing}) => {
     const [propertyType, setPropertyType] = useState(wipListing?.propertyType || 'Entire home')
@@ -17,12 +17,25 @@ const ListingCreate = ({wipListing}) => {
     const {listingId} = useParams()
     const existingListing = useSelector(getListing(listingId))
 
+    
     useEffect(()=> {
         if(listingId){
             dispatch(fetchListing(listingId))
         }
     }, [dispatch, listingId])
     
+    if(!sessionUser){
+        return (
+            <Redirect to='/'/>
+        );
+    } else if (existingListing && existingListing.hostId !== sessionUser.id){
+        return (
+            <Redirect to='/client'/>
+        );
+    };
+
+    console.log(existingListing)
+
     let listing = {
         title: '', 
         description: '',

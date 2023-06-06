@@ -9,8 +9,13 @@
     row-gap: 5%;
 }
 
-.listing-address-title {
+.listing-address-header {
     font-size: 30px;
+}
+
+.listing-address-subheader {
+    font-size: 16px;
+    color: gray;
 }
 
 .listing-address-box > div {
