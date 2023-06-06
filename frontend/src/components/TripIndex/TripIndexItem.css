@@ -4,6 +4,10 @@
     margin: 5px;
     display: flex;
     flex-wrap: wrap;
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+    min-height: 250px;
+    min-width: 250px;
 }
 
 #trip-info-photo-box {
@@ -27,6 +31,7 @@
     width: 50%;
     margin-top: 15%;
     margin-bottom: auto;
+    flex: none;
 }
 
 .bold-header {
@@ -51,7 +56,7 @@
 #trip-cancel-btn {
     background-color: red;
     color: white;
-    width: 60%;
+    width: 65%;
     height: 15%;
     border-radius: 10% / 30%;
 }
@@ -59,7 +64,7 @@
 #create-review-btn {
     background-color: green;
     color: white;
-    width: 60%;
+    width: 65%;
     height: 15%;
     border-radius: 10% / 30%;
 }

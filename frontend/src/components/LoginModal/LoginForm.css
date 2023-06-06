@@ -22,26 +22,15 @@
     width: 100%;
 }
 
-#modal-form {
-    display: flex;
-    position: absolute;
-    top: 10%;
-    width: 100%;
-    height: 40%;
-}
-
 .welcome-box {
-    top: 10%;
-    position: absolute;
+    height: 15%;
+    width: 100%;
     font-size: 20px;
-    margin-left: 4%;
-    margin-bottom: 5%;
+    margin-top: 5%;
+    margin-left: 5%;
 }
 
 .modal-form-box {
-    display: block; 
-    position: absolute;
-    top: 25%;
     width: 100%;
     height: 35%;
     text-align: center;
@@ -52,19 +41,31 @@
     width: 90%;
 }
 
-.privacy-policy {
-    position: absolute;
-    top: 66%;
+.privacy-policy-box {
+    margin-top: 5%;
+    height: 5%;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.error-box {
+    color: red;
     font-size: 15px;
-    margin-left: 4%;
+}
+
+.privacy-policy {
+    padding-right: 1%;
+    font-size: 15px;
     text-decoration: underline;
     color: red;
 }
 
 .submit-box {
-    display: block;
-    position: absolute;
-    bottom: 5%;
+    margin-top: 5%;
     height: 20%;
     width: 100%;
     text-align: center;
@@ -80,11 +81,36 @@
     font-weight: bold;
 }
 
-#modal-social-media {
+.break-line {
+    margin-top: 7%;
     display: flex;
-    position: absolute;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.break-line div {
+    width: 47%;
+}
+
+#break-line-or {
+    width: 5%;
+    text-align: center;
+}
+
+.modal-social-media {
+    display: flex;
     width: 100%;
     height: 40%;
-    bottom: 0%;
+    margin-top: 5%;
     align-content: flex-start;
+}
+
+.close-button {
+    position: absolute;
+    right: 2%;
+    top: 2%;
+    background-color: white;
+    border: none;
+    font-size: 20px;
 }

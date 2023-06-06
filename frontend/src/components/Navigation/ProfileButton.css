@@ -12,6 +12,7 @@
     -ms-transform: translate(-50%, -50%);
     left: 95%;
     border-radius: 25% / 50%;
+    background-color: white;
 }
 
 #menu-btn-inner-box {

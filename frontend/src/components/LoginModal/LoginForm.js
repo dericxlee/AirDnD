@@ -3,10 +3,8 @@ import * as sessionActions from '../../store/session';
 import { useDispatch } from 'react-redux';
 import './LoginForm.css'
 import DemoButton from '../DemoButton';
-import { useParams } from 'react-router-dom';
-import SignupFormModal from '../SignupModal';
 
-const LoginForm = () => {
+const LoginForm = ({handleClose}) => {
   const dispatch = useDispatch();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -36,33 +34,48 @@ const LoginForm = () => {
         <hr />
       </div>
       <div className='login-form-box' id='modal-form'>
-        <form onSubmit={handleSubmit}>
-          <h3 className='welcome-box' id='welcome-box'>Welcome to Airdnd</h3>
-          <div className='modal-form-box'>
-            <input
-              className="modal-input-box"
-              type="text"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder='Email Address'
-              required
-            />
-            <input
-              className="modal-input-box"
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              placeholder='Password'
-              required
-            />
+        <div className='welcome-box' id='welcome-box'>Welcome to Airdnd</div>
+        <div className='modal-form-box'>
+          <input
+            className="modal-input-box"
+            id='email-input'
+            type="text"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder='Email Address'
+          />
+          <input
+            className="modal-input-box"
+            id='password-input'
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            placeholder='Password'
+          />
+        </div>
+        <div className='privacy-policy-box' id='privacy-policy'>
+          <div className='error-box'>
+            {errors}
           </div>
-            <p className='privacy-policy id='privacy-policy>Privacy Policy</p>
-            <div className='submit-box'>
-              <button className='submit-btn' type="submit">Continue</button>
-            </div>
-        </form>
+          <div className='privacy-policy'>
+            Privacy Policy
+          </div>
+        </div>
+        <div className='submit-box'>
+          <button className='submit-btn' onClick={handleSubmit}>Continue</button>
+        </div>
       </div>
-      <div id='modal-social-media'><DemoButton/></div>
+      <div className='break-line'>
+        <div>
+          <hr />
+        </div>
+        <div id='break-line-or'>or</div>
+        <div>
+          <hr />
+        </div>
+      </div>
+      <div className='modal-social-media'><DemoButton/></div>
+      <button onClick={handleClose} className='close-button'>X</button>
     </div>
   );
 }

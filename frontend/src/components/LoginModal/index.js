@@ -20,7 +20,7 @@ const LoginFormModal = () => {
       <button onClick={handleClick}>Log In</button>
       {showModal && (
         <Modal onClose={handleClose}>
-          <LoginForm />
+          <LoginForm handleClose={handleClose}/>
         </Modal>
       )}
     </>

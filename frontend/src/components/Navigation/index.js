@@ -4,9 +4,18 @@ import ProfileButton from './ProfileButton.js';
 import './Navigation.css';
 import { Redirect } from 'react-router-dom/cjs/react-router-dom.min.js';
 import SearchBar from '../SearchBar/index.js';
+import { useSelector } from 'react-redux';
 
 function Navigation() {
-  // const sessionUser = useSelector(state => state.session.user);
+  const sessionUser = useSelector(state => state.session.user);
+
+  let welcome;
+
+  if(sessionUser){
+    welcome = <div className='welcome-user-box'>
+      Welcome, {sessionUser?.firstName}!
+    </div>
+  };
 
   const navigateHome = () => {
     // e.preventDefault()
@@ -37,13 +46,9 @@ function Navigation() {
         </div>
       </div>
       <div id='utility-box'>
-        <NavLink to='/'>
-          <div id='creation-btn-box'>
-              <button id='creation-btn'>Airdnd your home</button>
-          </div>
-        </NavLink>
+        {welcome}
         <div id='language-btn-box'>
-          <button id='language-btn'>
+          <button id='language-btn' disabled>
             <img id='language-btn-logo' src="https://e7.pngegg.com/pngimages/556/45/png-clipart-globe-world-computer-icons-globe-miscellaneous-globe-thumbnail.png" alt="globe" />
           </button>
         </div>

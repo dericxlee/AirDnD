@@ -39,7 +39,7 @@ const TripIndex = () => {
                     <div className='trips-banner'>
                         <p className='trips-banner-header'>Upcoming Trips</p>
                     </div>
-                    <div id='trips-info-box-container'>
+                    <div className='slider' id='trips-info-box-container'>
                         {
                             futureTrips.map(trip => <TripIndexItem
                                 trip={trip}
@@ -53,7 +53,7 @@ const TripIndex = () => {
                     <div className='trips-banner'>
                         <p className='trips-banner-header'>Where you've been</p>
                     </div>
-                    <div id='past-trips-info-box-container'>
+                    <div className='slider' id='past-trips-info-box-container'>
                         {
                             pastTrips.map(trip => <TripIndexItem
                                 trip={trip}

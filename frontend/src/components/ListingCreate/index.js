@@ -125,7 +125,7 @@ const ListingCreate = ({wipListing}) => {
                     />
                     <label for='luxury-stay'>
                         <div className='radio-label-box'>
-                            <p>Luxury stay</p>
+                            <p>Entire luxury estate</p>
                             <p>Guests have an entire estate to explore.</p>
                         </div>
                     </label>

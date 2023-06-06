@@ -27,14 +27,6 @@ const TripForm = ({listing}) => {
         }
     }
     
-
-    // const [price, setPrice] = useState(0)
-
-    // useEffect(()=> {
-    //     setPrice(listing?.price.toLocaleString())
-    // }, [dispatch]) 
-
-    
     const price = listing?.price.toLocaleString()
     
     const [guest, setGuest] = useState('guest')
