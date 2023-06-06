@@ -4,8 +4,9 @@ import { useDispatch } from 'react-redux';
 import './LoginForm.css'
 import DemoButton from '../DemoButton';
 import { useParams } from 'react-router-dom';
+import SignupFormModal from '../SignupModal';
 
-function LoginForm() {
+const LoginForm = () => {
   const dispatch = useDispatch();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -29,16 +30,13 @@ function LoginForm() {
   }
 
   return (
-    <div id='login-form'>
-      <div id='modal-message'>
+    <div className='session-form'>
+      <div className='session-msg-box'>
         <p id='login-msg'>Log in</p>
         <hr />
       </div>
-      <div id='modal-form'>
+      <div className='login-form-box' id='modal-form'>
         <form onSubmit={handleSubmit}>
-          <ul id='errors'>
-            {errors.map(error => <li key={error}>{error}</li>)}
-          </ul>
           <h3 className='welcome-box' id='welcome-box'>Welcome to Airdnd</h3>
           <div className='modal-form-box'>
             <input

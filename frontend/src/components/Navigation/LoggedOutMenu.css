@@ -1,7 +1,7 @@
 #profile-dropdown-menu {
     position: absolute;
     top: 80%;
-    right: 0%;
+    right: -10%;
     width: 80%;
     border: solid;
     border-color: black;

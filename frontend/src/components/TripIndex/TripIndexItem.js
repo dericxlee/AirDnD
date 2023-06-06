@@ -4,7 +4,7 @@ import './TripIndexItem.css'
 import { deleteTrip } from "../../store/trip"
 import ReviewFormModal from "../ReviewFormModal"
 
-const TripIndexItem = ({trip, key, today}) => {
+const TripIndexItem = ({trip, key, today, update, setUpdate}) => {
     const dispatch = useDispatch()
 
     const tripStartDate = trip.startDate;
@@ -50,7 +50,7 @@ const TripIndexItem = ({trip, key, today}) => {
                 <p className='trip-info'>Hosted by {trip.host.firstName}</p>
                 <p className='trip-info'>{formattedDateRange}</p>
                 { trip.closingDate < today ? (
-                    <ReviewFormModal trip={trip}/>
+                    <ReviewFormModal trip={trip} update={update} setUpdate={setUpdate}/>
                 ) : (
                     <button className='trip-info' id='trip-cancel-btn' onClick={handleClick}>Cancel Trip</button>
                 )}

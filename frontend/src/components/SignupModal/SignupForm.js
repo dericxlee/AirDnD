@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
 import * as sessionActions from "../../store/session";
-import './SignupForm.css'
+import './SignupForm.css';
 import { Link } from "react-router-dom";
 
 function SignupForm() {
@@ -42,7 +42,7 @@ function SignupForm() {
   };
 
   return (
-    <div id='signup-form'>
+    <div className='session-form'>
       <div id='signup-message'>
         <p id='signup-msg'>Signing up</p>
         <hr />

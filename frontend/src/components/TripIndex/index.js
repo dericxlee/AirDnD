@@ -1,15 +1,16 @@
 import { useDispatch, useSelector } from "react-redux"
 import React from "react"
 import { getTrips, fetchTrips } from "../../store/trip"
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import TripIndexItem from "./TripIndexItem"
 import './TripIndex.css'
-import { Link } from "react-router-dom"
+import { Redirect } from "react-router-dom/cjs/react-router-dom.min"
 
 const TripIndex = () => {
     const dispatch = useDispatch()
     const sessionUser = useSelector(state => state.session.user)
     const trips = useSelector(getTrips)
+    const [update, setUpdate] = useState(false)
 
     const today = new Date().toJSON().slice(0, 10);
 
@@ -18,7 +19,15 @@ const TripIndex = () => {
 
     useEffect(()=>{
         dispatch(fetchTrips())
-    }, [dispatch])
+    }, [dispatch, update])
+
+    console.log(update)
+
+    if(!sessionUser){
+        return (
+            <Redirect to='/'/>
+        );
+    };
 
     return (
         <div className='new-page-render' id='trips-index-page'>
@@ -50,6 +59,8 @@ const TripIndex = () => {
                                 trip={trip}
                                 key={trip.id}
                                 today={today}
+                                update={update}
+                                setUpdate={setUpdate}
                             />)
                         }
                     </div>

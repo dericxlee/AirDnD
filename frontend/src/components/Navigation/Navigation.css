@@ -5,7 +5,7 @@
     height: 10%;
     width: 100%;
     box-sizing: border-box;
-    border-block: 1px solid black;
+    border-bottom: 1px solid gray;
     z-index: 99;
 }
 
