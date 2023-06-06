@@ -70,21 +70,23 @@ const ListingInfo = ({listing, step, setStep, totalSteps}) => {
             <div className='listing-info-input-container'>
                 <div className='listing-info-header'>Share some basics about your place</div>
                 <div className='listing-info-subheader'>You'll add more details later, like bed types.</div>
-                <div className='listing-info-input-box'>
-                    Guests
-                    <NumberInput input={guests} setInput={setGuests}/>
-                </div>
-                <div className="listing-info-input-box">
-                    Bedrooms
-                    <NumberInput input={bedrooms} setInput={setBedrooms}/>
-                </div>
-                <div className="listing-info-input-box">
-                    Beds
-                    <NumberInput input={beds} setInput={setBeds}/>
-                </div>
-                <div className="listing-info-input-box">
-                    Bathrooms
-                    <NumberInput input={baths} setInput={setBaths}/>
+                <div className='listing-info-input-list'>
+                    <div className='listing-info-input-box'>
+                        Guests
+                        <NumberInput input={guests} setInput={setGuests}/>
+                    </div>
+                    <div className="listing-info-input-box">
+                        Bedrooms
+                        <NumberInput input={bedrooms} setInput={setBedrooms}/>
+                    </div>
+                    <div className="listing-info-input-box">
+                        Beds
+                        <NumberInput input={beds} setInput={setBeds}/>
+                    </div>
+                    <div className="listing-info-input-box">
+                        Bathrooms
+                        <NumberInput input={baths} setInput={setBaths}/>
+                    </div>
                 </div>
             </div>
             <ListingProgressBar step={step} totalSteps={totalSteps} handleNext={handleNext} handleBack={handleBack}/>

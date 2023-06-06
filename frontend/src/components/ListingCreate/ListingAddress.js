@@ -80,20 +80,20 @@ const ListingAddress = ({listing, step, setStep, totalSteps}) => {
                 <div className='listing-address-subheader'>Your address is only shared with guests after they've made a reservation.</div>
                 <div className='listing-street-box'>
                     <div>Street Address</div>
-                    <input ref={addressRef} type="text" value={address} onChange={e => setAddress(e.target.value)} />
+                    <input ref={addressRef} id='street-input' type="text" value={address} onChange={e => setAddress(e.target.value)} />
                 </div>
                 <div className='listing-region-box'>
                     <div className='listing-city-box'>
                         <div>City</div>
-                        <input ref={cityRef} type="text" value={city} onChange={e => setCity(e.target.value)} />
+                        <input id='city-input' ref={cityRef} type="text" value={city} onChange={e => setCity(e.target.value)} />
                     </div>
                     <div className='listing-state-box'>
                         <div>State</div>
-                        <input type="text" value='CA' readOnly/>
+                        <input id='state-input' type="text" value='CA' readOnly/>
                     </div>
                     <div className='listing-country-box'>
                         <div>Country</div>
-                        <input type="text" value='United States' readOnly />
+                        <input id='country-input' type="text" value='United States' readOnly />
                     </div>
                 </div>
                 <Errors errors={errors}/>

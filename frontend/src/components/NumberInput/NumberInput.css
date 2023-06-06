@@ -2,7 +2,6 @@
     width: 18%;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
 }
 
 .number-input-btn-box {
@@ -12,18 +11,37 @@
 
 .number-input-display-box {
     height: 100%;
-    width: 40%;
+    width: 40px;
+    min-width: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-left: 7.5px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.number-display {
+    margin-bottom: 7.5px;
 }
 
 
 .input-button {
     border: 1px solid black;
     border-radius: 50%;
-    aspect-ratio: 1 / 1;
-    height: 100%;
+    height: 30px;
+    min-height: 30px;
+    width: 30px;
+    min-width: 30px;
     background-color: white;
-    font-size: 26px;
+    font-size: 20px;
+    
+}
+
+.input-button:disabled {
+    border: 1px solid lightgrey;
+}
+
+.input-button:hover {
+    cursor: pointer;
 }

@@ -12,13 +12,17 @@ const ListingManagement = () => {
     const dispatch = useDispatch()
     const sessionUser = useSelector(state => state.session.user)
 
-    // if(!sessionUser) return <Redirect to='/'/>
-
     const listings = useSelector(getListings)
 
     useEffect(()=> {
         dispatch(manageListings())
-    }, [dispatch])
+    }, [dispatch, listings?.length])
+
+    if(!sessionUser){
+        return (
+            <Redirect to='/'/>
+        );
+    };
 
     return (
         <>

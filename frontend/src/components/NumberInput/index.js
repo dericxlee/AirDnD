@@ -17,7 +17,7 @@ const NumberInput = ({input, setInput}) => {
                 <button className='input-button' disabled={input <= 1} onClick={handleSubtract}>-</button>
             </div>
             <div className='number-input-display-box'>
-                {input} 
+                <div className='number-display'>{input}</div>
             </div>
             <div className='number-input-btn-box'>
                 <button className='input-button' onClick={handleAdd}>+</button>

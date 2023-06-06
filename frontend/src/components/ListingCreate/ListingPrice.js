@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import ListingInfo from "./ListingInfo";
 import ListingProgressBar from "./ListingProgressBar";
 import './ListingPrice.css'
@@ -11,14 +11,32 @@ const ListingPrice = ({listing, step, setStep, totalSteps}) => {
     const [back, setBack] = useState(false)
     const [errors, setErrors] = useState('')
     const errorMsg = 'Price must be greater than zero'
+    const priceRef = useRef(null)
+
+    const handleRef = () => {
+        const priceInput = priceRef.current
+
+        if(priceRef && priceInput.value <= 0){
+            priceInput.style.border = '2px solid red'
+        } else {
+            priceInput.style.border = '1px solid black'
+        };
+    };
+
+    useEffect(()=> {
+        if(price){
+            handleRef()
+        };
+    }, [price])
 
     const handleNext = () => {
         if(price > 0){
             setStep(step+1)
             setNext(true)
         } else {
-            setErrors(errorMsg)
-        }
+            setErrors(errorMsg);
+            handleRef();
+        };
     };
 
     const handleBack = () => {
@@ -62,10 +80,10 @@ const ListingPrice = ({listing, step, setStep, totalSteps}) => {
         <div className='listing-create-page'>
             <div className='listing-price-container'>
                 <div className='listing-price-header'>How much for one night's stay?</div>
-                <div className='listing-price-subheader'>This is the amount that you will receive</div>
+                <div className='listing-price-subheader'>This is the amount that you will receive.</div>
                 <div className='listing-price-box'>
                     <div>$</div>
-                    <input className='listing-price-input' type="number" value={price} onChange={e=> setPrice(e.target.value)}/> 
+                    <input className='listing-price-input' ref={priceRef} type="number" value={price} onChange={e=> setPrice(e.target.value)}/> 
                     <div>per night</div>
                 </div>
                 <Errors errors={errors}/>
