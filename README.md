@@ -22,7 +22,6 @@ Airdnd was built with:
 ### Listings
 + Users can create, update, and delete their listings. 
 + Splash page includes an index of available listings for both users and non-users to read.
-+ Listings on index are filtered upon logging in to prevent seeing current user's listings.
 + Listings show page include information such as price, property type, and location
 
 ### Trips
@@ -30,4 +29,11 @@ Airdnd was built with:
 + Trip are filtered by past trips and upcoming trips. User can only delete upcoming trips. 
 
 ### Reviews
-+ Users can read reviews on specific listing show pages. 
++ Users can read reviews on specific listing show pages.
++ Users can create reviews on past trips.
++ Users can update and delete their own reviews. 
+
+### Search
++ Users can search by city and/or number of guests.
++ User will only see listings that are hosted by other Users, not their own.
++ Listings index re-renders on query search. 
