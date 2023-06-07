@@ -17,7 +17,7 @@ Airdnd was built with:
 
 ### User Auth
 + Users can signup, login, and logout of an account. 
-+ Certain features are only available for logged in users such creating listings
++ Certain features are only available for logged in users such creating listings.
 
 ### Listings
 + Users can create, update, and delete their listings. 
