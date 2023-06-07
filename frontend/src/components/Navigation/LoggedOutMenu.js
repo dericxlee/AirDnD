@@ -6,7 +6,7 @@ import './LoggedOutMenu.css'
 const LoggedOutMenu = () => {
     return (
         <div>
-            <ul id='profile-dropdown-menu'>
+            <ul className='profile-dropdown-menu' id='logout-menu'>
                 <li><SignupFormModal/></li>
                 <li><LoginFormModal/></li>
                 <hr />

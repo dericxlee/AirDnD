@@ -4,7 +4,7 @@ import './TripIndexItem.css'
 import { deleteTrip } from "../../store/trip"
 import ReviewFormModal from "../ReviewFormModal"
 
-const TripIndexItem = ({trip, key, today, update, setUpdate}) => {
+const TripIndexItem = ({trip, today, update, setUpdate}) => {
     const dispatch = useDispatch()
 
     const tripStartDate = trip.startDate;

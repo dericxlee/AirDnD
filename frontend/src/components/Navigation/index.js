@@ -36,7 +36,7 @@ function Navigation() {
         <a id='github-box' href="https://github.com/dericxlee">
           <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="github" />
         </a>
-        <a id='linkedin-box' href="">
+        <a id='linkedin-box' href="https://www.linkedin.com/in/deric-lee-940923106/">
           <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="linkedin" />
         </a>
       </div>

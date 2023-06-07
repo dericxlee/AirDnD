@@ -56,5 +56,14 @@
     height: 70%;
     background-color: red;
     border-radius: 50%;
+    border: none;
+    overflow: hidden;
+}
+
+.search-guests button img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border: none;
 }
 

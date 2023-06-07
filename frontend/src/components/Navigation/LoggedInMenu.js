@@ -15,7 +15,7 @@ function LoggedInMenu({user}){
 
     return (
         <div>
-            <ul id='profile-dropdown-menu'>
+            <ul className='profile-dropdown-menu' id='login-menu'>
                 <li><button>Messages</button></li>
                 <li><button>Notifications</button></li>
                 <li><NavLink to='/trips'><button>Trips</button></NavLink></li>

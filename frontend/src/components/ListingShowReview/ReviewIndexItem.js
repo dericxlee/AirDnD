@@ -11,7 +11,7 @@ const ReviewIndexItem = ({review}) => {
                 </div>
                 <div id='review-user-info-box'>
                     <p>{review.user.firstName}</p>
-                    <p>May 2023</p>
+                    <p>June 2023</p>
                 </div>
             </div>
             <div id='review-body-box'>

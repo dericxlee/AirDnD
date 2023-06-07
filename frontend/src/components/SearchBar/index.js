@@ -22,8 +22,10 @@ const SearchBar = () => {
                 <input type="text" value={city} onChange={e=>setCity(e.target.value)} placeholder="Anywhere" />
             </div>
             <div className='search-guests'>
-                <input type="text" value={guests} onChange={e=>setGuests(e.target.value)} placeholder="Add guests"/>
-                <button onClick={handleSearch}></button>
+                <input type="number" value={guests} onChange={e=>setGuests(e.target.value)} placeholder="Add guests"/>
+                <button onClick={handleSearch}>
+                    <img src="https://www.clker.com/cliparts/R/6/l/K/8/R/search-icon-red-hi.png" alt="" />
+                </button>
             </div>
         </form>
         

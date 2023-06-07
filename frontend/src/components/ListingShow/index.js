@@ -12,8 +12,7 @@ const ListingShow = () => {
     const {listingId} = useParams();
     const dispatch = useDispatch();
     const listing = useSelector(getListing(listingId));
-    // const [rating, setRating] = useState(0);
-    // const [length, setLength] = useState(0);
+    let numReview = 'review'
 
     useEffect(()=> {
         dispatch(fetchListing(listingId))
@@ -27,6 +26,10 @@ const ListingShow = () => {
     
     if(length){
         averageRating = (totalSum / length).toFixed(2)
+    };
+
+    if(length > 1){
+        numReview = 'reviews'
     };
     
     return (
@@ -60,14 +63,15 @@ const ListingShow = () => {
                         </ul>
                     </div>
                     <div id='show-page-description-box'>
-                        <hr id='show-page-description-line'></hr>
                         <p id='show-page-description'>{listing?.description}</p>
-                        <hr id='show-page-description-line'/>
                     </div>
                     <div id='reviews-index-mega-container'>
                         <div id='reviews-index-header'>
-                            <li>{ averageRating }</li>
-                            <li><span>{length} reviews</span></li>
+                            <div>
+                                <img src="https://media.istockphoto.com/id/1295967422/vector/five-point-star-vector-icon-isolated-gold-star-rating-flat-symbol-vector.jpg?s=612x612&w=0&k=20&c=f9kJnuy_7JluRDG2ZgIPAkI33173kVwOuCBXe-z-w6Y=" alt="" />
+                            </div>
+                            <div id='description-box'>{ averageRating }</div>
+                            <div id='description-box'>{length} {numReview}</div>
                         </div>
                         <div id='reviews-index-container'>
                             <ListingShowReviews reviews={reviews}/>

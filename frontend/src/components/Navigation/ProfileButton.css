@@ -43,11 +43,9 @@
 }
 
 .nav-avatar {
-    height: 90%;
+    height: 100%;
     width: 100%;
-    display: inline-block;
     overflow: hidden;
     border-radius: 50%;
-    border: solid;
-    border-color: lightgray;
+    object-fit: cover;
 }

@@ -32,8 +32,7 @@ class Listing < ApplicationRecord
     validates :num_baths, presence: true
     validates :max_guests, presence: true
 
-    before_validation :generate_default_photo
-    # before_validation :generate_second_photo
+    # before_validation :generate_default_photo
     
     belongs_to :host,
     foreign_key: :host_id,

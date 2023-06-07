@@ -1,20 +1,28 @@
-#profile-dropdown-menu {
+.profile-dropdown-menu {
     position: absolute;
     top: 80%;
     right: -10%;
-    width: 80%;
+    width: 70%;
     border: solid;
     border-color: black;
     z-index: 99;
     background-color: white;
+    border-radius: 5% / 8%;
+}
+
+#logout-menu {
+    border-radius: 5% / 9%;
+}
+
+#login-menu {
     border-radius: 5%;
 }
 
-#profile-dropdown-menu li {
+.profile-dropdown-menu li {
     margin: 5%;
 }
 
-#profile-dropdown-menu li button {
+.profile-dropdown-menu li button {
     border: none;
     background-color: white;
 }

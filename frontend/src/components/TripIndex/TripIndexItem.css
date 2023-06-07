@@ -6,8 +6,9 @@
     flex-wrap: wrap;
     flex: 0 0 auto;
     scroll-snap-align: start;
-    min-height: 250px;
-    min-width: 250px;
+    min-height: 80px;
+    min-width: 200px;
+    overflow-y: hidden;
 }
 
 #trip-info-photo-box {

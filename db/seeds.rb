@@ -230,7 +230,7 @@ require "open-uri"
     listing_6.photos.attach(io: URI.open('https://airdnb-dev.s3.us-west-1.amazonaws.com/listing6/ranch3.webp'), filename: 'ranch3.webp')
     listing_6.photos.attach(io: URI.open('https://airdnb-dev.s3.us-west-1.amazonaws.com/listing6/ranch4.webp'), filename: 'ranch4.webp')
     listing_6.photos.attach(io: URI.open('https://airdnb-dev.s3.us-west-1.amazonaws.com/listing6/ranch5.webp'), filename: 'ranch5.webp')
-
+    
     listing_7 = Listing.create!(
         host_id: 4,
         title: 'Relaxing Oceanfront Home just Minutes to Beaches',
@@ -269,7 +269,7 @@ require "open-uri"
         This unique property features a private pool and lovely outdoor space. 
         Enjoy endless hours of entertainment in the spacious living room, or take a few laps in the pool while taking in the magnificent mountain view. 
         A fully-equipped kitchen and cozy bedrooms offer plenty of comfort and convenience, while access to hiking trails nearby ensures you can explore your surroundings at will.'
-    )
+        )
 
     listing_8.photos.attach(io: URI.open('https://airdnb-dev.s3.us-west-1.amazonaws.com/listing8/yose1.webp'), filename: 'yose1.webp')
     listing_8.photos.attach(io: URI.open('https://airdnb-dev.s3.us-west-1.amazonaws.com/listing8/yose2.webp'), filename: 'yose2.webp')
@@ -296,7 +296,7 @@ require "open-uri"
     listing_9.photos.attach(io: URI.open('https://airdnb-dev.s3.us-west-1.amazonaws.com/listing9/beach3.webp'), filename: 'beach3.webp')
     listing_9.photos.attach(io: URI.open('https://airdnb-dev.s3.us-west-1.amazonaws.com/listing9/beach4.webp'), filename: 'beach4.webp')
     listing_9.photos.attach(io: URI.open('https://airdnb-dev.s3.us-west-1.amazonaws.com/listing9/beach5.webp'), filename: 'beach5.webp')
-    
+
     listing_10 = Listing.create!(
         host_id: 3,
         title: "EAGLE'S WATCH MALIBU",
@@ -309,9 +309,9 @@ require "open-uri"
         num_bedrooms: 3,
         num_baths: 3,
         description: "Eagle's Watch is one of Malibu's most famous houses, impossible to miss while driving the Pacific Coast Highway and designed by legendary architect Harry Gesner. 
-            Perched above the Pacific Ocean, Eagle’s Watch has the best unobstructed panoramic view in Malibu. 
-            Perfect for entertaining with dramatic outdoor and indoor spaces, the views from every location are simply stunning. 
-            Stay in ultimate luxury in this one of a kind serene modern marvel."
+        Perched above the Pacific Ocean, Eagle’s Watch has the best unobstructed panoramic view in Malibu. 
+        Perfect for entertaining with dramatic outdoor and indoor spaces, the views from every location are simply stunning. 
+        Stay in ultimate luxury in this one of a kind serene modern marvel."
     )
 
     listing_10.photos.attach(io: URI.open('https://airdnb-dev.s3.us-west-1.amazonaws.com/listing10/eagle1.webp'), filename: 'eagle1.webp')
@@ -332,8 +332,8 @@ require "open-uri"
         num_bedrooms: 8,
         num_baths: 7,
         description: 'Panoramic views stretch from downtown Los Angeles to Catalina Island at this ultra-luxurious estate in Beverly Hills. 
-            Floor-to-ceiling glass invites the incredible vista inside, while multiple lounge areas on the terrace create even more living space for your large group. 
-            After a relaxing day by the pool, venture down to Santa Monica for a beachfront dinner and a moonlit selfie on the pier.'
+        Floor-to-ceiling glass invites the incredible vista inside, while multiple lounge areas on the terrace create even more living space for your large group. 
+        After a relaxing day by the pool, venture down to Santa Monica for a beachfront dinner and a moonlit selfie on the pier.'
     )
 
     listing_11.photos.attach(io: URI.open('https://airdnb-dev.s3.us-west-1.amazonaws.com/listing11/grand1.webp'), filename: 'grand1.webp')
@@ -354,9 +354,9 @@ require "open-uri"
         num_bedrooms: 1,
         num_baths: 1,
         description: "Experience comfort and style in our modern in-law unit with an open kitchen and living space with a mid-century modern esthetic. 
-            Conveniently located in the unit are a washer and dryer. Have a peaceful sleep on the queen-sized bed with cooling pillows and breathable sheets in the bedroom. 
-            Both the living area and bedroom have televisions, and recessed lighting throughout. 
-            This unit is on the ground floor of a single-family home in an Oakland neighborhood."
+        Conveniently located in the unit are a washer and dryer. Have a peaceful sleep on the queen-sized bed with cooling pillows and breathable sheets in the bedroom. 
+        Both the living area and bedroom have televisions, and recessed lighting throughout. 
+        This unit is on the ground floor of a single-family home in an Oakland neighborhood."
     )
 
     listing_12.photos.attach(io: URI.open('https://airdnb-dev.s3.us-west-1.amazonaws.com/listing12/cozy1.webp'), filename: 'cozy1.webp')
@@ -401,11 +401,11 @@ require "open-uri"
         num_bedrooms: 4,
         num_baths: 3,
         description: "Just 14 miles across the Golden Gate Bridge lies the ultimate Bay Area getaway! 
-            Bring your family and friends to enjoy the vast sweeping views of the bay, including both Bay and Golden Gate Bridges. 
-            Enjoy this epic scenery from the terrace or taking a splash in the pool or treat yourself to the ultimate writers retreat and soak in the peaceful and quiet atmosphere. 
-            Only 1.5 miles to the Angel Island Ferry, take a day trip to beautiful Angel Island or explore all that Tiburon has to offer. 
-            Great location for hiking, biking, close proximity to Muir Woods and Mt. Tamalpais- something for everyone! 
-            This incredibly special place will give you memories for a lifetime."
+        Bring your family and friends to enjoy the vast sweeping views of the bay, including both Bay and Golden Gate Bridges. 
+        Enjoy this epic scenery from the terrace or taking a splash in the pool or treat yourself to the ultimate writers retreat and soak in the peaceful and quiet atmosphere. 
+        Only 1.5 miles to the Angel Island Ferry, take a day trip to beautiful Angel Island or explore all that Tiburon has to offer. 
+        Great location for hiking, biking, close proximity to Muir Woods and Mt. Tamalpais- something for everyone! 
+        This incredibly special place will give you memories for a lifetime."
     )
 
     listing_14.photos.attach(io: URI.open('https://airdnb-dev.s3.us-west-1.amazonaws.com/listing14/stun1.webp'), filename: 'stun1.webp')
@@ -439,7 +439,7 @@ require "open-uri"
     listing_15.photos.attach(io: URI.open('https://airdnb-dev.s3.us-west-1.amazonaws.com/listing15/condo3.webp'), filename: 'condo3.webp')
     listing_15.photos.attach(io: URI.open('https://airdnb-dev.s3.us-west-1.amazonaws.com/listing15/condo4.webp'), filename: 'condo4.webp')
     listing_15.photos.attach(io: URI.open('https://airdnb-dev.s3.us-west-1.amazonaws.com/listing15/condo5.webp'), filename: 'condo5.webp')
-
+    
     # 20.times do 
     #     Listing.create!({
     #         host_id: rand(2..6),
@@ -490,29 +490,29 @@ require "open-uri"
         num_guests: 2,
     )
 
-    Trip.create!(
-        user_id: 5,
-        listing_id: 1,
-        start_date: '1/1/2021',
-        closing_date: '7/1/2021',
-        num_guests: 2
-    )
+    # Trip.create!(
+    #     user_id: 5,
+    #     listing_id: 1,
+    #     start_date: '1/1/2021',
+    #     closing_date: '7/1/2021',
+    #     num_guests: 2
+    # )
 
-    Trip.create!(
-        user_id: 3,
-        listing_id: 1,
-        start_date: '1/1/2020',
-        closing_date: '7/1/2020',
-        num_guests: 2
-    )
+    # Trip.create!(
+    #     user_id: 3,
+    #     listing_id: 1,
+    #     start_date: '1/1/2020',
+    #     closing_date: '7/1/2020',
+    #     num_guests: 2
+    # )
 
-    Trip.create!(
-        user_id: 4,
-        listing_id: 1,
-        start_date: '1/1/2022',
-        closing_date: '7/1/2022',
-        num_guests: 2
-    )
+    # Trip.create!(
+    #     user_id: 4,
+    #     listing_id: 1,
+    #     start_date: '1/1/2022',
+    #     closing_date: '7/1/2022',
+    #     num_guests: 2
+    # )
 
     require 'date'
 
@@ -521,9 +521,9 @@ require "open-uri"
         start_date = Date.today
       
         count.times do
-        #   formatted_date = start_date.strftime('%d/%m/%Y')
-        #   dates << formatted_date
-            dates << start_date
+            formatted_date = start_date.strftime('%d/%m/%Y')
+            dates << formatted_date
+            # dates << start_date
             start_date += 2  # Add 2 day to the start date
         end
       
@@ -539,45 +539,59 @@ require "open-uri"
         Trip.create!(
             user_id: rand(2..6),
             listing_id: rand(1..15),
-            start_date: start_date,
-            closing_date: closing_date,
+            start_date: start_date.strftime('%d/%m/%Y'),
+            closing_date: closing_date.strftime('%d/%m/%Y'),
             num_guests: 2
         )
     end
 
     puts 'all trips done'
 
+    trips = Trip.where('id > ?', 5).all
+
     bodies = [
         'beautiful place, beautiful views',
         'Lovely host. Incredible hospitality',
         'Pleasant stay for my time off',
         'Very clean. Felt like home',
-        'Enjoyed my summer vacation here, will definitely be back'
+        'Enjoyed my summer vacation here, will definitely be back',
+        'location, location, location!',
+        'Amazing beachside front, loved the Cali sun'
     ]
 
-    Review.create!(
-        user_id: 5,
-        listing_id: 1,
-        trip_id: 5,
-        rating: 5,
-        body: 'beautiful house. had a great time staying there for the whole month on new year occasion with the family'
-    )
+    trips.each do |trip|
+        Review.create!(
+            user_id: trip.user.id,
+            listing_id: trip.listing_id,
+            trip_id: trip.id,
+            rating: rand(1..5),
+            body: bodies.sample
+        )
+    end
 
-    Review.create!(
-        user_id: 3,
-        listing_id: 1,
-        trip_id: 6,
-        rating: 4,
-        body: 'Location, location, location. This mansion is all about the proximity to downtown Beverly Hills plus large salt water pool and spa.'
-    )
+    # Review.create!(
+    #     user_id: 5,
+    #     listing_id: 1,
+    #     trip_id: 5,
+    #     rating: 5,
+    #     body: 'beautiful house. had a great time staying there for the whole month on new year occasion with the family'
+    # )
 
-    Review.create!(
-        user_id: 4,
-        listing_id: 1,
-        trip_id: 7,
-        rating: 1,
-        body: 'Perfect location in stunning Beverly Hills.'
-    )
+    # Review.create!(
+    #     user_id: 3,
+    #     listing_id: 1,
+    #     trip_id: 6,
+    #     rating: 4,
+    #     body: 'Location, location, location. This mansion is all about the proximity to downtown Beverly Hills plus large salt water pool and spa.'
+    # )
+
+    # Review.create!(
+    #     user_id: 4,
+    #     listing_id: 1,
+    #     trip_id: 7,
+    #     rating: 1,
+    #     body: 'Perfect location in stunning Beverly Hills.'
+    # )
 
     puts 'Seeding done'
 
