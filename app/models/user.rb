@@ -14,6 +14,7 @@
 #
 class User < ApplicationRecord
     has_secure_password
+    require 'open-uri'
 
     validates :email, 
         length: { in: 4..24}, 
@@ -30,7 +31,7 @@ class User < ApplicationRecord
     validate :validate_age
 
     before_validation :ensure_session_token
-    # before_validation :generate_default_pic
+    before_validation :generate_default_pic
 
     has_many :listings,
     foreign_key: :host_id,
@@ -67,19 +68,20 @@ class User < ApplicationRecord
         self.session_token ||= generate_session_token
     end
 
+    
     private
-
+    
     def generate_session_token
         loop do
             token = SecureRandom::urlsafe_base64(16)
             return token unless User.exists?(session_token: token)
         end
     end
-
-    # def generate_default_pic
-    #     unless self.photo.attached?
-    #         file = URI.open("https://airdnb-dev.s3.us-west-1.amazonaws.com/default.jpeg");
-    #         self.photo.attach(io: file, filename: "default.jpeg")
-    #     end
-    # end
+    
+    def generate_default_pic
+        unless self.photo.attached?
+            file = URI.open("https://airdnb-dev.s3.us-west-1.amazonaws.com/default.jpeg");
+            self.photo.attach(io: file, filename: "default.jpeg")
+        end
+    end
 end

@@ -18,5 +18,3 @@ const NumberError = ({ errors }) => {
         </div>
     )
 };
-
-export default NumberError

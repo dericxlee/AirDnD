@@ -5,3 +5,4 @@ json.user do
     json.email review.user.email
     json.photoUrl review.user.photo.url
 end
+

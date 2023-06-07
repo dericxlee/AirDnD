@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import * as sessionActions from '../../store/session';
 import { useDispatch } from 'react-redux';
 import './LoginForm.css'
@@ -25,7 +25,7 @@ const LoginForm = ({handleClose}) => {
         else if (data) setErrors([data]);
         else setErrors([res.statusText]);
       });
-  }
+  };
 
   return (
     <div className='session-form'>

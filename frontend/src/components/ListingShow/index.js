@@ -12,18 +12,23 @@ const ListingShow = () => {
     const {listingId} = useParams();
     const dispatch = useDispatch();
     const listing = useSelector(getListing(listingId));
+    // const [rating, setRating] = useState(0);
+    // const [length, setLength] = useState(0);
 
     useEffect(()=> {
         dispatch(fetchListing(listingId))
     }, [dispatch, listingId])
 
+    let averageRating = 0
+
     const reviews = listing?.reviews
+    const length = reviews?.length
     const totalSum = reviews?.reduce((sum, review) => sum + review.rating, 0)
     
-    const length = reviews?.length
-
-    const averageRating = (totalSum/length).toFixed(2)
-
+    if(length){
+        averageRating = (totalSum / length).toFixed(2)
+    };
+    
     return (
         <div id='show-page-container'>
             <div id='show-page-title-box'><p id='show-page-title'>{listing?.title}</p></div>
@@ -34,10 +39,10 @@ const ListingShow = () => {
                         <img id='big-photo' src={listing?.photoUrls[0]} alt="sample photo" />
                     </div>
                     <div id='photo-divider-container'>
-                        <img className='top-small-photo' src={listing?.photoUrls[1]} alt="sample" />
-                        <img className='top-small-photo' id='third-photo' src={listing?.photoUrls[2]} alt="sample" />
-                        <img className='small-photo' src={listing?.photoUrls[3]} alt="sample" />
-                        <img className='small-photo' id='fifth-photo' src={listing?.photoUrls[4]} alt="sample" />
+                        <img className='top-small-photo' src={listing?.photoUrls[1] || listing?.photoUrls[0]} alt="sample" />
+                        <img className='top-small-photo' id='third-photo' src={listing?.photoUrls[2] || listing?.photoUrls[0]} alt="sample" />
+                        <img className='small-photo' src={listing?.photoUrls[3] || listing?.photoUrls[0]} alt="sample" />
+                        <img className='small-photo' id='fifth-photo' src={listing?.photoUrls[4] || listing?.photoUrls[0]} alt="sample" />
                     </div>
                 </div>
             </div>

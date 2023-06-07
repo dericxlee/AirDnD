@@ -34,7 +34,6 @@ const ListingCreate = ({wipListing}) => {
         );
     };
 
-    console.log(existingListing)
 
     let listing = {
         title: '', 

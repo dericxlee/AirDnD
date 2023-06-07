@@ -20,7 +20,7 @@ const SignupFormModal = () => {
       <button onClick={handleClick}>Sign Up</button>
       {showModal && (
         <Modal onClose={handleClose}>
-          <SignupForm />
+          <SignupForm handleClose={handleClose}/>
         </Modal>
       )}
     </>

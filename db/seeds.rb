@@ -103,10 +103,10 @@ require "open-uri"
         num_bedrooms: 6,
         num_baths: 6,
         description: 'Modern construction, $7m 6,500 sq ft, Hollywood Hills Sanctuary home perfect for 12 guests. 
-            Featuring new jetted hot tub, pool table, theater, 5 bedrooms with en suite bathrooms, 6 baths, several view-side balconies, rooftop hot tub, 2 car garage + 3 car driveway (parking for 6 on property)
-            6th bedroom is in the theatre room (queen bed)
-            This house truly defines the essence of the Hollywood Hills. Spectacular-views from downtown Los Angeles to the beaches of Santa Monica & Polos Verdes. 
-            The house is decorated tastefully with an edgy/modern comfortable feel, has a full movie theatre with an extra full sofa pull out memory foam bed, also a jacuzzi to soak in as you gaze out over the city.',
+        Featuring new jetted hot tub, pool table, theater, 5 bedrooms with en suite bathrooms, 6 baths, several view-side balconies, rooftop hot tub, 2 car garage + 3 car driveway (parking for 6 on property)
+        6th bedroom is in the theatre room (queen bed)
+        This house truly defines the essence of the Hollywood Hills. Spectacular-views from downtown Los Angeles to the beaches of Santa Monica & Polos Verdes. 
+        The house is decorated tastefully with an edgy/modern comfortable feel, has a full movie theatre with an extra full sofa pull out memory foam bed, also a jacuzzi to soak in as you gaze out over the city.',
     )
         
     listing_1.photos.attach(io: URI.open('https://airdnb-dev.s3.us-west-1.amazonaws.com/listing1/mansion1.webp'), filename: 'mansion1.webp')
@@ -127,9 +127,9 @@ require "open-uri"
         num_bedrooms: 10,
         num_baths: 7,
         description: 'Private, gated French country chateau-inspired home sits at the end of a cul de sac on nearly 2 acres of land and is surrounded by stately trees, mature landscaping, and verdant canyon views. 
-            Beautifully living room with fireplace, formal dining room, large kitchen, and light-filled breakfast area. 
-            Spectacular canyon views from every room and nearby access to Beverly Hills, and the valley. 
-            Expansive backyard and pool area.',
+        Beautifully living room with fireplace, formal dining room, large kitchen, and light-filled breakfast area. 
+        Spectacular canyon views from every room and nearby access to Beverly Hills, and the valley. 
+        Expansive backyard and pool area.',
     )
 
     listing_2.photos.attach(io: URI.open('https://airdnb-dev.s3.us-west-1.amazonaws.com/listing2/beverly1.webp'), filename: 'beverly1.webp')
@@ -150,9 +150,9 @@ require "open-uri"
         num_bedrooms: 4,
         num_baths: 3,
         description: "Most villas have a great room, but this manor just north of Malibu Pier has many—even the bedrooms, cinema, and wine cave loom large. 
-            Mixing French, Italian, and Spanish design, this is Mediterranean meets Hollywood in high fashion. 
-            Linger in the pool with views of stone walls and lawn, play tennis on the private court, and host cocktails at the marble wet bar. 
-            You're 1.5 miles from the Pier.",
+        Mixing French, Italian, and Spanish design, this is Mediterranean meets Hollywood in high fashion. 
+        Linger in the pool with views of stone walls and lawn, play tennis on the private court, and host cocktails at the marble wet bar. 
+        You're 1.5 miles from the Pier.",
     )
 
     listing_3.photos.attach(io: URI.open('https://airdnb-dev.s3.us-west-1.amazonaws.com/listing3/petra1.webp'), filename: 'petra1.webp')
@@ -173,8 +173,8 @@ require "open-uri"
         num_bedrooms: 3,
         num_baths: 3,
         description: 'Exquisite multi level Mediterranean Villa located along legendary Mulholland Drive in the oh so fabulous Hollywood Hills!
-            Stunning villa filled with lots of natural light, panoramic city and mountain views from all 4 levels and a resort-like backyard.
-            Private gated driveway and 3 car garage provides ample parking - a short walk to Runyon Canyon hiking trails and the famous Hollywood sign!'
+        Stunning villa filled with lots of natural light, panoramic city and mountain views from all 4 levels and a resort-like backyard.
+        Private gated driveway and 3 car garage provides ample parking - a short walk to Runyon Canyon hiking trails and the famous Hollywood sign!'
     )
 
     listing_4.photos.attach(io: URI.open('https://airdnb-dev.s3.us-west-1.amazonaws.com/listing4/runyon1.webp'), filename: 'runyon1.webp')
@@ -195,11 +195,11 @@ require "open-uri"
         num_bedrooms: 5,
         num_baths: 3,
         description: "Welcome to Pitchouline Estate. 
-            Nestled within 150 acres in Fallbrook & adjoining Temecula city consists of an organic olive farm, vineyard & fruit orchard. 
-            This 8,000 sqft residence w/ separate guest house offers a perfect blend of space, privacy & luxury. 
-            Guests will be delighted by the views, pool, hot tub, lake fishing, amenities & expansive trails along the creek & groves. 
-            Conveniently located 10 miles from Temecula wine country & 25 miles to the beach. 
-            It is the perfect family luxury retreat"
+        Nestled within 150 acres in Fallbrook & adjoining Temecula city consists of an organic olive farm, vineyard & fruit orchard. 
+        This 8,000 sqft residence w/ separate guest house offers a perfect blend of space, privacy & luxury. 
+        Guests will be delighted by the views, pool, hot tub, lake fishing, amenities & expansive trails along the creek & groves. 
+        Conveniently located 10 miles from Temecula wine country & 25 miles to the beach. 
+        It is the perfect family luxury retreat"
     )
 
     listing_5.photos.attach(io: URI.open('https://airdnb-dev.s3.us-west-1.amazonaws.com/listing5/pitch1.webp'), filename: 'pitch1.webp')
@@ -220,9 +220,9 @@ require "open-uri"
         num_bedrooms: 3,
         num_baths: 2,
         description: "With 10,000 square feet of luxurious living The Villa has it all. 
-            There are 6 oversized bedrooms, 7 spa like baths, movie theater, gym, commercial bar and a chef's kitchen. 
-            The exterior has a full kitchen with BBQ and a pizza oven. 
-            Large pool with waterfall and bocce court nearby.",
+        There are 6 oversized bedrooms, 7 spa like baths, movie theater, gym, commercial bar and a chef's kitchen. 
+        The exterior has a full kitchen with BBQ and a pizza oven. 
+        Large pool with waterfall and bocce court nearby.",
     )
 
     listing_6.photos.attach(io: URI.open('https://airdnb-dev.s3.us-west-1.amazonaws.com/listing6/ranch1.webp'), filename: 'ranch1.webp')
@@ -243,9 +243,9 @@ require "open-uri"
         num_bedrooms: 3,
         num_baths: 2,
         description: 'Located between the famous Pleasure Point and Capitola Village, you will find yourself waking up to a breathtaking view of the Pacific Ocean. 
-            The pristine backyard is perfect for sunbathing, lawn games, or enjoying lunch on the patio. 
-            Included is an entry key to a private beach just steps away at Privates Beach where only the locals go to surf and soak up the sun- clothing optional. 
-            This spacious home is the perfect family getaway.',
+        The pristine backyard is perfect for sunbathing, lawn games, or enjoying lunch on the patio. 
+        Included is an entry key to a private beach just steps away at Privates Beach where only the locals go to surf and soak up the sun- clothing optional. 
+        This spacious home is the perfect family getaway.',
     )
 
     listing_7.photos.attach(io: URI.open('https://airdnb-dev.s3.us-west-1.amazonaws.com/listing7/ocean1.webp'), filename: 'ocean1.webp')
@@ -266,9 +266,9 @@ require "open-uri"
         num_bedrooms: 3,
         num_baths: 2,
         description: 'Enjoy a luxurious getaway in this stunning 3 BR, 2 Bath home with breathtaking mountain views! 
-            This unique property features a private pool and lovely outdoor space. 
-            Enjoy endless hours of entertainment in the spacious living room, or take a few laps in the pool while taking in the magnificent mountain view. 
-            A fully-equipped kitchen and cozy bedrooms offer plenty of comfort and convenience, while access to hiking trails nearby ensures you can explore your surroundings at will.'
+        This unique property features a private pool and lovely outdoor space. 
+        Enjoy endless hours of entertainment in the spacious living room, or take a few laps in the pool while taking in the magnificent mountain view. 
+        A fully-equipped kitchen and cozy bedrooms offer plenty of comfort and convenience, while access to hiking trails nearby ensures you can explore your surroundings at will.'
     )
 
     listing_8.photos.attach(io: URI.open('https://airdnb-dev.s3.us-west-1.amazonaws.com/listing8/yose1.webp'), filename: 'yose1.webp')
@@ -278,7 +278,7 @@ require "open-uri"
     listing_8.photos.attach(io: URI.open('https://airdnb-dev.s3.us-west-1.amazonaws.com/listing8/yose5.webp'), filename: 'yose5.webp')
 
     listing_9 = Listing.create!(
-        host_id: 1,
+        host_id: 5,
         title: 'Ocean Beach View Paradise',
         address: '9 Beach Dr',
         city: 'Pacifica',
@@ -288,10 +288,7 @@ require "open-uri"
         num_beds: 6,
         num_bedrooms: 5,
         num_baths: 4,
-        description: "Need a place to reset, relax, or work remotely? 
-            This is the place. Situated in charming Pedro Point (above Linda Mar beach), this 4BR/3BA home has views from every room. 
-            Our 3 decks are perfect places to enjoy your morning coffee, work on your perfect yoga pose, or finish that NYT crossword. 
-            But if you love working (that's OK too). With fast wifi throughout, this home is a perfect place to work remotely, write your great American novel or host Zooms."
+        description: "Need a place to reset, relax, or work remotely? This is the place. Situated in charming Pedro Point (above Linda Mar beach), this 4BR/3BA home has views from every room. Our 3 decks are perfect places to enjoy your morning coffee, work on your perfect yoga pose, or finish that NYT crossword. But if you love working (that's OK too). With fast wifi throughout, this home is a perfect place to work remotely, write your great American novel or host Zooms."
     )
 
     listing_9.photos.attach(io: URI.open('https://airdnb-dev.s3.us-west-1.amazonaws.com/listing9/beach1.webp'), filename: 'beach1.webp')
@@ -346,7 +343,7 @@ require "open-uri"
     listing_11.photos.attach(io: URI.open('https://airdnb-dev.s3.us-west-1.amazonaws.com/listing11/grand5.webp'), filename: 'grand5.webp')
 
     listing_12 = Listing.create!(
-        host_id: 1,
+        host_id: 5,
         title: "Cozy One Bedroom",
         address: '12 Cozy Dr',
         city: 'Oakland',
@@ -418,7 +415,7 @@ require "open-uri"
     listing_14.photos.attach(io: URI.open('https://airdnb-dev.s3.us-west-1.amazonaws.com/listing14/stun5.webp'), filename: 'stun5.webp')
 
     listing_15 = Listing.create!(
-        host_id: 5,
+        host_id: 1,
         title: "Oceanfront Condo",
         address: '15 Condo Dr',
         city: 'Watsonville',
@@ -472,16 +469,16 @@ require "open-uri"
     Trip.create!(
         user_id: 1,
         listing_id: 2,
-        start_date: '9/2/2023',
-        closing_date: '11/2/2023',
+        start_date: '9/2/2025',
+        closing_date: '11/2/2025',
         num_guests: 2,
     )
 
     Trip.create!(
         user_id: 1,
         listing_id: 4,
-        start_date: '1/9/2024',
-        closing_date: '6/9/2024',
+        start_date: '1/9/2026',
+        closing_date: '6/9/2026',
         num_guests: 2,
     )
 
@@ -517,7 +514,46 @@ require "open-uri"
         num_guests: 2
     )
 
+    require 'date'
+
+    def generate_dates(count)
+        dates = []
+        start_date = Date.today
+      
+        count.times do
+        #   formatted_date = start_date.strftime('%d/%m/%Y')
+        #   dates << formatted_date
+            dates << start_date
+            start_date += 2  # Add 2 day to the start date
+        end
+      
+        dates
+    end
+
+    dates = generate_dates(40)
+  
+    dates.each do |date|
+        start_date = Date.strptime(date, '%d/%m/%Y')
+        closing_date = start_date + 1
+
+        Trip.create!(
+            user_id: rand(2..6),
+            listing_id: rand(1..15),
+            start_date: start_date,
+            closing_date: closing_date,
+            num_guests: 2
+        )
+    end
+
     puts 'all trips done'
+
+    bodies = [
+        'beautiful place, beautiful views',
+        'Lovely host. Incredible hospitality',
+        'Pleasant stay for my time off',
+        'Very clean. Felt like home',
+        'Enjoyed my summer vacation here, will definitely be back'
+    ]
 
     Review.create!(
         user_id: 5,
@@ -532,11 +568,7 @@ require "open-uri"
         listing_id: 1,
         trip_id: 6,
         rating: 4,
-        body: 'Location, location, location. This mansion is all about the proximity to downtown Beverly Hills plus large salt water pool and spa. 
-            We enjoyed the beautiful rooms and comfortable beds with the softest sheets. 
-            Also noteworthy, the living room is very spacious and comfortable with a large 4k TV. 
-            We also enjoyed the patio furniture along with the outdoor BBQ and dining area. 
-            This was wonderful for a celebratory dinner.'
+        body: 'Location, location, location. This mansion is all about the proximity to downtown Beverly Hills plus large salt water pool and spa.'
     )
 
     Review.create!(
@@ -544,10 +576,7 @@ require "open-uri"
         listing_id: 1,
         trip_id: 7,
         rating: 1,
-        body: 'Perfect location in stunning Beverly Hills. 
-            The house was impeccably cleaned and there was plenty of room for all the guests. 
-            I left a bag there by accident on check-out day, and the property manager was nice enough to ship it to me. 
-            Would stay here again for sure!',
+        body: 'Perfect location in stunning Beverly Hills.'
     )
 
     puts 'Seeding done'

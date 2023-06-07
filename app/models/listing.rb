@@ -18,6 +18,8 @@
 #  updated_at    :datetime         not null
 #
 class Listing < ApplicationRecord
+    require 'open-uri'
+
     validates :host_id, presence: true
     validates :title, presence: true
     validates :description, presence: true
@@ -29,6 +31,9 @@ class Listing < ApplicationRecord
     validates :num_bedrooms, presence: true
     validates :num_baths, presence: true
     validates :max_guests, presence: true
+
+    before_validation :generate_default_photo
+    # before_validation :generate_second_photo
     
     belongs_to :host,
     foreign_key: :host_id,
@@ -44,4 +49,28 @@ class Listing < ApplicationRecord
 
     has_many_attached :photos
 
+    private
+
+    def generate_default_photo
+        unless self.photos.attached?
+            # file = URI.open("https://airdnb-dev.s3.us-west-1.amazonaws.com/no-image.jpeg")
+            # self.photos.attach(io: file, filename: "no-image.jpeg")
+
+            file = URI.open("https://airdnb-dev.s3.us-west-1.amazonaws.com/default-listing/default1.webp")
+            self.photos.attach(io: file, filename: "default1.webp")
+            # file2 = URI.open("https://airdnb-dev.s3.us-west-1.amazonaws.com/default-listing/default2.webp")
+            # self.photos.attach(io: file2, filename: "default2.webp")
+            # file3 = URI.open("https://airdnb-dev.s3.us-west-1.amazonaws.com/default-listing/default3.webp")
+            # self.photos.attach(io: file3, filename: "default3.webp")
+            # self.photos.attach(io: file4, filename: "default4.webp")
+            # self.photos.attach(io: file5, filename: "default5.webp")
+        end
+    end
+
+    
+
+    
+
+
+    
 end
