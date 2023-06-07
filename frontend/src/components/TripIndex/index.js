@@ -21,8 +21,6 @@ const TripIndex = () => {
         dispatch(fetchTrips())
     }, [dispatch, update])
 
-    console.log(update)
-
     if(!sessionUser){
         return (
             <Redirect to='/'/>

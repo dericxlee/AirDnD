@@ -10,9 +10,9 @@ const ListingPhotos = () => {
         setFiles([...files, ...selectedFiles])
     };
 
-    useEffect(()=> {
-        console.log(files)
-    }, [files])
+    // useEffect(()=> {
+    //     console.log(files)
+    // }, [files])
 
     return (
         <div className='listing-create-page'>

@@ -18,7 +18,6 @@ function App() {
         <Navigation/>
       </div>
       <Switch>
-        <Route exact path='/test' component={ListingPhotos}/>
         <Route exact path='/host' component={ListingCreate}/>
         <Route path='/host/:listingId/' component={ListingCreate}/>
         <Route exact path='/trips' component={TripIndex}/>
