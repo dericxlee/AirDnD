@@ -22,16 +22,16 @@ function DemoButton() {
     return (
         <ul id='community-btn-box'>
             <li id='community-btn-item'>
-                <button id='community-btn' onClick={handleClick}>Demo</button>
+                <button className='community-btn' id='demo' onClick={handleClick}>Demo</button>
             </li>
             <li id='community-btn-item'>
-                <button id='community-btn'>Continue with Facebook</button>
+                <button className='community-btn' disabled>Continue with Facebook</button>
             </li>
             <li id='community-btn-item'>
-                <button id='community-btn'>Continue with Google</button>
+                <button className='community-btn' disabled>Continute with Google</button>
             </li>
             <li id='community-btn-item'>
-                <button id='community-btn'>Continue with Apple</button>
+                <button className='community-btn' disabled>Continue with Apple</button>
             </li>
         </ul>
 

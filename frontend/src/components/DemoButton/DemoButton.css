@@ -10,9 +10,14 @@
     text-align: center;
 }
 
-#community-btn {
+.community-btn {
     width: 90%;
     height: 65%;
     font-size: 14px;
     border-radius: 8px;
+    background-color: white;
+}
+
+#demo {
+    font-size: 18px;
 }

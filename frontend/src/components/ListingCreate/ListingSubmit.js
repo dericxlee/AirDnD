@@ -16,7 +16,6 @@ const ListingSubmit = ({listing, step, setStep, totalSteps}) => {
     const [errors, setErrors] = useState('');
     const errorMsg = 'Field cannot be blank';
     const descrRef = useRef(null);
-
     
     const handleRef = () => {
         const descrInput = descrRef.current
