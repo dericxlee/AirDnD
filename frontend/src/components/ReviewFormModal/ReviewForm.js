@@ -71,6 +71,7 @@ const ReviewForm = ({trip, review, handleClose}) => {
         e.preventDefault()
         if(!body){
             setErrors('Field cannot be blank')
+            handleRef()
         } else if (!rating){
             setErrors('Please give the trip a rating')
         } else {

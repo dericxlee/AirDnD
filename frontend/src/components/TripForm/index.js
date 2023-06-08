@@ -95,7 +95,7 @@ const TripForm = ({listing}) => {
         } else if (stringStartDate >= stringClosingDate) {
             setErrors('Date range is invalid')
         } else if (stringStartDate < today) {
-            setErrors('Start date cannot be in the past')
+            setErrors('Check-in time cannot be in the past')
         } else {
             setReserve('Reserving')
 
