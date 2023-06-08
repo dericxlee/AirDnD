@@ -11,11 +11,11 @@
 }
 
 #logout-menu {
-    border-radius: 5% / 9%;
+    border-radius: 5% / 10%;
 }
 
 #login-menu {
-    border-radius: 5%;
+    border-radius: 5% / 10%;
 }
 
 .profile-dropdown-menu li {

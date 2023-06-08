@@ -4,12 +4,14 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useEffect } from 'react'
 import { createTrip } from '../../store/trip'
 import { useHistory } from 'react-router-dom'
+import Errors from '../ListingCreate/Errors'
 
 const TripForm = ({listing}) => {
     const dispatch = useDispatch()
     const history = useHistory()
     const sessionUser = useSelector(state => state.session.user)
     const [reserve, setReserve] = useState('Reserve')
+    const [errors, setErrors] = useState('')
     
     const addDays = (num) => {
         const today = new Date()
@@ -49,10 +51,22 @@ const TripForm = ({listing}) => {
         }
     }, [dispatch, numGuests])
 
+    useEffect(()=> {
+        if(numGuests < 1 && numGuests !== ''){
+            setTimeout(()=> {
+                setNumGuests(1)
+            }, 500)
+        } else if (numGuests > listing?.maxGuests){
+            setTimeout(()=> {
+                setNumGuests(listing?.maxGuests)
+            }, 500)
+        }
+    }, [numGuests])
+
     function calcNumDays() {
         const diffDays = (closingDate - startDate)/(1000*3600*24)
         return diffDays
-    }
+    };
 
     const [numDays, setNumDays] = useState(calcNumDays())
     const [nightlyFee, setNightlyFee] = useState(0)
@@ -70,18 +84,20 @@ const TripForm = ({listing}) => {
         numGuests: numGuests
     }
 
-    // console.log(trip)
-
     const handleSubmit = e => {
         e.preventDefault();
-        setReserve('Reserving')
-        setTimeout(()=> {
-            dispatch(createTrip(trip))
-            history.push('/trips')
-        }, 1000)
-        // trip = {...trip}
-        // trip = {...trip, userId, listingId, startDate, closingDate}
-    }
+        if(!sessionUser){
+            setErrors('You must be logged in to reserve')
+        } else if (stringStartDate >= stringClosingDate) {
+            setErrors('Date range is invalid')
+        } else {
+            setReserve('Reserving')
+            setTimeout(()=> {
+                dispatch(createTrip(trip))
+                history.push('/trips')
+            }, 1000)
+        };
+    };
 
     useEffect(()=> {
         setTimeout(()=> {
@@ -156,6 +172,9 @@ const TripForm = ({listing}) => {
             </div>
             <div id='trip-form-payment-container'>
                 <div id='trip-form-payment-msg'>You won't be charged yet</div>
+                <div id='trip-form-error-box'>
+                    <Errors errors={errors}/>
+                </div>
                 <div id='trip-form-nightly-fee'>
                     <div id='trip-form-sub-calc'>${price} x {numDays} nights</div>
                     <div id='trip-form-sub-total'>${strNightlyFee}</div>

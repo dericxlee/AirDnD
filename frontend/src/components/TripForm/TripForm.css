@@ -185,7 +185,7 @@
 }
 
 #trip-form-nightly-fee {
-    margin-top: 15%;
+    margin-top: 7%;
     margin-left: 7%;
     height: 10%;
     width: 86%;
@@ -226,6 +226,13 @@
 
 #trip-form-line-break {
     width: 90%;
+}
+
+#trip-form-error-box {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin-top: 5%;
 }
 
 

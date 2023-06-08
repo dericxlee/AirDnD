@@ -48,7 +48,7 @@ function Navigation() {
       <div id='utility-box'>
         {welcome}
         <div id='language-btn-box'>
-          <button id='language-btn' disabled>
+          <button className='hidden-button' id='language-btn' disabled>
             <img id='language-btn-logo' src="https://e7.pngegg.com/pngimages/556/45/png-clipart-globe-world-computer-icons-globe-miscellaneous-globe-thumbnail.png" alt="globe" />
           </button>
         </div>

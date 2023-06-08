@@ -9,8 +9,8 @@ const LoggedOutMenu = () => {
             <ul className='profile-dropdown-menu' id='logout-menu'>
                 <li><SignupFormModal/></li>
                 <li><LoginFormModal/></li>
-                <hr />
-                <li><button>Help</button></li>
+                <hr className='hidden-buttons'/>
+                <li className='hidden-buttons'><button>Help</button></li>
             </ul>
         </div>
     )    
