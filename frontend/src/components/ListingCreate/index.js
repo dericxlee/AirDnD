@@ -94,8 +94,11 @@ const ListingCreate = ({wipListing}) => {
                     />
                     <label for='entire-home'>
                         <div className='radio-label-box'>
-                            <p>An entire place</p>
-                            <p>Guest have the whole place to themselves.</p>
+                            <p className='radio-header'>An entire place</p>
+                            <p className='radio-subheader'>Guest have the whole place to themselves.</p>
+                        </div>
+                        <div className='radio-img'>
+                            <img src="https://cdn-icons-png.flaticon.com/512/6676/6676508.png" alt="" />
                         </div>
                     </label>
                 
@@ -109,8 +112,11 @@ const ListingCreate = ({wipListing}) => {
                     />
                     <label for='private-room'>
                         <div className='radio-label-box'>
-                            <p>A room</p>
-                            <p>Guests have their own room in a home, plus access to shared spaces.</p>
+                            <p className='radio-header'>A room</p>
+                            <p className='radio-subheader'>Guests have their own room in a home, plus access to shared spaces.</p>
+                        </div>
+                        <div className='radio-img'>
+                            <img src="https://cdn-icons-png.flaticon.com/512/2237/2237440.png" alt="" />
                         </div>
                     </label>
                 
@@ -124,8 +130,11 @@ const ListingCreate = ({wipListing}) => {
                     />
                     <label for='luxury-stay'>
                         <div className='radio-label-box'>
-                            <p>Entire luxury estate</p>
-                            <p>Guests have an entire estate to explore.</p>
+                            <p className='radio-header'>A complete estate</p>
+                            <p className='radio-subheader'>Guests have a whole luxury estate to explore.</p>
+                        </div>
+                        <div className='radio-img'>
+                            <img src="https://cdn-icons-png.flaticon.com/512/341/341585.png" alt="" />
                         </div>
                     </label>
                 

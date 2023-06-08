@@ -31,12 +31,27 @@
 
 .listing-radio-box label {
     display: inline-block;
+    position: relative;
     background-color: white;
     border: 1px solid black;
     height: 30%;
     width: 100%;
     margin-top: 2%;
     border-radius: 2% / 12%;
+}
+
+.radio-img {
+    position: absolute;
+    top: 30%;
+    right: 5%;
+    height: 30px;
+    width: 30px;
+}
+
+.radio-img img {
+    height: 100%;
+    width: 100%;
+    background-color: inherit;
 }
 
 .listing-radio-box label:hover {
@@ -49,9 +64,15 @@
     margin-left: 2%;
 }
 
-.radio-label-box p:first-child {
-    font-weight: bold;
+.radio-header {
+    font-size: 20px;
     margin-bottom: 1%;
+    color: black;
+}
+
+.radio-subheader {
+    font-size: 16px;
+    color: gray;
 }
 
 .listing-radio-box input[type='radio']:checked + label {

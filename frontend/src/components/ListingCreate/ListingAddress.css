@@ -64,16 +64,20 @@
 
 #street-input {
     border-radius: 1% / 15%;
+    border: 1px solid black;
 }
 
 #city-input {
     border-radius: 2% / 14%;
+    border: 1px solid black;
 }
 
 #state-input {
     border-radius: 4% / 8%;
+    border: 1px solid black;
 }
 
 #country-input {
     border-radius: 2% / 10%;
+    border: 1px solid black;
 }
