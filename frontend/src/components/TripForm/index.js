@@ -12,6 +12,10 @@ const TripForm = ({listing}) => {
     const sessionUser = useSelector(state => state.session.user)
     const [reserve, setReserve] = useState('Reserve')
     const [errors, setErrors] = useState('')
+    const today = new Date().toISOString().split('T')[0];
+
+    // console.log(today)
+    // console.log(today.toISOString().split('T')[0])
     
     const addDays = (num) => {
         const today = new Date()
@@ -82,20 +86,26 @@ const TripForm = ({listing}) => {
         startDate: stringStartDate,
         closingDate: stringClosingDate,
         numGuests: numGuests
-    }
+    };
 
-    const handleSubmit = e => {
+    const handleSubmit = async(e) => {
         e.preventDefault();
         if(!sessionUser){
             setErrors('You must be logged in to reserve')
         } else if (stringStartDate >= stringClosingDate) {
             setErrors('Date range is invalid')
+        } else if (stringStartDate < today) {
+            setErrors('Start date cannot be in the past')
         } else {
             setReserve('Reserving')
-            setTimeout(()=> {
-                dispatch(createTrip(trip))
+
+            try {
+                await dispatch(createTrip(trip))
                 history.push('/trips')
-            }, 1000)
+            } catch (error) {
+                setErrors('Reservation overlaps with existing trips')
+                setReserve('Reserve')
+            };
         };
     };
 
