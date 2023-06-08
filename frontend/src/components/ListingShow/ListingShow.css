@@ -102,12 +102,12 @@
     position: absolute;
     top: 83%;
     width: 100%;
-    height: 200%;
+    height: 80%;
 }
 
 #show-page-information-box {
     width: 60%;
-    height: inherit;
+    height: 100%;
 }
 
 #show-page-booking-form {
@@ -116,34 +116,37 @@
 }
 
 #show-page-host-box {
+    margin-top: 2%;
     width: 100%;
-    height: 1%;
+    height: 5%;
+    display: flex;
+    align-items: center;
 }
 
 #show-page-host {
     font-size: 24px;
-    position: absolute;
-    top: 0%;
-    margin-left: 10%;
+    margin-left: 16.5%;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 500;
 }
 
 #show-page-attribute-box {
-    height: 1%;
+    margin-top: 1%;
+    height: 2%;
     width: 100%;
+    display: flex;
+    align-items: center;
 }
 
 #show-page-attribute {
     list-style-type: disc;
-    position: absolute;
     display: flex;
-    left: 10%;
-    height: 2%;
+    margin-left: 16.5%;
+    height: 4%;
 }
 
 #show-page-attribute li {
-    margin-top: 4%;
+    margin-top: 2%;
     margin-right: 20px;
     font-size: 16px;
     font-family: Arial, Helvetica, sans-serif;
@@ -156,7 +159,7 @@
 
 #show-page-description-box {
     width: 80%;
-    height: 8%;
+    height: 35%;
     word-wrap: break-word;
     display: block;
     border-top: 1px solid gray;
@@ -169,7 +172,7 @@
 }
 
 #show-page-description-line {
-    margin-top: 4%;
+    margin-top: 8%;
     margin-bottom: 4%;
     margin-left: 17%;
     width: 76%;
@@ -184,7 +187,6 @@
 }
 
 #reviews-index-mega-container {
-    top: 200%;
     width: 100%;
     height: 100%;
 }
@@ -193,7 +195,7 @@
     display: flex;
     flex-direction: row;
     align-content: center;
-    height: 1.5%;
+    height: 3%;
     margin-left: 17%;
 }
 

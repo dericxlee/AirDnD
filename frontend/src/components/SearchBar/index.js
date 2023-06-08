@@ -21,7 +21,7 @@ const SearchBar = () => {
 
         <form className='search-bar'>
             <div className='search-city'>
-                <input type="text" value={city} onChange={e=>setCity(e.target.value)} placeholder="Anywhere" />
+                <input type="text" value={city} onChange={e=>setCity(e.target.value)} placeholder="City" />
             </div>
             <div className='search-guests'>
                 <input type="number" value={guests} onChange={e=>setGuests(e.target.value)} placeholder="Add guests"/>

@@ -18,7 +18,7 @@ class Trip < ApplicationRecord
     validates :closing_date, presence: true, comparison: {greater_than: :start_date}
     validates :num_guests, numericality: {greater_than: 0}, comparison: {less_than_or_equal_to: :max_guests}
 
-    # validate :no_overlapping_trip
+    validate :no_overlapping_trip
     
     belongs_to :user,
     foreign_key: :user_id,
@@ -58,7 +58,7 @@ class Trip < ApplicationRecord
             .where(start_date: ..closing_date, closing_date: start_date..)
             .where.not(id: id)
             .exists?
-        errors.add(:base, 'Trip cannot overlap existing trips') if overlapping_trip
+        errors.add(:base, 'Reservation cannot overlap existing trips') if overlapping_trip
     end
 
 end

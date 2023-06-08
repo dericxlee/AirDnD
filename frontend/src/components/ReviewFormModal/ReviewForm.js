@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { createReview, updateReview, deleteReview } from "../../store/review";
 import './ReviewForm.css'
@@ -11,6 +11,17 @@ const ReviewForm = ({trip, review, handleClose}) => {
     const [body, setBody] = useState('');
     const [rating, setRating] = useState(0);
     const [errors, setErrors] = useState('');
+    const bodyRef = useRef(null);
+
+    const handleRef = () => {
+        const bodyInput = bodyRef.current
+
+        if(bodyRef && !bodyInput?.value){
+            bodyInput.style.border = '2px solid red'
+        } else {
+            bodyInput.style.border = '1px solid black'
+        };
+    };
 
     const tripStartDate = trip.startDate;
     const tripEndDate = trip.closingDate;
@@ -46,6 +57,7 @@ const ReviewForm = ({trip, review, handleClose}) => {
         e.preventDefault()
         if(!body){
             setErrors('Field cannot be blank')
+            handleRef()
         } else if (!rating){
             setErrors('Please give the trip a rating')
         } else {
@@ -93,7 +105,7 @@ const ReviewForm = ({trip, review, handleClose}) => {
             <div className="review-form-input-container">
                 <form className="review-form-input-box">
                     <p className='review-form-input-header'>How was your stay at {trip.host.firstName}'s place?</p>
-                    <textarea className='review-form-input-body' type="textarea" value={body} onChange={e=>setBody(e.target.value)} placeholder="Write a public review"/>
+                    <textarea className='review-form-input-body' ref={bodyRef} type="textarea" value={body} onChange={e=>setBody(e.target.value)} placeholder="Write a public review"/>
                     <div className='review-form-rating-box'>
                         <Rating onClick={handleRating} initialValue={rating}/>
                     </div>
