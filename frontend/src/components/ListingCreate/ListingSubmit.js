@@ -38,10 +38,10 @@ const ListingSubmit = ({listing, step, setStep, totalSteps}) => {
     const handleDispatch = (listing) => {
         if(listing.id){
             dispatch(updateListing(listing));
-            history.push('/client')
+            history.push('/')
         } else {
             dispatch(createListing(listing))
-            history.push('/client')
+            history.push('/')
         };
     }
 

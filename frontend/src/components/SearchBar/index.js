@@ -13,6 +13,8 @@ const SearchBar = () => {
         if(city) params.append("city", city)
         if(guests) params.append("guests", guests)
         history.push(`/search?${params}`)
+        setCity('')
+        setGuests('')
     };
 
     return (

@@ -5,21 +5,30 @@ import { useEffect, useState } from "react"
 import TripIndexItem from "./TripIndexItem"
 import './TripIndex.css'
 import { Redirect } from "react-router-dom/cjs/react-router-dom.min"
+import NoTripsBanner from "./NoTripsBanner"
 
 const TripIndex = () => {
     const dispatch = useDispatch()
     const sessionUser = useSelector(state => state.session.user)
     const trips = useSelector(getTrips)
     const [update, setUpdate] = useState(false)
-
+    
     const today = new Date().toJSON().slice(0, 10);
-
+    
     const futureTrips = trips.filter(trip => trip.closingDate > today)
     const pastTrips = trips.filter(trip => trip.closingDate < today)
-
+    
     useEffect(()=>{
         dispatch(fetchTrips())
     }, [dispatch, update])
+    
+    const pastTripsMessage = () => {
+        return pastTrips.length ? "Where you've been" : "You haven't completed any trips!"
+    };
+
+    const futureTripsMessage = () => {
+        return futureTrips.length ? "Upcoming Trips" : "No trips booked...yet!"
+    }
 
     if(!sessionUser){
         return (
@@ -33,24 +42,30 @@ const TripIndex = () => {
                 <p>Trips</p>
             </div>
             <div id='all-trips-container'>
-                <div id='upcoming-trips-box'>
-                    <div className='trips-banner'>
-                        <p className='trips-banner-header'>Upcoming Trips</p>
+                { futureTrips.length ? (
+                    <div id='upcoming-trips-box'>
+                        <div className='trips-banner'>
+                            <p className='trips-banner-header'>{futureTripsMessage()}</p>
+                        </div>
+                        <div className='slider' id='trips-info-box-container'>
+                            {
+                                futureTrips.map(trip => <TripIndexItem
+                                    trip={trip}
+                                    key={trip.id}
+                                    today={today}
+                                />)
+                            }
+                        </div>
                     </div>
-                    <div className='slider' id='trips-info-box-container'>
-                        {
-                            futureTrips.map(trip => <TripIndexItem
-                                trip={trip}
-                                key={trip.id}
-                                today={today}
-                            />)
-                        }
-                    </div>
-                </div>
+                ) : (
+                    <NoTripsBanner/>
+                )}
                 <div id='past-trips-box'>
                     <div className='trips-banner'>
-                        <p className='trips-banner-header'>Where you've been</p>
+                        <p className='trips-banner-header'>{pastTripsMessage()}</p>
                     </div>
+                    
+
                     <div className='slider' id='past-trips-info-box-container'>
                         {
                             pastTrips.map(trip => <TripIndexItem
@@ -62,6 +77,7 @@ const TripIndex = () => {
                             />)
                         }
                     </div>
+                   
                 </div>
             </div>
             <div id='trips-index-footer-box'>

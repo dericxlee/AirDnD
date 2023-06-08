@@ -54,3 +54,8 @@ table {
 button:hover {
 	cursor: pointer;
 }
+
+a {
+	text-decoration: none;
+	color: white;
+ }

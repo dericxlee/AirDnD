@@ -7,12 +7,17 @@ import ListingDeleteButton from "./ListingDeleteButton";
 import ListingCreateButton from "./ListingCreateButton";
 import ListingEditButton from "./ListingEditButton";
 import { Redirect } from "react-router-dom/cjs/react-router-dom.min";
+import { NavLink } from "react-router-dom/cjs/react-router-dom";
 
 const ListingManagement = () => {
     const dispatch = useDispatch()
     const sessionUser = useSelector(state => state.session.user)
 
     const listings = useSelector(getListings)
+
+    const readPrice = (price) => {
+        return price.toLocaleString();
+    }
 
     useEffect(()=> {
         dispatch(manageListings())
@@ -35,8 +40,8 @@ const ListingManagement = () => {
                         <tr id='listing-table-header'>
                             <th>Airdnd Listing ID</th>
                             <th>Airdnd Listing Name</th>
-                            <th>Local Name</th>
-                            <th>Sync Status</th>
+                            <th>Nightly Fee</th>
+                            <th>Show Page</th>
                             <th>Listed</th>
                             <th>Edit</th>
                             <th>Unlink</th>
@@ -47,8 +52,13 @@ const ListingManagement = () => {
                                 <tr id='listing-table-data' listing={listing} key={listing.id}>
                                     <th>{listing.id}</th>
                                     <th>{listing.title}</th>
-                                    <th><button className='dummy-btn'>Connect Roomtype</button></th>
-                                    <th><button className='dummy-btn'>Connect Listing</button></th>
+                                    <th>${readPrice(listing.price)}</th>
+                                    <th>
+                                        <button className='dummy-btn'>
+                                            <NavLink to={`/listings/${listing.id}`}>
+                                                Go to Page
+                                            </NavLink>
+                                        </button></th>
                                     <th>Listed</th>
                                     <th><ListingEditButton listing={listing}/></th>
                                     <th></th>

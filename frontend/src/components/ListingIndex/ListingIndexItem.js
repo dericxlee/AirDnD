@@ -7,13 +7,13 @@ const ListingIndexItem = ({listing}) => {
 
     return (
         <>
-            <li id='listing-box'>
+            <div id='listing-box'>
                 <NavLink to={`/listings/${listing.id}`}>
                     <img id='index-photo' src={listing.photoUrls[0]} alt="sample house" />
                     <p className='nav-link-text'>{listing.city}, California</p>
                     <p className='nav-link-text'>${price} night</p>
                 </NavLink>
-            </li>
+            </div>
         </>
     )
 }

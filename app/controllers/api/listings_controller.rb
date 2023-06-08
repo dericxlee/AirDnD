@@ -30,9 +30,9 @@ class Api::ListingsController < ApplicationController
             @listings = @listings.where("max_guests >= ?", guests)
         end
 
-        if current_user
-            @listings = @listings.where.not(host_id: current_user.id )
-        end
+        # if current_user
+        #     @listings = @listings.where.not(host_id: current_user.id )
+        # end
 
         render :index
     end

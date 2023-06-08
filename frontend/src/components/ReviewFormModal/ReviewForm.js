@@ -3,12 +3,14 @@ import { useDispatch, useSelector } from "react-redux";
 import { createReview, updateReview, deleteReview } from "../../store/review";
 import './ReviewForm.css'
 import { Rating } from 'react-simple-star-rating';
+import Errors from "../ListingCreate/Errors";
 
 const ReviewForm = ({trip, review, handleClose}) => {
     const dispatch = useDispatch();
     const sessionUser = useSelector(state => state.session.user);
     const [body, setBody] = useState('');
     const [rating, setRating] = useState(0);
+    const [errors, setErrors] = useState('');
 
     const tripStartDate = trip.startDate;
     const tripEndDate = trip.closingDate;
@@ -37,20 +39,33 @@ const ReviewForm = ({trip, review, handleClose}) => {
         if(review.id) {
             setBody(review.body)
             setRating(review.rating)
-        }
+        };
     }, [dispatch])
     
     const handleCreate = (e) => {
         e.preventDefault()
-        dispatch(createReview(review))
-        handleClose()
+        if(!body){
+            setErrors('Field cannot be blank')
+        } else if (!rating){
+            setErrors('Please give the trip a rating')
+        } else {
+            review = {...review, body, rating}
+            dispatch(createReview(review))
+            handleClose()
+        };
     };
 
     const handleUpdate = (e) => {
         e.preventDefault()
-        review = {...review, body, rating}
-        dispatch(updateReview(review))
-        handleClose()
+        if(!body){
+            setErrors('Field cannot be blank')
+        } else if (!rating){
+            setErrors('Please give the trip a rating')
+        } else {
+            review = {...review, body, rating}
+            dispatch(updateReview(review))
+            handleClose()
+        };
     };
 
     const handleDelete = (e) => {
@@ -82,6 +97,7 @@ const ReviewForm = ({trip, review, handleClose}) => {
                     <div className='review-form-rating-box'>
                         <Rating onClick={handleRating} initialValue={rating}/>
                     </div>
+                    <Errors errors={errors}/>
                     { !review.id ? (
                         <div className="review-form-button-box">
                             <button className='review-form-create-btn' onClick={handleCreate}>Post Review</button>
@@ -94,8 +110,7 @@ const ReviewForm = ({trip, review, handleClose}) => {
                     )}
                 </form>
             </div>
-            
-            
+            <button onClick={handleClose} className='close-button'>X</button>
         </>
     )
 }

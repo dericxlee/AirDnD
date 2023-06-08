@@ -9,3 +9,9 @@
     align-content: flex-start;
     column-count: 4;
 }
+
+.empty-listing-index {
+    position: absolute;
+    padding: 3%;
+    font-size: 30px;
+}

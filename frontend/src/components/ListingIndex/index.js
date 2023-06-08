@@ -19,15 +19,25 @@ const ListingIndex = () => {
         dispatch(fetchListings(city, guests))
     }, [sessionUser, city, guests])
 
+    if(!listings.length){
+        return (
+            <div id='listing-box-container'>
+                <div className='empty-listing-index'>
+                    No listings found!
+                </div>
+            </div>
+        );
+    };
+
     return (
-        <ul id='listing-box-container'>
+        <div id='listing-box-container'>
             {
                 listings.map(listing => <ListingIndexItem
                     listing={listing}
                     key={listing.id}
                 />)
             }
-        </ul>
+        </div>
     )
 }
 
