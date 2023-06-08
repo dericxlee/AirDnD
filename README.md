@@ -20,13 +20,35 @@ Airdnd was built with:
 
 ### Listings
 + Users can create, update, and delete their listings. 
+
+
+<img width="700" alt="listingform-1" src="https://github.com/dericxlee/Airdnd/assets/103487062/4eaae914-644f-43ab-8109-ea7889b9905a">
+
+
+
+<img width="624" alt="listingform-2" src="https://github.com/dericxlee/Airdnd/assets/103487062/2cfb99f3-beab-4dab-84d7-64ebe2ed9251">
+
+
 + Splash page includes an index of available listings for both users and non-users to read.
 + Listings show page include information such as price, property type, and location
 
+
+<img width="1197" alt="listingshowpage" src="https://github.com/dericxlee/Airdnd/assets/103487062/2fc2b244-7bec-4b60-a52d-723f0da2a22a">
+
+
 ### Trips
 + Users can read, create, and delete trips. 
+
+
+<img width="500" alt="tripform" src="https://github.com/dericxlee/Airdnd/assets/103487062/268b0d9e-affc-4081-9ff5-48b0244ee82e">
+
+
 + Trip are filtered by past trips and upcoming trips. User can only delete upcoming trips. 
 + Users can only see trips that they reserved
+
+
+<img width="1200" alt="tripindex-2" src="https://github.com/dericxlee/Airdnd/assets/103487062/4ef3ec8f-ada7-4451-adc4-3f8a60ca5335">
+
 
 ```ruby
     def index   
@@ -114,3 +136,10 @@ Airdnd was built with:
         dispatch(fetchListings(city, guests))
     }, [sessionUser, city, guests])
 ```
+
+
+
+
+
+
+
