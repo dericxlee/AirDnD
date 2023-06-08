@@ -27,8 +27,8 @@ const TripIndex = () => {
     };
 
     const futureTripsMessage = () => {
-        return futureTrips.length ? "Upcoming Trips" : "No trips booked...yet!"
-    }
+        return "Upcoming Trips" 
+    };
 
     if(!sessionUser){
         return (
